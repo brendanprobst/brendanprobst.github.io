@@ -5,17 +5,30 @@
 .header {
 	width: min(100%, 100rem);
 	padding: 2rem 4rem;
-	@include flex-container(row, flex-start, center, wrap);
+	@include flex-container(row, space-between, center, nowrap);
 	color: colors.$text;
 	font-family: var.$font-button;
 	font-weight: 700;
-
-	.links {
+	a {
+		color: inherit;
+	}
+	.links,
+	.socials {
 		@include flex-container(row, flex-start, center, nowrap);
 		height: 100%;
-		p {
+		flex: 1;
+		gap: 1rem;
+		a {
 			font-size: 1.5rem;
-			margin-inline-end: 4rem;
+			text-decoration: none;
+			p {
+				white-space: none;
+			}
+		}
+		a:hover {
+			p {
+				text-decoration: underline;
+			}
 		}
 	}
 	.logo {
@@ -24,9 +37,8 @@
 		height: 100%;
 	}
 	.socials {
-		height: fit-content;
-		margin-inline-start: auto;
-		@include flex-container(row, flex-start, center, nowrap);
+		justify-content: flex-end;
+		margin-left: auto;
 	}
 }
 
