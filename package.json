@@ -14,8 +14,10 @@
     "@astrojs/mdx": "^0.11.6",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/solid-js": "^1.2.3",
     "astro": "^1.6.10",
     "global": "^4.4.0",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "solid-js": "^1.4.3"
   }
 }

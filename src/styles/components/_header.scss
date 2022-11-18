@@ -1,0 +1,67 @@
+/* Header */
+@use "../var";
+@use "../colors";
+@import "../mixins";
+.header {
+	width: min(100%, 100rem);
+	padding: 2rem 4rem;
+	@include flex-container(row, flex-start, center, wrap);
+	color: colors.$text;
+	font-family: var.$font-button;
+	font-weight: 700;
+
+	.links {
+		@include flex-container(row, flex-start, center, nowrap);
+		height: 100%;
+		p {
+			font-size: 1.5rem;
+			margin-inline-end: 4rem;
+		}
+	}
+	.logo {
+		width: 90px;
+		margin-inline-end: 3rem;
+		height: 100%;
+	}
+	.socials {
+		height: fit-content;
+		margin-inline-start: auto;
+		@include flex-container(row, flex-start, center, nowrap);
+	}
+}
+
+p {
+	margin: 0;
+}
+
+.flex-row-vstart-hstart {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.txt-211 {
+	font-size: 30px;
+	font-family: var;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 1);
+	word-wrap: break-word;
+	margin-right: 100px;
+}
+
+.txt-311 {
+	font-size: 30px;
+	font-family: var.$font-button;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 1);
+	word-wrap: break-word;
+}
+
+.rectangle-21 {
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 80px;
+	border-radius: 90px;
+	margin-right: 70px;
+	height: 100%;
+}
