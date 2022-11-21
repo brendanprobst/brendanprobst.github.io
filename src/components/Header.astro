@@ -1,0 +1,72 @@
+---
+import {
+	FaBrandsGithub,
+	FaBrandsInstagram,
+	FaBrandsTwitter,
+	FaBrandsMedium,
+	FaBrandsLinkedin,
+} from "solid-icons/fa";
+import { BiRegularMenuAltRight } from "solid-icons/bi";
+---
+
+<!-- TODO: add drop down menu css -->
+<header>
+	<a href="/" class="logo">
+		<img src="white_logo.png" alt="my logo" />
+	</a>
+	<div class="links">
+		<a href="/projects" class="projects"> Projects</a>
+		<a href="/about_me" class="about_me"> About Me</a>
+		<a href="/contact_me" class="say_hello"> Say Hello!</a>
+	</div>
+	<div class="socials">
+		<a
+			aria-label="visit my linkedin account"
+			class="linkedin"
+			href="https://www.linkedin.com/in/brendan-probst-a951ab1a8/ "
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FaBrandsLinkedin />
+		</a>
+		<a
+			aria-label="visit my instagram account"
+			class="instagram"
+			href="https://github.com/brendanprobst"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FaBrandsGithub />
+		</a>
+		<a
+			aria-label="visit my instagram account"
+			class="instagram"
+			href="https://www.instagram.com/bprobst_13/"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FaBrandsInstagram />
+		</a>
+		<a
+			aria-label="visit my twitter page"
+			class="twitter"
+			href="https://twitter.com/brendanprobst"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FaBrandsTwitter />
+		</a>
+		<a
+			aria-label="visit my medium page"
+			class="medium"
+			href="https://medium.com/@brendanprobst"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<FaBrandsMedium />
+		</a>
+	</div>
+	<div class="menu">
+		<BiRegularMenuAltRight />
+	</div>
+</header>

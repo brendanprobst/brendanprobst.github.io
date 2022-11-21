@@ -3,22 +3,22 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+
 @use "./var";
 @use "./colors";
 * {
 	box-sizing: border-box;
 }
 body {
-	font-family: Verdana, sans-serif;
+	font-family: var.$font-body;
+
 	margin: auto;
-	padding: 20px;
-	// max-width: 65ch;
 	text-align: left;
 	background-color: colors.$bg;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
-	color: #444;
+	color: colors.$text;
 }
 h1,
 h2,
@@ -28,7 +28,7 @@ h5,
 h6,
 strong,
 b {
-	color: #222;
+	color: colors.$text;
 }
 a {
 	color: #3273dc;
@@ -72,3 +72,5 @@ blockquote {
 }
 
 @import "./components/header";
+@import "./components/ui";
+@import "./pages/landing";
