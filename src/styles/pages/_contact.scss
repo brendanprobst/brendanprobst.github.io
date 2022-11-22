@@ -1,0 +1,76 @@
+@use "../colors";
+@use "../var";
+
+#contact-me {
+	padding-top: 4rem;
+	main {
+		padding: 1rem;
+		display: grid;
+		gap: 1rem;
+		justify-content: stretch;
+		align-items: stretch;
+	}
+}
+#my-form {
+	background: linear-gradient(
+		359.59deg,
+		#15137a 57.35%,
+		rgba(21, 19, 122, 0) 95.41%
+	);
+	padding: 0 1.5rem 2rem 1.5rem;
+	.form-group {
+		@include flex-container(column, flex-start, flex-start, nowrap);
+		* {
+			width: 100%;
+		}
+	}
+	input,
+	textarea {
+		padding: 0.5rem 0 0 0;
+		margin: 0 0 2rem 0;
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px colors.$border solid;
+		color: colors.$text;
+		font-family: var.$font-body;
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: colors.$border;
+		}
+	}
+	.check-box {
+		input {
+			background-color: pink;
+		}
+		#wants-to-meet {
+			background-color: transparent;
+			border: 2px colors.$border;
+			border-radius: 5px;
+		}
+	}
+
+	label {
+		color: colors.$text-secondary;
+		font-family: var.$font-body;
+	}
+	#form-button {
+		width: 100%;
+		font-family: var.$font-button;
+		font-size: 1.5rem;
+		line-height: 4rem;
+		border: 2px colors.$border solid;
+		border-radius: 0.5rem;
+		text-align: center;
+		background-color: transparent;
+		&:hover {
+			background-color: colors.$fg;
+			transition: all 500ms linear;
+		}
+	}
+}
+
+#contact-info {
+}

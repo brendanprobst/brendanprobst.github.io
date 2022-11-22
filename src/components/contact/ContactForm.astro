@@ -1,0 +1,76 @@
+---
+// var form = document.getElementById("my-form");
+
+// async function handleSubmit(event: {
+// 	preventDefault: () => void;
+// 	target: HTMLFormElement | undefined;
+// }) {
+// 	event.preventDefault();
+// 	var status = document.getElementById("my-form-status");
+// 	var data = new FormData(event.target);
+// 	fetch(event.target?.action, {
+// 		method: form.method,
+// 		body: data,
+// 		headers: {
+// 			Accept: "application/json",
+// 		},
+// 	})
+// 		.then((response) => {
+// 			if (response.ok) {
+// 				status.innerHTML = "Thanks for your submission!";
+// 				form.reset();
+// 			} else {
+// 				response.json().then((data) => {
+// 					if (Object.hasOwn(data, "errors")) {
+// 						status.innerHTML = data["errors"]
+// 							.map((error) => error["message"])
+// 							.join(", ");
+// 					} else {
+// 						status.innerHTML = "Oops! There was a problem submitting your form";
+// 					}
+// 				});
+// 			}
+// 		})
+// 		.catch((error) => {
+// 			status.innerHTML = "Oops! There was a problem submitting your form";
+// 		});
+// }
+// form.addEventListener("submit", handleSubmit);
+---
+
+<section>
+	<form id="my-form" action="https://formspree.io/f/xkneeeez" method="POST">
+		<h2>Get In Touch Today</h2>
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				placeholder="What do people call you?"
+			/>
+		</div>
+		<div class="form-group">
+			<label for="contact">What's the best way to reach you?</label>
+			<input
+				type="text"
+				id="contact"
+				name="contact"
+				placeholder="phone, email, name of your carrier pidgeon, ect. "
+			/>
+		</div>
+		<div>
+			<label for="message">What do you want to tell me?</label>
+			<textarea
+				id="message"
+				name="message"
+				rows="5"
+				placeholder="The floor is yours!"></textarea>
+		</div>
+		<div class="check-box">
+			<input type="checkbox" id="wants-to-meet" name="wants-to-meet" checked />
+			<label for="wants-to-eat">Do you want to set up a meeting?</label>
+		</div>
+		<button id="form-button">Send</button>
+	</form>
+</section>

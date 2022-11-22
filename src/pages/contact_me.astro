@@ -1,5 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import ContactForm from "../components/contact/ContactForm.astro";
+import ContactInfo from "../components/contact/ContactInfo";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
@@ -10,8 +12,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body id="contact-me">
 		<Header />
-		<h1>Contact me</h1>
+		<main>
+			<ContactInfo />
+			<ContactForm />
+		</main>
 	</body>
 </html>
