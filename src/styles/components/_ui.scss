@@ -25,4 +25,7 @@ button {
 	outline: inherit;
 	text-align: inherit;
 	padding: 0;
+	.hidden {
+		display: none;
+	}
 }

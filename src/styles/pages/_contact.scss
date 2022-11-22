@@ -1,17 +1,41 @@
 @use "../colors";
 @use "../var";
-
-#contact-me {
-	padding-top: 4rem;
+.small-page {
+	height: 100%;
+	@include flex-container(column, center, center, nowrap);
 	main {
-		padding: 1rem;
-		display: grid;
-		gap: 1rem;
-		justify-content: stretch;
-		align-items: stretch;
+		flex: 1;
+		width: 100%;
 	}
 }
+#contact-me {
+	margin-top: 5rem;
+	padding: 5rem 1rem 5rem 1rem;
+	display: grid;
+	gap: 1rem;
+	justify-content: stretch;
+	align-items: stretch;
+	margin: auto auto;
+}
+@media screen and (max-width: 799px) {
+	#contact-me {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas: "info" "form";
+	}
+}
+@media screen and (min-width: 800px) {
+	#contact-me {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "info form";
+		margin: 0 auto;
+		max-width: 100rem;
+	}
+}
+
 #my-form {
+	grid-area: form;
 	background: linear-gradient(
 		359.59deg,
 		#15137a 57.35%,
@@ -58,6 +82,7 @@
 	}
 	#form-button {
 		width: 100%;
+		background-color: transparent;
 		font-family: var.$font-button;
 		font-size: 1.5rem;
 		line-height: 4rem;
@@ -66,11 +91,81 @@
 		text-align: center;
 		background-color: transparent;
 		&:hover {
-			background-color: colors.$fg;
-			transition: all 500ms linear;
+			background-color: colors.$text;
+			color: colors.$bg;
+			border: 2px colors.$text solid;
+			transition: all 150ms ease-in-out;
 		}
 	}
 }
 
 #contact-info {
+	grid-area: info;
+	padding: 0 1.5rem;
+	.label {
+		font-size: 1.25rem;
+	}
+	.list {
+		padding-left: 0;
+		li {
+			padding: 0.5rem;
+			list-style: none;
+			border-radius: 0.25rem;
+			position: relative;
+			cursor: pointer !important;
+			@include flex-container(row, flex-start, flex-start, wrap);
+
+			&:hover {
+				background-color: colors.$fg;
+				.icons {
+					display: block;
+					opacity: 1;
+				}
+			}
+			.icon {
+				width: 2rem;
+				padding: 0.5rem 0 0 0.5rem;
+			}
+			.info {
+				@include flex-container(column, flex-start, flex-start, nowrap);
+			}
+			p {
+				margin: 0.5rem;
+			}
+			.icons {
+				position: absolute;
+				margin-left: auto;
+				right: 0;
+				background-color: colors.$fg;
+				border-radius: 0.25rem;
+				opacity: 0;
+				.icon {
+					font-size: 2rem;
+					margin: 0 0.5rem;
+					color: colors.$border !important;
+					&:hover {
+						color: colors.$text !important;
+					}
+				}
+				&:hover {
+					opacity: 1;
+					transition: all 0.25s ease-in;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 599px) {
+	#contact-info {
+		padding: 0.5rem;
+	}
+}
+@media screen and (min-width: 600px) {
+	#contact-info {
+		.list {
+			li {
+				font-size: 1.25rem;
+			}
+		}
+	}
 }
