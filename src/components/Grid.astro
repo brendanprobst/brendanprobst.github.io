@@ -1,5 +1,6 @@
 ---
 import GridSection from "./gridSection";
+import Projects from "./projects/projectsPreview";
 const quaeProps = {
 	title: "Quae",
 	headline: "Community Voting App",
@@ -19,6 +20,7 @@ const cabalProps = {
 const aboutMeProps = {
 	title: "About Me",
 	headline: "Software Engineer",
+	subHeadline: "Full Stack Developer | Focus on Front-End ",
 	blocks: [
 		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
 		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
@@ -37,12 +39,14 @@ const aboutMeProps = {
 		<GridSection {...aboutMeProps} />
 	</div>
 	<div id="skills-module">
-		<div class="row">
-			<GridSection title="Skills" />
-			<GridSection title="My Resume" />
-		</div>
+		<GridSection title="Skills" />
+	</div>
+	<div id="resume-module">
+		<GridSection title="My Resume" />
 	</div>
 	<div id="projects-module">
-		<GridSection title="My Projects" />
+		<GridSection title="My Projects">
+			<Projects />
+		</GridSection>
 	</div>
 </section>

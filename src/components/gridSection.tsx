@@ -1,17 +1,21 @@
+import type { JSXElement } from "solid-js";
+
 interface GridSection {
 	title: string;
 	headline?: string;
 	subHeadline?: string;
 	blocks?: string[];
+	children?: JSXElement;
 }
 export default function GridSection({
 	title,
 	headline,
 	subHeadline,
 	blocks,
+	children,
 }: GridSection) {
 	return (
-		<div class="grid-section">
+		<div class={`grid-section ${title.toLowerCase()}`}>
 			<div class="header">
 				<h2>{title}</h2>
 				<h3 class="headline">{headline}</h3>
@@ -20,6 +24,7 @@ export default function GridSection({
 			{blocks?.map((item) => {
 				return <p>{item}</p>;
 			})}
+			{children}
 		</div>
 	);
 }
