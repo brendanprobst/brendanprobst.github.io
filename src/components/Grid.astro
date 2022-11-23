@@ -1,16 +1,40 @@
 ---
 import GridSection from "./gridSection";
+const quaeProps = {
+	title: "Quae",
+	headline: "Community Voting App",
+	subHeadline: "Co-founder",
+	blocks: [
+		"Minim exercitation velit voluptate ex voluptate. Voluptate sunt enim adipisicing ex magna. Nisi ex duis pariatur labore ea id laboris consequat commodo ex velit. Consectetur ipsum reprehenderit ipsum dolore laborum nulla est eiusmod. Ullamco culpa esse duis fugiat cupidatat nulla sunt mollit reprehenderit eiusmod laborum amet sunt nulla.",
+	],
+};
+const cabalProps = {
+	title: "Cabal Labs",
+	headline: "Web3 Research & Devleopment Group",
+	subHeadline: "Co-founder",
+	blocks: [
+		"Minim exercitation velit voluptate ex voluptate. Voluptate sunt enim adipisicing ex magna. Nisi ex duis pariatur labore ea id laboris consequat commodo ex velit. Consectetur ipsum reprehenderit ipsum dolore laborum nulla est eiusmod. Ullamco culpa esse duis fugiat cupidatat nulla sunt mollit reprehenderit eiusmod laborum amet sunt nulla.",
+	],
+};
+const aboutMeProps = {
+	title: "About Me",
+	headline: "Software Engineer",
+	blocks: [
+		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
+		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
+	],
+};
 ---
 
 <section id="grid">
 	<div id="quae-module">
-		<GridSection title="Quae" />
+		<GridSection {...quaeProps} />
 	</div>
 	<div id="cabal-module">
-		<GridSection title="Cabal Labs" />
+		<GridSection {...cabalProps} />
 	</div>
 	<div id="bio-module">
-		<GridSection title="About Me" />
+		<GridSection {...aboutMeProps} />
 	</div>
 	<div id="skills-module">
 		<div class="row">

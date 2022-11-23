@@ -4,10 +4,10 @@ export default function HeroImages() {
 		<section class="hero-images">
 			<div class="img-container">
 				<img src={"/public/img/brendan_1.jpg"} alt="picture of me" />
-				<button class="container" onClick={() => console.log("clicked")}>
+				<a class="container" href="/contact_me">
 					<h4>Send Me A Message</h4>
 					<BsChatFill class="icon" />
-				</button>
+				</a>
 			</div>
 		</section>
 	);

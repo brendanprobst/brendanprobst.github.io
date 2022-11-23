@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import ContactForm from "../components/contact/ContactForm.astro";
 import ContactInfo from "../components/contact/ContactInfo";
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
@@ -13,10 +13,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="small-page">
-		<Header />
+		<Header client:load />
 		<main id="contact-me">
-			<ContactInfo />
-			<ContactForm />
+			<ContactInfo client:load />
+			<ContactForm client:load />
 		</main>
 	</body>
 </html>

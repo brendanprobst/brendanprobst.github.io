@@ -70,8 +70,5 @@ blockquote {
 	margin: 0px;
 	font-style: italic;
 }
-
-@import "./components/header";
-@import "./components/ui";
-@import "./pages/landing";
-@import "./pages/contact";
+@import "./components";
+@import "./pages";

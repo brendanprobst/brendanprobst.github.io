@@ -109,11 +109,12 @@
 		padding-left: 0;
 		li {
 			padding: 0.5rem;
+			margin: 0.25rem 0;
 			list-style: none;
-			border-radius: 0.25rem;
+			border-radius: 0.5rem;
 			position: relative;
 			cursor: pointer !important;
-			@include flex-container(row, flex-start, flex-start, wrap);
+			@include flex-container(row, flex-start, center, wrap);
 
 			&:hover {
 				background-color: colors.$fg;
@@ -135,12 +136,14 @@
 			.icons {
 				position: absolute;
 				margin-left: auto;
+				padding-left: 2rem;
 				right: 0;
-				background-color: colors.$fg;
+				background: linear-gradient(to right, transparent, colors.$fg 20%);
 				border-radius: 0.25rem;
 				opacity: 0;
 				.icon {
-					font-size: 2rem;
+					font-size: 1.75rem;
+					line-height: 2rem;
 					margin: 0 0.5rem;
 					color: colors.$border !important;
 					&:hover {
@@ -158,6 +161,16 @@
 @media screen and (max-width: 599px) {
 	#contact-info {
 		padding: 0.5rem;
+		.list {
+			li {
+				background-color: colors.$fg;
+
+				.icons {
+					display: block;
+					opacity: 1;
+				}
+			}
+		}
 	}
 }
 @media screen and (min-width: 600px) {

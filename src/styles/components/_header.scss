@@ -47,18 +47,104 @@ header {
 		margin-left: auto;
 		padding-block: 0.25rem;
 	}
+	.close {
+		font-size: 3rem;
+		display: none;
+	}
 	.menu {
 		margin-left: auto;
 		font-size: 2rem;
 	}
+	.behind-mobile-menu {
+		display: none;
+		height: 0;
+	}
 }
 @media screen and (max-width: 399px) {
 	header {
-		padding: 0.25rem 0.5rem;
+		justify-content: flex-start;
+		padding: 0.5rem;
 		.socials,
-		.links {
+		.links,
+		.behind-mobile-menu,
+		.close {
+			height: min-content;
 			display: none;
 		}
+
+		.behind-mobile-menu.show {
+			display: block;
+			position: fixed;
+			background-color: colors.$fg;
+			z-index: 1;
+			height: 100vh;
+			width: 100vw;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			margin-bottom: 0;
+			animation: slideDown 0.5s ease-in-out;
+		}
+		.links,
+		.socials {
+			&.show {
+				position: fixed;
+				z-index: 2;
+				display: flex;
+				font-size: 2rem;
+			}
+		}
+		.links.show {
+			bottom: 30%;
+			width: 100%;
+			@include flex-container(column, flex-end, center, nowrap);
+			a {
+				width: 100%;
+				text-align: center;
+			}
+			animation: slideDownContent 0.5s ease-in-out;
+		}
+		.socials.show {
+			width: 100%;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			bottom: 15%;
+			animation: slideDownContent 0.5s ease-in-out;
+		}
+		.close.show {
+			position: fixed;
+			color: colors.$border;
+			@include flex-container(row, center, center, nowrap);
+			bottom: 5%;
+			z-index: 2;
+			left: 0;
+			right: 0;
+			animation: slideDownContent 0.5s ease-in-out;
+		}
+	}
+}
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+@keyframes slideDownContent {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	20% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
 	}
 }
 
@@ -70,8 +156,11 @@ header {
 		.logo {
 			margin-inline-end: 1rem;
 		}
-		.socials {
+		.menu {
 			display: none;
+		}
+		.socials {
+			// display: none;
 		}
 	}
 }
@@ -79,8 +168,8 @@ header {
 	header {
 		font-size: 1.5rem;
 		padding: 1rem 2rem;
-		.menu {
-			display: none;
-		}
+	}
+	.menu {
+		display: none;
 	}
 }

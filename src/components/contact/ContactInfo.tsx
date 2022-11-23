@@ -16,12 +16,12 @@ export default function ContactInfo({}) {
 		{ type: "mail", icon: <IoMailOpen />, value: "bprobst1029@gmail.com" },
 		{
 			type: "mail",
-			icon: null,
+			icon: <IoMailOpen />,
 			value: "bprobst@stevens.edu",
 		},
 		{
 			type: "mail",
-			icon: null,
+			icon: <IoMailOpen />,
 			value: "bprobst@quae.app",
 		},
 		{

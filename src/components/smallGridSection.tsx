@@ -2,24 +2,19 @@ interface GridSection {
 	title: string;
 	headline?: string;
 	subHeadline?: string;
-	blocks?: string[];
 }
 export default function GridSection({
 	title,
 	headline,
 	subHeadline,
-	blocks,
 }: GridSection) {
 	return (
 		<div class="grid-section">
 			<div class="header">
 				<h2>{title}</h2>
-				<h3 class="headline">{headline}</h3>
-				<h4 class="sub-headline">{subHeadline}</h4>
+				{headline ? <h4>{headline}</h4> : null}
+				{subHeadline ? <h6>{subHeadline}</h6> : null}
 			</div>
-			{blocks?.map((item) => {
-				return <p>{item}</p>;
-			})}
 		</div>
 	);
 }

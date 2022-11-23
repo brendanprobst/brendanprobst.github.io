@@ -87,6 +87,8 @@
 		}
 		.container {
 			background: rgba(0, 0, 0, 0.3);
+			color: colors.$text;
+			text-decoration: none;
 			border-radius: 1rem;
 			padding: 1rem 2rem;
 			width: 100%;
@@ -174,17 +176,28 @@
 		"cabal bio"
 		"cabal skills"
 		"projects projects";
+	& > div {
+		border-radius: 1rem;
+		overflow: hidden;
+		background-position: center;
+		background-size: cover;
+		background-repeat: repeat;
+		filter: drop-shadow(0px 0px 50px rgba(47, 210, 246, 0.1));
+	}
 	#quae-module {
 		// background-color: purple;
 		grid-area: quae;
+		background-image: url("/public/img/shapes/quae_module_bg.svg");
 	}
 	#cabal-module {
 		// background-color: orange;
 		grid-area: cabal;
+		background-image: url("/public/img/shapes/cabal_labs_bg.svg");
 	}
 	#bio-module {
 		// background-color: red;
 		grid-area: bio;
+		background-image: url("/public/img/shapes/bio_module_bg.svg");
 	}
 	#skills-module {
 		// background-color: pink;
@@ -193,6 +206,7 @@
 	#projects-module {
 		// background-color: green;
 		grid-area: projects;
+		background-image: url("/public/img/shapes/projct_module_bg.svg");
 	}
 	.row {
 		@include flex-container(row, flex-start, center, nowrap);
@@ -204,15 +218,21 @@
 		}
 	}
 	.grid-section {
-		background-color: colors.$fg;
-		border-radius: 1rem;
+		cursor: pointer !important;
+		background-color: rgb(153, 224, 247, 0.1);
+		-webkit-backdrop-filter: blur(50px);
+		backdrop-filter: blur(50px);
 		width: 100%;
 		height: 100%;
+		padding: 1rem;
 		.header {
-			padding: 1rem;
 			h2 {
 				margin: 0;
 				font-family: var.$font-title;
+			}
+			.headline,
+			.sub-headline {
+				margin: 0.25rem 0;
 			}
 		}
 	}
