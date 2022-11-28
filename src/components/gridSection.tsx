@@ -4,13 +4,18 @@ interface GridSection {
 	title: string;
 	headline?: string;
 	subHeadline?: string;
+	link?: string;
+	linkText?: string;
 	blocks?: string[];
 	children?: JSXElement;
 }
 export default function GridSection({
 	title,
+
 	headline,
 	subHeadline,
+	link,
+	linkText,
 	blocks,
 	children,
 }: GridSection) {
@@ -25,6 +30,9 @@ export default function GridSection({
 				return <p>{item}</p>;
 			})}
 			{children}
+			<div class="footer">
+				<a href={link}>{linkText}</a>
+			</div>
 		</div>
 	);
 }

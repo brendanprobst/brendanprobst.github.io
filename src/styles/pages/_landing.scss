@@ -5,13 +5,6 @@
 	background-position: top-left;
 	background-repeat: repeat;
 	background-size: cover;
-	// #hero-shapes {
-	// 	position: absolute;
-	// 	z-index: -1;
-	// 	bottom: 0;
-	// 	height: 100%;
-	// 	width: 100vw;
-	// }
 	.hero-content {
 		position: relative;
 		background: rgba(153, 224, 247, 0.1);
@@ -129,7 +122,7 @@
 }
 @media screen and (min-width: 800px) {
 	#hero {
-		height: 70vh;
+		height: 90vh;
 		@include flex-container(row, center, center, nowrap);
 		.hero-content,
 		.hero-images {
@@ -140,7 +133,7 @@
 			padding-top: min(30%, 10rem);
 			@include flex-container(column, flex-end, flex-end, nowrap);
 			.text {
-				padding-right: 4rem;
+				padding-right: 2rem;
 				.title {
 					font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
 				}
@@ -171,6 +164,8 @@ $grid-blur: 50px;
 	& > div,
 	.skills,
 	.resume {
+		color: colors.$text;
+		text-decoration: none;
 		border-radius: 1rem;
 		overflow: hidden;
 		background-position: center;
@@ -236,6 +231,12 @@ $grid-blur: 50px;
 				margin: 0.25rem 0;
 			}
 		}
+		.footer {
+			a {
+				text-decoration: none;
+				color: colors.$text;
+			}
+		}
 	}
 }
 @media screen and (max-width: 799px) {
@@ -260,5 +261,123 @@ $grid-blur: 50px;
 			"cabal cabal bio bio"
 			"cabal cabal skills resume"
 			"projects projects projects projects";
+	}
+}
+$card-opacity: 0;
+$card-width: 70%;
+#projects-module {
+	overflow: hidden;
+	.project-preview {
+		flex: 1;
+		width: 100%;
+		position: relative;
+		@include flex-container(row, flex-start, flex-start, nowrap);
+		height: 20rem;
+	}
+	.project-card {
+		min-width: 10rem;
+		height: 100%;
+		width: 0;
+		text-decoration: none;
+		color: colors.$text;
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 0.5rem;
+		@include flex-container(column, flex-start, center, nowrap);
+		width: 70%;
+		position: absolute;
+		height: 20rem;
+		&.focused {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			opacity: 1;
+			animation: handleFocused 1.5s linear;
+		}
+		&.focused-prev {
+			left: 0;
+			opacity: $card-opacity;
+			transform: translateX(-150%);
+			animation: handlePrev 1.5s linear;
+		}
+		&.focused-next {
+			right: 0;
+			opacity: $card-opacity;
+			transform: translateX(150%);
+			animation: handleNext 1.5s linear;
+		}
+		&.not-focused {
+			opacity: 0;
+			animation: handleNotFocused 1.5s linear 0.5s;
+		}
+		img {
+			height: 10rem;
+			border-radius: 1.5rem;
+		}
+		.tag-container {
+			width: 100%;
+			flex: 1;
+			margin: 0.5rem;
+			@include flex-container(row, center, center, wrap);
+			.tag {
+				background-color: colors.$bg;
+				border-radius: 0.125rem;
+				margin-inline-end: 0.25rem;
+				width: max-content;
+				text-align: center;
+				padding: 0.25rem;
+			}
+		}
+	}
+}
+@keyframes handleFocused {
+	from {
+		right: 0;
+		opacity: $card-opacity;
+		transform: translateX(50%);
+	}
+	to {
+		left: 0;
+		right: 0;
+		opacity: 1;
+	}
+}
+@keyframes handlePrev {
+	from {
+		margin: 0 auto;
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		margin-left: 0;
+		opacity: $card-opacity;
+		transform: translateX(-150%);
+	}
+}
+@keyframes handleNext {
+	from {
+		opacity: 0;
+		transform: translateX(200%);
+	}
+	to {
+		opacity: $card-opacity;
+		margin-left: auto;
+		transform: translateX(100%);
+	}
+}
+@keyframes handleNotFocused {
+	from {
+		transform: translateX(-75%);
+	}
+
+	to {
+		transform: translateX(-150%);
+	}
+}
+@keyframes horizontalScroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
 	}
 }

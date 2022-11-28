@@ -1,6 +1,6 @@
 ---
 import GridSection from "./gridSection";
-import Projects from "./projects/projectsPreview";
+import ProjectsPreview from "./projects/projectsPreview";
 const quaeProps = {
 	title: "Quae",
 	headline: "Community Voting App",
@@ -26,6 +26,12 @@ const aboutMeProps = {
 		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
 	],
 };
+
+const projectsProps = {
+	title: "My Projects",
+	link: "/projects",
+	linkText: "See More",
+};
 ---
 
 <section id="grid">
@@ -45,8 +51,8 @@ const aboutMeProps = {
 		<GridSection title="My Resume" />
 	</div>
 	<div id="projects-module">
-		<GridSection title="My Projects">
-			<Projects />
+		<GridSection {...projectsProps}>
+			<ProjectsPreview client:load />
 		</GridSection>
 	</div>
 </section>

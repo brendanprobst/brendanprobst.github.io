@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header";
+import ProjectsList from "../components/projects/projectsList";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
@@ -10,8 +11,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="small-page">
 		<Header client:load />
-		<h1>Projects</h1>
+		<main>
+			<section>
+				<h1>Projects</h1>
+				<ProjectsList />
+			</section>
+		</main>
 	</body>
 </html>
