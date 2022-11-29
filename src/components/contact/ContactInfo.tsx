@@ -12,7 +12,7 @@ export default function ContactInfo({}) {
 		value: string;
 		type: string;
 	};
-	const info = [
+	const info: Contact[] = [
 		{ type: "mail", icon: <IoMailOpen />, value: "bprobst1029@gmail.com" },
 		{
 			type: "mail",

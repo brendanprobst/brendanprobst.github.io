@@ -1,0 +1,244 @@
+@use "../var";
+@use "../colors";
+
+#projects {
+	#hero {
+		height: 70vh;
+		width: 100%;
+		@include flex-container(column, center, center, nowrap);
+		background: linear-gradient(
+			to right,
+			colors.$primary-default,
+			colors.$accent-default
+		);
+		.buttons {
+			width: min(100%, 45rem);
+			@include flex-container(row, space-around, center, nowrap);
+		}
+	}
+}
+#projects {
+	.projects-container {
+		width: 100vw;
+		padding: 1rem;
+		.project-card {
+			margin: 0 auto 2rem;
+			width: clamp(8rem, 100%, 60rem);
+			@include flex-container(row, center, flex-start, wrap);
+			background-color: rgba(53, 137, 197, 0.3);
+			border-radius: 1.75rem;
+			.header {
+				display: grid;
+				width: 100%;
+
+				.content {
+					grid-area: content;
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+				.icons {
+					grid-area: icons;
+					a {
+						color: colors.$text;
+					}
+				}
+				img {
+					flex: 0.75;
+					border-radius: 1rem;
+					grid-area: logo;
+				}
+				.content {
+					flex: 1;
+					.title {
+						font-size: 2rem;
+					}
+					.tag-container {
+						margin-inline: 0;
+					}
+				}
+			}
+			.blocks {
+				padding-inline: 1rem;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 799px) {
+	#projects {
+		.project-card {
+			.header {
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto;
+				justify-items: stretch;
+				align-items: stretch;
+				grid-template-areas: "logo" "icons" "content";
+				padding-top: 2rem;
+				img {
+					max-height: 15rem;
+					margin: 0 auto;
+				}
+				.icons {
+					@include flex-container(row, center, center, nowrap);
+					font-size: 2rem;
+					gap: 2rem;
+				}
+				.content {
+					width: 100%;
+					justify-self: stretch;
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 800px) {
+	#projects {
+		.project-card {
+			.header {
+				padding: 1rem;
+				grid-template-columns: auto 1fr auto;
+				grid-template-rows: 1fr;
+				align-items: flex-start;
+				justify-items: stretch;
+				grid-template-areas: "logo content icons";
+				img {
+					max-width: 10rem;
+				}
+				.content {
+					flex: 1;
+					justify-self: stretch;
+					padding-inline: 1rem;
+				}
+				.icons {
+					gap: 0.5rem;
+					font-size: 1.5rem;
+					@include flex-container(row, flex-end, center, nowrap);
+				}
+			}
+		}
+	}
+}
+.tag-container {
+	width: 100%;
+	flex: 1;
+	margin: 0.5rem;
+	@include flex-container(row, flex-start, center, wrap);
+	.tag {
+		background-color: colors.$bg;
+		border-radius: 0.125rem;
+		margin-inline-end: 0.25rem;
+		width: max-content;
+		text-align: center;
+		padding: 0.25rem;
+	}
+}
+$card-opacity: 0%;
+$card-width: 70%;
+#projects-module {
+	overflow: hidden;
+	.project-preview {
+		flex: 1;
+		width: 100%;
+		position: relative;
+		@include flex-container(row, flex-start, flex-start, nowrap);
+		height: 20rem;
+	}
+	.project-card {
+		min-width: 10rem;
+		height: 100%;
+		width: 0;
+		text-decoration: none;
+		color: colors.$text;
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 0.5rem;
+		@include flex-container(column, flex-start, center, nowrap);
+		width: 40%;
+		position: absolute;
+		height: 20rem;
+		&.focused {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			opacity: 1;
+			animation: handleFocused 1.5s linear;
+		}
+		&.focused-prev {
+			left: 0;
+			opacity: $card-opacity;
+			transform: translateX(-50%), skewX(20deg);
+			animation: handlePrev 1.5s linear;
+		}
+		&.focused-next {
+			right: 0;
+			opacity: $card-opacity;
+			transform: translateX(50%);
+			animation: handleNext 1.5s linear;
+		}
+		&.not-focused {
+			opacity: 0;
+			animation: handleNotFocused 1.5s linear 0.5s;
+		}
+		img {
+			height: 10rem;
+			border-radius: 1.5rem;
+		}
+		.tag-container {
+			justify-content: center;
+		}
+	}
+}
+@keyframes handleFocused {
+	from {
+		right: 0;
+		opacity: $card-opacity;
+		transform: translateX(50%);
+	}
+	to {
+		left: 0;
+		right: 0;
+		opacity: 1;
+	}
+}
+@keyframes handlePrev {
+	from {
+		margin: 0 auto;
+		opacity: 1;
+		transform: translateX(0) skewX(0);
+	}
+	to {
+		margin-left: 0;
+		opacity: $card-opacity;
+		transform: translateX(-50%) skewX(20deg);
+	}
+}
+@keyframes handleNext {
+	from {
+		opacity: 0;
+		transform: translateX(150%);
+	}
+	to {
+		opacity: $card-opacity;
+		margin-left: auto;
+		transform: translateX(50%);
+	}
+}
+@keyframes handleNotFocused {
+	from {
+		transform: translateX(-150%);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
+}
+@keyframes horizontalScroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}

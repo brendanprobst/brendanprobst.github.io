@@ -29,3 +29,12 @@ button {
 		display: none;
 	}
 }
+.small-page {
+	height: 100%;
+	@include flex-container(column, center, center, nowrap);
+	main {
+		#hero {
+			padding-top: 3rem;
+		}
+	}
+}

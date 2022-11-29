@@ -1,101 +1,104 @@
-#hero {
-	z-index: 1;
-	overflow: hidden;
-	background-image: url("/public/img/shapes/shapes.svg");
-	background-position: top-left;
-	background-repeat: repeat;
-	background-size: cover;
-	.hero-content {
-		position: relative;
-		background: rgba(153, 224, 247, 0.1);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-blur: (100px);
-		.text {
-			padding: 1rem;
-			overflow: hidden;
+#landing {
+	#hero {
+		z-index: 1;
+		overflow: hidden;
+		background-image: url("/public/img/shapes/shapes.svg");
+		background-position: top-left;
+		background-repeat: repeat;
+		background-size: cover;
+		.hero-content {
+			position: relative;
+			background: rgba(153, 224, 247, 0.1);
+			backdrop-filter: blur(100px);
+			-webkit-backdrop-blur: (100px);
+			.text {
+				padding: 1rem;
+				overflow: hidden;
+			}
+			.title {
+				font-size: 2.5rem;
+				font-family: var.$font-title;
+			}
+			.sub-titles {
+				font-size: 2rem;
+				line {
+					font-size: inherit;
+				}
+				:nth-child(0) {
+					font-size: 100%;
+					opacity: 100%;
+				}
+				:nth-child(1) {
+					font-size: 95%;
+					opacity: 95%;
+				}
+				:nth-child(2) {
+					font-size: 90%;
+					opacity: 90%;
+				}
+				:nth-child(3) {
+					font-size: 85%;
+					opacity: 85%;
+				}
+				:nth-child(4) {
+					font-size: 80%;
+					opacity: 80%;
+				}
+				:nth-child(5) {
+					font-size: 75%;
+					opacity: 75%;
+				}
+				:nth-child(6) {
+					font-size: 70%;
+					opacity: 70%;
+				}
+				:nth-child(7) {
+					font-size: 65%;
+					opacity: 65%;
+				}
+				:nth-child(8) {
+					font-size: 60%;
+					opacity: 60%;
+				}
+				:nth-child(9) {
+					font-size: 55%;
+					opacity: 55%;
+				}
+				:nth-child(10) {
+					font-size: 50%;
+					opacity: 50%;
+				}
+			}
 		}
-		.title {
-			font-size: 2.5rem;
-			font-family: var.$font-title;
-		}
-		.sub-titles {
-			font-size: 2rem;
-			line {
-				font-size: inherit;
+		.hero-images {
+			background: rgba(153, 224, 247, 0.1);
+			backdrop-filter: blur(25px);
+			-webkit-backdrop-filter: blur(25px);
+			@include flex-container(column, center, center, nowrap);
+			padding: 2rem;
+			img {
+				border-radius: 1rem;
 			}
-			:nth-child(0) {
-				font-size: 100%;
-				opacity: 100%;
-			}
-			:nth-child(1) {
-				font-size: 95%;
-				opacity: 95%;
-			}
-			:nth-child(2) {
-				font-size: 90%;
-				opacity: 90%;
-			}
-			:nth-child(3) {
-				font-size: 85%;
-				opacity: 85%;
-			}
-			:nth-child(4) {
-				font-size: 80%;
-				opacity: 80%;
-			}
-			:nth-child(5) {
-				font-size: 75%;
-				opacity: 75%;
-			}
-			:nth-child(6) {
-				font-size: 70%;
-				opacity: 70%;
-			}
-			:nth-child(7) {
-				font-size: 65%;
-				opacity: 65%;
-			}
-			:nth-child(8) {
-				font-size: 60%;
-				opacity: 60%;
-			}
-			:nth-child(9) {
-				font-size: 55%;
-				opacity: 55%;
-			}
-			:nth-child(10) {
-				font-size: 50%;
-				opacity: 50%;
-			}
-		}
-	}
-	.hero-images {
-		background: rgba(153, 224, 247, 0.1);
-		backdrop-filter: blur(25px);
-		-webkit-backdrop-filter: blur(25px);
-		@include flex-container(column, center, center, nowrap);
-		padding: 2rem;
-		img {
-			border-radius: 1rem;
-		}
-		.container {
-			background: rgba(0, 0, 0, 0.3);
-			color: colors.$text;
-			text-decoration: none;
-			border-radius: 1rem;
-			padding: 1rem 2rem;
-			width: 100%;
-			@include flex-container(row, space-between, center, nowrap);
-			font-size: 1.5rem;
-			h4 {
-				margin: 0;
-			}
-			.icon {
-				font-size: inherit;
+			.container {
+				background: rgba(0, 0, 0, 0.3);
+				color: colors.$text;
+				text-decoration: none;
+				border-radius: 1rem;
+				padding: 1rem 2rem;
+				width: 100%;
+				@include flex-container(row, space-between, center, nowrap);
+				font-size: 1.5rem;
+				h4 {
+					margin: 0;
+				}
+				.icon {
+					font-size: inherit;
+				}
 			}
 		}
 	}
 }
+
 @media screen and (max-width: 500px) {
 	#hero {
 		.hero-images {
@@ -261,123 +264,5 @@ $grid-blur: 50px;
 			"cabal cabal bio bio"
 			"cabal cabal skills resume"
 			"projects projects projects projects";
-	}
-}
-$card-opacity: 0;
-$card-width: 70%;
-#projects-module {
-	overflow: hidden;
-	.project-preview {
-		flex: 1;
-		width: 100%;
-		position: relative;
-		@include flex-container(row, flex-start, flex-start, nowrap);
-		height: 20rem;
-	}
-	.project-card {
-		min-width: 10rem;
-		height: 100%;
-		width: 0;
-		text-decoration: none;
-		color: colors.$text;
-		background-color: rgba(0, 0, 0, 0.3);
-		border-radius: 0.5rem;
-		@include flex-container(column, flex-start, center, nowrap);
-		width: 70%;
-		position: absolute;
-		height: 20rem;
-		&.focused {
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			opacity: 1;
-			animation: handleFocused 1.5s linear;
-		}
-		&.focused-prev {
-			left: 0;
-			opacity: $card-opacity;
-			transform: translateX(-150%);
-			animation: handlePrev 1.5s linear;
-		}
-		&.focused-next {
-			right: 0;
-			opacity: $card-opacity;
-			transform: translateX(150%);
-			animation: handleNext 1.5s linear;
-		}
-		&.not-focused {
-			opacity: 0;
-			animation: handleNotFocused 1.5s linear 0.5s;
-		}
-		img {
-			height: 10rem;
-			border-radius: 1.5rem;
-		}
-		.tag-container {
-			width: 100%;
-			flex: 1;
-			margin: 0.5rem;
-			@include flex-container(row, center, center, wrap);
-			.tag {
-				background-color: colors.$bg;
-				border-radius: 0.125rem;
-				margin-inline-end: 0.25rem;
-				width: max-content;
-				text-align: center;
-				padding: 0.25rem;
-			}
-		}
-	}
-}
-@keyframes handleFocused {
-	from {
-		right: 0;
-		opacity: $card-opacity;
-		transform: translateX(50%);
-	}
-	to {
-		left: 0;
-		right: 0;
-		opacity: 1;
-	}
-}
-@keyframes handlePrev {
-	from {
-		margin: 0 auto;
-		opacity: 1;
-		transform: translateX(0);
-	}
-	to {
-		margin-left: 0;
-		opacity: $card-opacity;
-		transform: translateX(-150%);
-	}
-}
-@keyframes handleNext {
-	from {
-		opacity: 0;
-		transform: translateX(200%);
-	}
-	to {
-		opacity: $card-opacity;
-		margin-left: auto;
-		transform: translateX(100%);
-	}
-}
-@keyframes handleNotFocused {
-	from {
-		transform: translateX(-75%);
-	}
-
-	to {
-		transform: translateX(-150%);
-	}
-}
-@keyframes horizontalScroll {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-100%);
 	}
 }

@@ -1,14 +1,6 @@
 @use "../colors";
 @use "../var";
-.small-page {
-	height: 100%;
-	@include flex-container(column, center, center, nowrap);
-	main {
-		flex: 1;
-		margin-top: 3rem;
-		width: 100%;
-	}
-}
+
 #contact-me {
 	padding: 5rem 1rem 5rem 1rem;
 	display: grid;
