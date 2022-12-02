@@ -5,8 +5,11 @@ const quaeProps = {
 	title: "Quae",
 	headline: "Community Voting App",
 	subHeadline: "Co-founder",
+	link: "https://quae.app",
 	blocks: [
-		"Minim exercitation velit voluptate ex voluptate. Voluptate sunt enim adipisicing ex magna. Nisi ex duis pariatur labore ea id laboris consequat commodo ex velit. Consectetur ipsum reprehenderit ipsum dolore laborum nulla est eiusmod. Ullamco culpa esse duis fugiat cupidatat nulla sunt mollit reprehenderit eiusmod laborum amet sunt nulla.",
+		"I founded Quae to address a problem I saw in the world: people aren't listened to by their leaders. Quae empowers people to be heard in their community and those elected to represent them.",
+		// "Today, representation fails millions of people. It is difficult to have your concerns heard by your leader in a way that leads to action, and even more difficult to create change when you face opposition.",
+		"Quae solves this problem by taking a new approach to how we vote. Right now, you only get to vote once every 4 years. Some problems can't wait 4 years. To take action today, people can use Quae to verifiably vote on projects, problems, or concerns in their community and use the results to create the chagne that is needed today.",
 	],
 };
 const cabalProps = {
@@ -14,7 +17,8 @@ const cabalProps = {
 	headline: "Web3 Research & Devleopment Group",
 	subHeadline: "Co-founder",
 	blocks: [
-		"Minim exercitation velit voluptate ex voluptate. Voluptate sunt enim adipisicing ex magna. Nisi ex duis pariatur labore ea id laboris consequat commodo ex velit. Consectetur ipsum reprehenderit ipsum dolore laborum nulla est eiusmod. Ullamco culpa esse duis fugiat cupidatat nulla sunt mollit reprehenderit eiusmod laborum amet sunt nulla.",
+		"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bototá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology",
+		// "We all strongly beleive in the ideals of the web3 movement: privacy, sensorship resistance, freedom, and giving the power to the people. We felt that an organiation like Cabal Labs will help us expand the impact our work as engineers can have on the world. By working together, we can do thigns that would be impossible on our own. ",
 	],
 };
 const aboutMeProps = {
@@ -22,8 +26,10 @@ const aboutMeProps = {
 	headline: "Software Engineer",
 	subHeadline: "Full Stack Developer | Focus on Front-End ",
 	blocks: [
-		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
-		"This is a paragaph about me Pariatur incididunt ex consequat duis est laboris ea. Eu fugiat ipsum aute magna nulla laborum in. Labore ea ullamco exercitation irure sint excepteur qui magna.",
+		"Hi! I'm Brendan",
+		"I'm a software engineer, entreprenure, and a builder. I'm a full stack engineer, but I have focused mostly on front-end devleopment. The skills I've learned have helped me build beautiful user interfaces captivatig landig pages for the initiatives I'm working on. ",
+		" For the past 2+ years, I've been dedicated to building Quae.  ",
+		"In my spare time, I love cooking, mototsport, and coding, and video games (specificaly racing games)",
 	],
 };
 
@@ -36,20 +42,26 @@ const projectsProps = {
 
 <section id="grid">
 	<div id="quae-module">
-		<GridSection {...quaeProps} />
+		<GridSection {...quaeProps} client:load />
 	</div>
 	<div id="cabal-module">
 		<GridSection {...cabalProps} />
 	</div>
 	<div id="bio-module">
-		<GridSection {...aboutMeProps} />
+		<GridSection {...aboutMeProps}>
+			<div id="skills-module" class="sub-module">
+				<GridSection title="Skills">
+					<a href="/projects">See More</a>
+				</GridSection>
+			</div>
+			<div id="resume-module" class="sub-module">
+				<GridSection title="My Resume">
+					<a href="/public/brendan_probst_resume.pdf" download> Download</a>
+				</GridSection>
+			</div>
+		</GridSection>
 	</div>
-	<div id="skills-module">
-		<GridSection title="Skills" />
-	</div>
-	<div id="resume-module">
-		<GridSection title="My Resume" />
-	</div>
+
 	<div id="projects-module">
 		<GridSection {...projectsProps}>
 			<ProjectsPreview client:load />

@@ -22,7 +22,12 @@ export default function GridSection({
 	return (
 		<div class={`grid-section ${title.toLowerCase()}`}>
 			<div class="header">
-				<h2>{title}</h2>
+				<div>
+					<h2>{title}</h2>
+					<a href={link} target="_blank" rel="noopener">
+						Learn More
+					</a>
+				</div>
 				<h3 class="headline">{headline}</h3>
 				<h4 class="sub-headline">{subHeadline}</h4>
 			</div>

@@ -190,16 +190,22 @@ $grid-blur: 50px;
 		// background-color: red;
 		grid-area: bio;
 		background-image: url("/public/img/shapes/bio_module_bg.svg");
+		.sub-module {
+			margin-top: 1rem;
+			a {
+				color: colors.$text-secondary;
+			}
+		}
 	}
-	#skills-module {
-		// background-color: pink;
-		grid-area: skills;
-		background-image: url("/public/img/shapes/skills_module_bg.svg");
-	}
-	#resume-module {
-		grid-area: resume;
-		background-image: url("/public/img/shapes/resume_module_bg.svg");
-	}
+	// #skills-module {
+	// 	// background-color: pink;
+	// 	grid-area: skills;
+	// 	// background-image: url("/public/img/shapes/skills_module_bg.svg");
+	// }
+	// #resume-module {
+	// 	// grid-area: resume;
+	// 	// background-image: url("/public/img/shapes/resume_module_bg.svg");
+	// }
 	#projects-module {
 		// background-color: green;
 		grid-area: projects;
@@ -250,19 +256,16 @@ $grid-blur: 50px;
 			"bio bio"
 			"quae quae"
 			"cabal cabal"
-			"skills resume"
 			"projects projects";
 	}
 }
 @media screen and (min-width: 800px) {
 	#grid {
-		grid-template-columns: repeat(1fr, 4);
-		grid-template-rows: repeat(1fr, 10);
+		grid-template-columns: repeat(1fr, 2);
+		grid-template-rows: repeat(auto, 4);
 		grid-template-areas:
-			"quae quae bio bio"
-			"quae quae bio bio"
-			"cabal cabal bio bio"
-			"cabal cabal skills resume"
-			"projects projects projects projects";
+			"quae  bio"
+			"cabal bio"
+			"projects projects";
 	}
 }
