@@ -15,17 +15,17 @@ export default function ProjectsList({}) {
 								<h4>
 									{item.date[0]} {item.date[1] ? `- ${item.date[1]}` : ""}
 								</h4>
-								<div class="tag-container">
-									{item.tags.map((item) => {
-										return <div class="tag">{item}</div>;
-									})}
-								</div>
 							</div>
 							<div class="icons">
 								{item.icons?.map((item) => {
 									return <ProjectIcon {...item} />;
 								})}
 							</div>
+						</div>
+						<div class="tag-container">
+							{item.tags.map((item) => {
+								return <div class="tag">{item}</div>;
+							})}
 						</div>
 						<div class="blocks">
 							{item.blocks?.map((item) => {

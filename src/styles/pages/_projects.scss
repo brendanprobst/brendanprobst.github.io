@@ -7,14 +7,28 @@
 		width: 100%;
 		@include flex-container(column, center, center, nowrap);
 		background: linear-gradient(
-			to right,
-			colors.$primary-default,
-			colors.$accent-default
+			to bottom,
+			colors.$accent-light,
+			colors.$primary-default
 		);
+		h1 {
+			font-size: 3rem;
+		}
 		.buttons {
 			width: min(100%, 45rem);
 			@include flex-container(row, space-around, center, nowrap);
 		}
+	}
+}
+.skill-container {
+	@include flex-container(row, center, center, wrap);
+	.tag {
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		margin: 0.3rem;
+		min-width: 10ch;
+		text-align: center;
+		background-color: colors.$accent-light;
 	}
 }
 #projects {
@@ -37,6 +51,10 @@
 					h4 {
 						margin: 0;
 					}
+					.sub-title {
+						font-style: italic;
+						font-weight: 400;
+					}
 				}
 				.icons {
 					grid-area: icons;
@@ -54,11 +72,9 @@
 					.title {
 						font-size: 2rem;
 					}
-					.tag-container {
-						margin-inline: 0;
-					}
 				}
 			}
+
 			.blocks {
 				padding-inline: 1rem;
 			}
@@ -71,14 +87,14 @@
 		.project-card {
 			.header {
 				grid-template-columns: 1fr;
-				grid-template-rows: auto auto auto;
+				grid-template-rows: auto auto;
 				justify-items: stretch;
-				align-items: stretch;
-				grid-template-areas: "logo" "icons" "content";
+				align-items: flex-start;
+				grid-template-areas: "logo icons" "content content";
 				padding-top: 2rem;
+				padding: 1rem;
 				img {
-					max-height: 15rem;
-					margin: 0 auto;
+					width: 5rem;
 				}
 				.icons {
 					@include flex-container(row, center, center, nowrap);
@@ -86,9 +102,9 @@
 					gap: 2rem;
 				}
 				.content {
+					margin-top: 1rem;
 					width: 100%;
 					justify-self: stretch;
-					padding: 1rem;
 				}
 			}
 		}
@@ -105,7 +121,7 @@
 				justify-items: stretch;
 				grid-template-areas: "logo content icons";
 				img {
-					max-width: 10rem;
+					max-width: 6rem;
 				}
 				.content {
 					flex: 1;
@@ -118,17 +134,22 @@
 					@include flex-container(row, flex-end, center, nowrap);
 				}
 			}
+			.blocks {
+				p {
+					column-count: 2;
+				}
+			}
 		}
 	}
 }
 .tag-container {
 	width: 100%;
 	flex: 1;
-	margin: 0.5rem;
+	margin-inline: 1rem;
 	@include flex-container(row, flex-start, center, wrap);
 	.tag {
 		background-color: colors.$bg;
-		border-radius: 0.125rem;
+		border-radius: 0.25rem;
 		margin-inline-end: 0.25rem;
 		width: max-content;
 		text-align: center;

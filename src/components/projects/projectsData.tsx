@@ -6,8 +6,12 @@ import {
 	FaBrandsTwitter,
 	FaBrandsMedium,
 	FaBrandsLinkedin,
+	FaBrandsAppStore,
+	FaBrandsGooglePlay,
 	FaBrandsYoutube,
 } from "solid-icons/fa";
+import { AiFillInfoCircle } from "solid-icons/ai";
+import { CgWebsite } from "solid-icons/cg";
 export type ProjectCard = {
 	title: string;
 	subText?: string;
@@ -31,8 +35,29 @@ export type BlockType = {
 };
 export const projects: ProjectCard[] = [
 	{
+		title: "Cabal Labs Landing Page",
+		subText: "Liberation Through Technology",
+		tags: ["HTML", "Vanilla JS", "SCSS", "Landing Page"],
+		logo: "/img/logos/caballabs.png",
+		date: ["Oct 2022", "Present"],
+		icons: [
+			{
+				icon: <CgWebsite />,
+				link: "https://caballabs.com",
+				label: "Cabal Labs landing page",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+			},
+		],
+	},
+	{
 		title: "Tap Contacts",
-		subText: "",
+		subText: "NFC Enabled Web3 Contacts",
 		link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
 		tags: ["React Native", "web3.js", "Ejected Expo", "NFC"],
 		logo: "/img/logos/tapme.png",
@@ -59,25 +84,54 @@ export const projects: ProjectCard[] = [
 	},
 	{
 		title: "Cabal Protocol",
+		subText: "Own Your Data",
 		link: "https://ethglobal.com/showcase/cabal-jgj8g",
 		tags: ["Next.js", "web3.js", "Wallet Connect"],
 		logo: "/img/logos/oath.png",
 		date: ["Jul 2022"],
+		icons: [
+			{
+				icon: null,
+				link: "",
+				label: "",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+			},
+		],
 	},
 	{
 		title: "Quae Web App",
+		subText: "Vote Every Day",
 		link: "https://web.quae.app",
 		tags: ["Next.js", "SCSS", "Responsive Web Page"],
 		logo: "/img/logos/quae_logo.png",
 		date: ["Jul 2021", "Present"],
+		icons: [
+			{
+				icon: <CgWebsite />,
+				link: "https://web.quae.app",
+				label: "Quae web app",
+			},
+			{
+				icon: <AiFillInfoCircle />,
+				link: "https://quae.app",
+				label: "Quae website",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+			},
+		],
 	},
-	{
-		title: "Quae Mobile App",
-		link: "appstore link",
-		tags: ["React Native", "Expo", "Mobile App"],
-		logo: "/img/logos/quae_logo.png",
-		date: ["Jan 2021", "Present"],
-	},
+
 	{
 		title: "LeaveNow",
 		subText: "Be on time, every time",
@@ -85,10 +139,22 @@ export const projects: ProjectCard[] = [
 		tags: ["React-Native", "Expo"],
 		logo: "/img/logos/LN_logo.png",
 		date: ["Jan 2022", "May 2022"],
+		icons: [
+			{
+				icon: <CgWebsite />,
+				link: "https://leavenow.app",
+				label: "LeaveNow website",
+			},
+			{
+				icon: <FaBrandsGithub />,
+				link: "https://quae.app",
+				label: "Quae website",
+			},
+		],
 		blocks: [
 			{
 				type: "text",
-				content: `LeaveNow was a fun idea that I thought of while hanging out with a <a href="https://https://samschmitt.net/">friend</a>. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br /> Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was such a perfect situation, being able to build something so fun, and still get school credit for it. <br /><br /> There is still some work that needs to be done, but we're looking forward to releasing it to the public soon. `,
+				content: `LeaveNow was a fun idea that I thought of while hanging out with a friend. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br /> Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was such a perfect situation, being able to build something so fun, and still get school credit for it. <br /><br /> There is still some work that needs to be done, but we're looking forward to releasing it to the public soon. `,
 			},
 		],
 	},
@@ -116,7 +182,56 @@ export const projects: ProjectCard[] = [
 				content:
 					"Pixlow Chat was the culminating project of my Intro to Software Engineering Class. The project allowed users to create temporary chat rooms using websockets.  I worked on a team of 4, and took lead on the front end design and implementation. We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
 			},
-			{ type: "image", content: "" },
+			{ type: "image", content: "/img/app_screenshots/pixlow_home.png" },
+			{ type: "image", content: "/img/app_screenshots/pixlow_chat.png" },
+		],
+	},
+	{
+		title: "Quae Mobile App",
+		subText: "Vote Every Day",
+		link: "app store link",
+		tags: ["React Native", "Expo", "Mobile App"],
+		logo: "/img/logos/quae_logo.png",
+		date: ["Jan 2021", "Present"],
+		icons: [
+			{
+				icon: <FaBrandsAppStore />,
+				link: "https://apps.apple.com/us/app/quae/id1555653993",
+				label: "Quae on the app store",
+			},
+			{
+				icon: <FaBrandsGooglePlay />,
+				link: "https://play.google.com/store/apps/details?id=com.quae.quaeapp&hl=en_US&gl=US",
+				label: "quae on the play store",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+			},
+		],
+	},
+	{
+		title: "Quae Landing Page",
+		subText: "Vote Every Day",
+		tags: ["HTML", "SCSS", "Vanilla JS", "Landing Page", "SEO Optimized"],
+		logo: "/img/logos/quae_logo.png",
+		date: ["Sept 2020", "Present"],
+		icons: [
+			{
+				icon: <CgWebsite />,
+				link: "https://quae.app",
+				label: "Quae landing app",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+			},
 		],
 	},
 ];
@@ -137,7 +252,7 @@ const projectsList = [
 		img: "/assets/img/LN_logo.png",
 		title: "LeaveNow",
 		subText: "School Project Turned Side Hustle",
-		description: `LeaveNow was a fun idea that I thought of while hanging out with a <a href="https://https://samschmitt.net/">friend</a>. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br />
+		description: `LeaveNow was a fun idea that I thought of while hanging out with a friend. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br />
             Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was such a perfect situation, being able to build something so fun, and still get school credit for it. <br /><br />
             There is still some work that needs to be done, but we're looking forward to releasing it to the public soon. 
             `,

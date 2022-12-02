@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Hero from "../components/projects/hero.astro";
 import ProjectShapes from "../components/projects/projectShapes";
 import ProjectsList from "../components/projects/projectsList";
+import SkillList from "../components/skills";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
@@ -16,7 +17,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 	<body class="small-page" id="projects">
 		<Header client:load />
 		<main>
-			<Hero client:idle />
+			<Hero client:load />
+			<SkillList />
 			<ProjectShapes />
 			<ProjectsList client:load />
 		</main>
