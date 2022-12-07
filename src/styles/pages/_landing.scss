@@ -2,7 +2,7 @@
 	#hero {
 		z-index: 1;
 		overflow: hidden;
-		background-image: url("/public/img/shapes/shapes.svg");
+		background-image: url("/img/shapes/shapes.svg");
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
@@ -17,12 +17,27 @@
 			}
 			.title {
 				font-size: 2.5rem;
+				padding-right: 1.5rem;
+				margin-bottom: 1rem;
 				font-family: var.$font-title;
 			}
-			.sub-titles {
+			#line-container::before {
+				content: "";
+				background-color: red;
+				height: 100%;
+				width: 100%;
+			}
+			#line-container {
 				font-size: 2rem;
-				line {
+				min-height: 50%;
+				overflow: hidden;
+				transition: all 1s ease-in-out;
+				p {
+					line-height: inherit;
+					margin-block: 0.5rem;
 					font-size: inherit;
+					font-size: 50%;
+					opacity: 50%;
 				}
 				:nth-child(0) {
 					font-size: 100%;
@@ -74,10 +89,16 @@
 			background: rgba(153, 224, 247, 0.1);
 			backdrop-filter: blur(25px);
 			-webkit-backdrop-filter: blur(25px);
-			@include flex-container(column, center, center, nowrap);
-			padding: 2rem;
+			@include flex-container(column, flex-end, center, nowrap);
+			padding: 2rem 0;
+			height: 100%;
+			.img-container {
+				@include flex-container(column, flex-end, center, nowrap);
+				gap: 1rem;
+			}
 			img {
 				border-radius: 1rem;
+				max-height: 50%;
 			}
 			.container {
 				background: rgba(0, 0, 0, 0.3);
@@ -86,10 +107,12 @@
 				border-radius: 1rem;
 				padding: 1rem 2rem;
 				width: 100%;
+				height: min-content;
 				@include flex-container(row, space-between, center, nowrap);
 				font-size: 1.5rem;
 				h4 {
 					margin: 0;
+					padding-right: 1rem;
 				}
 				.icon {
 					font-size: inherit;
@@ -99,57 +122,62 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
-	#hero {
-		.hero-images {
-			.container {
-				font-size: 1rem;
-			}
-		}
-	}
-}
 @media screen and (max-width: 799px) {
-	#hero {
-		@include flex-container(column, center, center, nowrap);
+	#landing {
+		#hero {
+			@include flex-container(column, center, center, nowrap);
 
-		.hero-content,
-		.hero-images {
-			width: 100%;
-		}
-		.hero-content {
-			.text {
-				margin-top: 20%;
+			.hero-content,
+			.hero-images {
+				width: 100%;
+			}
+			.hero-content {
+				.text {
+					margin-top: 30%;
+				}
+			}
+			.hero-images {
+				padding: 0.5rem;
+				.img-container {
+					.container {
+						h4 {
+							font-size: 1.5rem;
+						}
+					}
+				}
 			}
 		}
 	}
 }
 @media screen and (min-width: 800px) {
-	#hero {
-		height: 70vh;
-		@include flex-container(row, center, center, nowrap);
-		.hero-content,
-		.hero-images {
-			flex: 1;
-			height: 100%;
-		}
-		.hero-content {
-			padding-top: min(30%, 10rem);
-			@include flex-container(column, flex-end, flex-end, nowrap);
-			.text {
-				padding-right: 2rem;
-				.title {
-					font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
-				}
-				.sub-titles {
-					font-size: min(calc(1.5vw + 1rem), 3rem);
+	#landing {
+		#hero {
+			height: 70vh;
+			@include flex-container(row, center, center, nowrap);
+			.hero-content,
+			.hero-images {
+				flex: 1;
+				height: 100%;
+			}
+			.hero-content {
+				padding-top: min(30%, 10rem);
+				@include flex-container(column, flex-end, flex-end, nowrap);
+				.text {
+					padding-right: 2rem;
+					.title {
+						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
+					}
+					.sub-titles {
+						font-size: min(calc(1.5vw + 1rem), 3rem);
+					}
 				}
 			}
-		}
-		.hero-images {
-			@include flex-container(column, flex-end, flex-start, nowrap);
-			padding: 3rem;
-			.img-container {
-				max-width: 40rem;
+			.hero-images {
+				padding: 3rem;
+				@include flex-container(column, flex-end, flex-start, nowrap);
+				.img-container {
+					max-width: 50rem;
+				}
 			}
 		}
 	}
@@ -179,12 +207,12 @@ $grid-blur: 50px;
 	#quae-module {
 		// background-color: purple;
 		grid-area: quae;
-		background-image: url("/public/img/shapes/quae_module_bg.svg");
+		background-image: url("/img/shapes/quae_module_bg.svg");
 	}
 	#cabal-module {
 		// background-color: orange;
 		grid-area: cabal;
-		background-image: url("/public/img/shapes/cabal_labs_bg.svg");
+		background-image: url("/img/shapes/cabal_labs_bg.svg");
 		.grid-section {
 			background-color: rgba(62, 62, 62, 0.25);
 		}
@@ -192,7 +220,7 @@ $grid-blur: 50px;
 	#bio-module {
 		// background-color: red;
 		grid-area: bio;
-		background-image: url("/public/img/shapes/bio_module_bg.svg");
+		background-image: url("/img/shapes/bio_module_bg.svg");
 		.sub-module {
 			margin-top: 1rem;
 			a {
@@ -203,16 +231,16 @@ $grid-blur: 50px;
 	// #skills-module {
 	// 	// background-color: pink;
 	// 	grid-area: skills;
-	// 	// background-image: url("/public/img/shapes/skills_module_bg.svg");
+	// 	// background-image: url("/img/shapes/skills_module_bg.svg");
 	// }
 	// #resume-module {
 	// 	// grid-area: resume;
-	// 	// background-image: url("/public/img/shapes/resume_module_bg.svg");
+	// 	// background-image: url("/img/shapes/resume_module_bg.svg");
 	// }
 	#projects-module {
 		// background-color: green;
 		grid-area: projects;
-		background-image: url("/public/img/shapes/projct_module_bg.svg");
+		background-image: url("/img/shapes/projct_module_bg.svg");
 		a {
 			text-decoration: none;
 		}
@@ -227,7 +255,7 @@ $grid-blur: 50px;
 		}
 	}
 	.grid-section {
-		cursor: pointer !important;
+		// cursor: pointer !important;
 		background-color: rgb(153, 224, 247, 0.1);
 		-webkit-backdrop-filter: blur($grid-blur);
 		backdrop-filter: blur($grid-blur);

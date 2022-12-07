@@ -10,29 +10,41 @@ import { createSignal } from "solid-js";
 import { AiOutlineClose } from "solid-icons/ai";
 export default function Header() {
 	const [mobileVisible, setMobileVisible] = createSignal(false);
+	const [scrolled, setScrolled] = createSignal(false);
 	function handleShow() {
 		setMobileVisible(true);
 	}
 	function handleClose() {
-		console.log(false);
 		setMobileVisible(false);
 	}
+	function handleScroll(event: any) {
+		let scroll = window.scrollY;
+		if (scroll > 200) {
+			setScrolled(true);
+		} else {
+			setScrolled(false);
+		}
+	}
+	document.addEventListener("scroll", (e) => handleScroll(e));
 	return (
-		<header class={`${mobileVisible() ? "show" : ""}`}>
+		<header
+			class={`${mobileVisible() ? "show" : ""} ${
+				scrolled() ? "scrolled" : ""
+			}`}>
 			<a href="/" class="logo">
 				<img src="white_logo.png" alt="my logo" />
 			</a>
 			<div class={`links ${mobileVisible() ? "show" : ""}`} id="nav-links">
+				<a href="/" class="home">
+					Home
+				</a>
 				<a href="/projects" class="projects">
-					{" "}
 					Projects
 				</a>
-				<a href="/about_me" class="about_me">
-					{" "}
+				{/* <a href="/about_me" class="about_me">
 					About Me
-				</a>
+				</a> */}
 				<a href="/contact_me" class="say_hello">
-					{" "}
 					Say Hello!
 				</a>
 			</div>

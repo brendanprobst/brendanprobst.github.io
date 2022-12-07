@@ -13,10 +13,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body id="landing">
-		<Header client:load />
+		<Header client:only />
 		<main>
 			<Hero />
-			<Grid client:load />
+			<Grid />
 		</main>
 		<Footer />
 	</body>

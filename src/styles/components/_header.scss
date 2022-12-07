@@ -2,6 +2,14 @@
 @use "../var";
 @use "../colors";
 @import "../mixins";
+@keyframes fadeIn {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
 header {
 	position: fixed;
 	margin: 0 auto;
@@ -15,6 +23,15 @@ header {
 	color: colors.$text;
 	font-family: var.$font-button;
 	font-weight: 700;
+	background-color: transparent;
+	animation: fadeIn 0.5s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
+	&.scrolled {
+		transition: background-color 0.5s ease-in-out;
+		background-color: colors.$glass;
+		backdrop-filter: blur(25px);
+		-webkit-backdrop-blur: (25px);
+	}
 	a {
 		color: inherit;
 	}

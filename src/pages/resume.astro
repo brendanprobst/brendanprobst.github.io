@@ -14,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body id="resume" class="small-page">
-		<Header client:load />
+		<Header client:only />
 		<main>
 			<button class="download">download</button>
 			<div class="resume-container">

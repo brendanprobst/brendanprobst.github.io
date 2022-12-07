@@ -19,6 +19,7 @@ body {
 	overflow-wrap: break-word;
 	line-height: 1.5;
 	color: colors.$text;
+	overflow-x: hidden;
 }
 h1,
 h2,
@@ -69,6 +70,12 @@ blockquote {
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
+}
+:target:before {
+	content: "";
+	display: block;
+	height: 100px;
+	margin: -100px 0 0;
 }
 @import "./components";
 @import "./pages";

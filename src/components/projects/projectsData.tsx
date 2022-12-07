@@ -10,6 +10,7 @@ import {
 	FaBrandsGooglePlay,
 	FaBrandsYoutube,
 } from "solid-icons/fa";
+import { FiExternalLink } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
 export type ProjectCard = {
@@ -40,11 +41,11 @@ export const projects: ProjectCard[] = [
 		class: "cabal-landing-page",
 		subText: "Liberation Through Technology",
 		tags: ["HTML", "Vanilla JS", "SCSS", "Landing Page"],
-		logo: "/img/logos/caballabs.png",
+		logo: "/img/logos/cabal_white.png",
 		date: ["Oct 2022", "Present"],
 		icons: [
 			{
-				icon: <CgWebsite />,
+				icon: <FiExternalLink />,
 				link: "https://caballabs.com",
 				label: "Cabal Labs landing page",
 			},
@@ -67,12 +68,7 @@ export const projects: ProjectCard[] = [
 		date: ["Oct 2022", "Present"],
 		icons: [
 			{
-				icon: <FaBrandsGithub />,
-				link: "https://tap contacts github",
-				label: "Tap Contacts Github",
-			},
-			{
-				icon: <FaSolidCircleInfo />,
+				icon: <FiExternalLink />,
 				link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
 				label: "Tap Contacts ETH Bogotá Submission",
 			},
@@ -95,9 +91,9 @@ export const projects: ProjectCard[] = [
 		date: ["Jul 2022"],
 		icons: [
 			{
-				icon: null,
-				link: "",
-				label: "",
+				icon: <FiExternalLink />,
+				link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
+				label: "Cabal Protocol's ETH NYC Submission",
 			},
 		],
 		blocks: [
@@ -203,8 +199,6 @@ export const projects: ProjectCard[] = [
 				content:
 					"We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
 			},
-			{ type: "image", content: "/img/app_screenshots/pixlow_home.png" },
-			{ type: "image", content: "/img/app_screenshots/pixlow_chat.png" },
 		],
 	},
 	{

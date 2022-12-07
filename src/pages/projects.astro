@@ -15,12 +15,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="small-page" id="projects">
-		<Header client:load />
+		<Header client:only />
 		<main>
 			<Hero client:load />
 			<SkillList />
 			<ProjectShapes />
 			<ProjectsList client:load />
+			<Footer />
 		</main>
 	</body>
 </html>

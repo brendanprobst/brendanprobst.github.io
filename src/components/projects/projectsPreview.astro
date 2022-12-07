@@ -1,0 +1,19 @@
+---
+import { ProjectCard, projects } from "./projectsData";
+---
+
+<div class="project-preview">
+	{
+		projects.map((item: ProjectCard, idx: number) => {
+			return (
+				<a class="project-card" href={`/projects#${item.class}`}>
+					<h3>{item.title}</h3>
+					<img src={item.logo} alt={`${item.title} logo`} />
+				</a>
+			);
+		})
+	}
+	<a href="/projects" class="project-card">
+		<h3>See All</h3>
+	</a>
+</div>
