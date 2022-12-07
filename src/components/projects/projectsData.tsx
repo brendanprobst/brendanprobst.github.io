@@ -14,6 +14,7 @@ import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
 export type ProjectCard = {
 	title: string;
+	class: string;
 	subText?: string;
 	link?: string;
 	tags: string[];
@@ -36,6 +37,7 @@ export type BlockType = {
 export const projects: ProjectCard[] = [
 	{
 		title: "Cabal Labs Landing Page",
+		class: "cabal-landing-page",
 		subText: "Liberation Through Technology",
 		tags: ["HTML", "Vanilla JS", "SCSS", "Landing Page"],
 		logo: "/img/logos/caballabs.png",
@@ -51,12 +53,13 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"Cabal Labs is an open source Web3 Research Lab. The Cabal's mission is to liberate people from outdated system by supporting and maintaining a portfolio of companies. I built this site using HTML, vanilla javascript, and SCSS. ",
 			},
 		],
 	},
 	{
 		title: "Tap Contacts",
+		class: "tap-contacts",
 		subText: "NFC Enabled Web3 Contacts",
 		link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
 		tags: ["React Native", "web3.js", "Ejected Expo", "NFC"],
@@ -78,12 +81,13 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"Tap Contacts is a React Native project that I worked on during the ETH Bogotá 2022 Hackathon. It is a contacts book for blockchain wallets. It also uses ejected Expo and a NFC library to facilitate transactions by tapping two phones together. This makes it possible to interact with crypto currency without ever seeing an address.  ",
 			},
 		],
 	},
 	{
 		title: "Cabal Protocol",
+		class: "cabal-protocol",
 		subText: "Own Your Data",
 		link: "https://ethglobal.com/showcase/cabal-jgj8g",
 		tags: ["Next.js", "web3.js", "Wallet Connect"],
@@ -100,12 +104,13 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"The Cabal Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract. ",
 			},
 		],
 	},
 	{
 		title: "Quae Web App",
+		class: "quae-web-app",
 		subText: "Vote Every Day",
 		link: "https://web.quae.app",
 		tags: ["Next.js", "SCSS", "Responsive Web Page"],
@@ -127,13 +132,19 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"The Quae web app is currently on version 2. The first version was built on using React, Material UI, and SCSS. But, with any long term project, we reached a point where we decided to rebuilt it from the ground up to alleviate technical debt and simplify the overall structure of the app. ",
+			},
+			{
+				type: "text",
+				content:
+					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
 			},
 		],
 	},
 
 	{
 		title: "LeaveNow",
+		class: "leave-now",
 		subText: "Be on time, every time",
 		link: "https://leavenow.app",
 		tags: ["React-Native", "Expo"],
@@ -154,12 +165,17 @@ export const projects: ProjectCard[] = [
 		blocks: [
 			{
 				type: "text",
-				content: `LeaveNow was a fun idea that I thought of while hanging out with a friend. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br /> Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was such a perfect situation, being able to build something so fun, and still get school credit for it. <br /><br /> There is still some work that needs to be done, but we're looking forward to releasing it to the public soon. `,
+				content: `LeaveNow aims to make meeting on time easy. This was an idea I thought of with my friend Sam when we were talking about how great it is when you happen to show up to a place you're meeting a friend at at exactly the same time. "Serendipitous" - we called it.`,
+			},
+			{
+				type: "text",
+				content: `Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was a fun project, but in the end we realized that it wasn't really a big enough problem for people to want to download an app for it. Maybe on a rainy day, I'll think about releasing it. `,
 			},
 		],
 	},
 	{
 		title: "PixlowChat",
+		class: "Pixlow-chat",
 		subText: "Chat room with an 8-bit aesthetic",
 		tags: ["React Native", "Tailwind", "Web Sockets"],
 		logo: "/img/logos/pixlow.png",
@@ -180,7 +196,12 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Pixlow Chat was the culminating project of my Intro to Software Engineering Class. The project allowed users to create temporary chat rooms using websockets.  I worked on a team of 4, and took lead on the front end design and implementation. We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
+					"Pixlow Chat was the culminating project of my Intro to Software Engineering Class. The project allowed users to create temporary chat rooms using websockets.  I worked on a team of 4, and took lead on the front end design and implementation. ",
+			},
+			{
+				type: "text",
+				content:
+					"We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
 			},
 			{ type: "image", content: "/img/app_screenshots/pixlow_home.png" },
 			{ type: "image", content: "/img/app_screenshots/pixlow_chat.png" },
@@ -188,6 +209,7 @@ export const projects: ProjectCard[] = [
 	},
 	{
 		title: "Quae Mobile App",
+		class: "quae-mobile-app",
 		subText: "Vote Every Day",
 		link: "app store link",
 		tags: ["React Native", "Expo", "Mobile App"],
@@ -209,12 +231,18 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"The Quae Mobile app was the first serious React-Native app that I worked on. In 1 month of working every day with my co-founder, we had a basic MVP that could connect to a database and server.",
+			},
+			{
+				type: "text",
+				content:
+					"Over the past 2 years, the app has gone through many iterations. During this time, I've learned a lot about mobile development, creating sleek UI's, and designing an amazing user experience.  ",
 			},
 		],
 	},
 	{
 		title: "Quae Landing Page",
+		class: "quae-landing-page",
 		subText: "Vote Every Day",
 		tags: ["HTML", "SCSS", "Vanilla JS", "Landing Page", "SEO Optimized"],
 		logo: "/img/logos/quae_logo.png",
@@ -230,42 +258,13 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Consectetur irure voluptate exercitation eiusmod ipsum ad sint elit qui cupidatat aliqua. Anim et fugiat consectetur qui dolor culpa dolor ad dolore. Officia ad quis nulla officia in amet. Veniam excepteur aliqua cupidatat laborum.",
+					"This was the first webpage I ever published. Seeing it published was a special moment for me. I opted to build the site myself, instead of using a site building tool like wix is because I knew -- even thought it would take longer now, it would pay off eventually. ",
+			},
+			{
+				type: "text",
+				content:
+					"The Quae landing page helped me hone my design skills. I also got to explore several options for web styling.",
 			},
 		],
-	},
-];
-
-const projectsList = [
-	{
-		img: "/assets/img/quae_logo.png",
-		title: "Quae",
-		subText: "Co-Founder of Tech Startup",
-		description: `<a href="https://quae.app">Quae</a> is the main focus of my life right now. I began working on Quae with <a href="https://samschmitt.net/">Sam Schmitt</a> during a Launchpad hackathon where we were tasked to focus on something that pained us. We bonded over the shared conviction that representation in countries around the world was failing. We are on a mission to solve this problem by empowering everyone to be heard. <br /> <br />
-        We believe that democratic organizations should BE democratic - and that means everyone votes, everyone participates. Quae redefines representation by putting the people back in power and encouraging any citizen to draft a proposal, and every citizen to vote on key decisions. <br /> <br />
-        
-        Sam and I didn't know each when we began working together, but have grown to become good friends. Some of the lessons I've learned while working on this will stay with me for the rest of my life.`,
-		tags: ["Entrepreneurship", "React", "React Native", "Material UI", "MERN"],
-		link: "https://quae.app",
-	},
-	{
-		img: "/assets/img/LN_logo.png",
-		title: "LeaveNow",
-		subText: "School Project Turned Side Hustle",
-		description: `LeaveNow was a fun idea that I thought of while hanging out with a friend. We were talking about the pure joy you feel when you're planning to meet someone somewhere and arrive at exactly the same time. "Serendipitous" - we called it. We immediately planned out how you would develop an app to make that happen every time, laughed about it, and moved on. <br /><br />
-            Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was such a perfect situation, being able to build something so fun, and still get school credit for it. <br /><br />
-            There is still some work that needs to be done, but we're looking forward to releasing it to the public soon. 
-            `,
-		tags: ["React Native", "Heroku", "Firebase"],
-		link: "https://leavenow.app",
-	},
-	{
-		img: "/assets/img/pixlow.png",
-		title: "PixlowChat",
-		subText: "Chat with friends... with an 8-bit aesthetic",
-		description:
-			"Pixlow Chat was the culminating project of my Intro to Software Engineering Class. The project allowed users to create temporary chatrooms using websockets.  I worked on a team of 4, and took lead on the front end design and implementation. We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
-		tags: ["React Native", "Tailwind", "Web Sockets"],
-		link: "https://github.com/Pixlow-Chat/pixlow-chat",
 	},
 ];

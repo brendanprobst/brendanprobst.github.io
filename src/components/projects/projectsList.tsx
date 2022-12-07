@@ -6,7 +6,7 @@ export default function ProjectsList({}) {
 		<div class="projects-container">
 			{projects.map((item) => {
 				return (
-					<div class={`project-card ${item.title.toLowerCase()}`}>
+					<div class={`project-card ${item.class}`}>
 						<div class="header">
 							<img src={item.logo} alt={`${item.title} logo`} />
 							<div class="content">

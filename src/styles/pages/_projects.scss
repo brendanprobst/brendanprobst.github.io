@@ -3,7 +3,7 @@
 
 #projects {
 	#hero {
-		height: 70vh;
+		// height: 70vh;
 		width: 100%;
 		@include flex-container(column, center, center, nowrap);
 		background: linear-gradient(
@@ -16,12 +16,27 @@
 		}
 		.buttons {
 			width: min(100%, 45rem);
-			@include flex-container(row, space-around, center, nowrap);
+			padding: 2rem;
+			@include flex-container(row, space-around, center, wrap);
+			gap: 1rem;
+			button {
+				flex: 1;
+				min-width: 20ch;
+				padding: 1rem;
+				text-align: center;
+				border: 1px solid colors.$border;
+				border-radius: 1rem;
+				&:hover {
+					background-color: colors.$fg;
+				}
+			}
 		}
 	}
 }
 .skill-container {
 	@include flex-container(row, center, center, wrap);
+	max-width: 65rem;
+	margin: 0 auto;
 	.tag {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
@@ -29,6 +44,7 @@
 		min-width: 10ch;
 		text-align: center;
 		background-color: colors.$accent-light;
+		color: colors.$bg;
 	}
 }
 #projects {
@@ -135,8 +151,16 @@
 				}
 			}
 			.blocks {
-				p {
-					column-count: 2;
+				padding-bottom: 1rem;
+				@include flex-container(row, flex-start, flex-start, wrap);
+				gap: 1rem;
+				p,
+				img {
+					flex: 0.5;
+					width: 50%;
+				}
+				img {
+					border-radius: 0.5rem;
 				}
 			}
 		}
@@ -160,6 +184,24 @@ $card-opacity: 0%;
 $card-width: 70%;
 #projects-module {
 	overflow: hidden;
+	#projects-controls {
+		@include flex-container(row, flex-start, center, nowrap);
+		gap: 1rem;
+		button {
+			font-size: 1.5rem;
+			border-radius: 0.25rem;
+			@include flex-container(column, center, center, nowrap);
+			height: 100%;
+			aspect-ratio: 1/1;
+			padding: 0.5rem;
+			background-color: transparent;
+			transition: background-color 0.25s ease-in-out;
+			&:hover {
+				transition: background-color 0.25s ease-in-out;
+				background-color: colors.$glass;
+			}
+		}
+	}
 	.project-preview {
 		flex: 1;
 		width: 100%;
@@ -170,13 +212,12 @@ $card-width: 70%;
 	.project-card {
 		min-width: 10rem;
 		height: 100%;
-		width: 0;
 		text-decoration: none;
 		color: colors.$text;
 		background-color: rgba(0, 0, 0, 0.3);
 		border-radius: 0.5rem;
 		@include flex-container(column, flex-start, center, nowrap);
-		width: 40%;
+		width: 50%;
 		position: absolute;
 		height: 20rem;
 		&.focused {
@@ -189,7 +230,7 @@ $card-width: 70%;
 		&.focused-prev {
 			left: 0;
 			opacity: $card-opacity;
-			transform: translateX(-50%), skewX(20deg);
+			transform: translateX(-150%);
 			animation: handlePrev 1.5s linear;
 		}
 		&.focused-next {
@@ -211,11 +252,18 @@ $card-width: 70%;
 		}
 	}
 }
+@media screen and (max-width: 799px) {
+	#projects-module {
+		.project-card {
+			width: 100%;
+		}
+	}
+}
 @keyframes handleFocused {
 	from {
 		right: 0;
 		opacity: $card-opacity;
-		transform: translateX(50%);
+		transform: translateX(150%);
 	}
 	to {
 		left: 0;
@@ -227,23 +275,21 @@ $card-width: 70%;
 	from {
 		margin: 0 auto;
 		opacity: 1;
-		transform: translateX(0) skewX(0);
+		transform: translateX(0);
 	}
 	to {
 		margin-left: 0;
 		opacity: $card-opacity;
-		transform: translateX(-50%) skewX(20deg);
+		transform: translateX(-150%);
 	}
 }
 @keyframes handleNext {
 	from {
-		opacity: 0;
 		transform: translateX(150%);
 	}
 	to {
-		opacity: $card-opacity;
 		margin-left: auto;
-		transform: translateX(50%);
+		transform: translateX(0%);
 	}
 }
 @keyframes handleNotFocused {

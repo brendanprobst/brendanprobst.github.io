@@ -16,6 +16,7 @@ const cabalProps = {
 	title: "Cabal Labs",
 	headline: "Web3 Research & Devleopment Group",
 	subHeadline: "Co-founder",
+	link: "https://caballabs.com",
 	blocks: [
 		"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bototá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology",
 		// "We all strongly beleive in the ideals of the web3 movement: privacy, sensorship resistance, freedom, and giving the power to the people. We felt that an organiation like Cabal Labs will help us expand the impact our work as engineers can have on the world. By working together, we can do thigns that would be impossible on our own. ",
@@ -36,7 +37,7 @@ const aboutMeProps = {
 const projectsProps = {
 	title: "My Projects",
 	link: "/projects",
-	linkText: "See More",
+	linkText: "See All Projects",
 };
 ---
 
@@ -63,7 +64,7 @@ const projectsProps = {
 	</div>
 
 	<div id="projects-module">
-		<GridSection {...projectsProps}>
+		<GridSection {...projectsProps} client:load>
 			<ProjectsPreview client:load />
 		</GridSection>
 	</div>
