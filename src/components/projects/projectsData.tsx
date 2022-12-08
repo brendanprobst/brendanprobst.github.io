@@ -1,4 +1,4 @@
-import type { JSXElement } from "solid-js";
+import { createSignal, JSXElement } from "solid-js";
 import {
 	FaBrandsGithub,
 	FaSolidCircleInfo,
@@ -22,6 +22,7 @@ export type ProjectCard = {
 	logo: string;
 	date: string[];
 	description?: string;
+	type: ProjectType;
 	icons?: IconType[];
 	blocks?: BlockType[];
 };
@@ -35,9 +36,41 @@ export type BlockType = {
 	content: string;
 	imgAlt?: string;
 };
+export type ProjectType = "Web App" | "Mobile App" | "Landing Page" | null;
+export function ClearFilter() {}
+
 export const projects: ProjectCard[] = [
 	{
+		title: "My Portfolio Site",
+		type: "Landing Page",
+		class: "cabal-landing-page",
+		subText: "A simple portfolio site",
+		tags: ["Astro.js", "Solid.js", "SCSS", "Landing Page"],
+		logo: "/white_logo.png",
+		date: ["Oct 2022", "Present"],
+		icons: [
+			{
+				icon: <FaBrandsGithub />,
+				link: "https://github.com/brendanprobst/astroPortfolio",
+				label: "The repo for this website",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"I built this site using Astro.js and Solid.js to dip my toes into some new web technologies I had never used before. It was a fun process, I got to make my site easier to maintain, and I overcame some hesitation that we all inevitably feel when we try new things.",
+			},
+			{
+				type: "text",
+				content:
+					"In the next dev sprint for my portfoio site, I want to continue to expand my horizion. I've been interested in Three.js and WebGL for a long time. I want to add 3D graphics here. I think it will take my site to the next level.",
+			},
+		],
+	},
+	{
 		title: "Cabal Labs Landing Page",
+		type: "Landing Page",
 		class: "cabal-landing-page",
 		subText: "Liberation Through Technology",
 		tags: ["HTML", "Vanilla JS", "SCSS", "Landing Page"],
@@ -56,17 +89,34 @@ export const projects: ProjectCard[] = [
 				content:
 					"Cabal Labs is an open source Web3 Research Lab. The Cabal's mission is to liberate people from outdated system by supporting and maintaining a portfolio of companies. I built this site using HTML, vanilla javascript, and SCSS. ",
 			},
+			{
+				type: "text",
+				content:
+					"In the next few months, I'll be making consistent updates to this site as Cabal Labs grows. I also want to convert it to Astro.js to improve the maintenance and performance. ",
+			},
 		],
 	},
 	{
 		title: "Tap Contacts",
+		type: "Mobile App",
 		class: "tap-contacts",
 		subText: "NFC Enabled Web3 Contacts",
 		link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
-		tags: ["React Native", "web3.js", "Ejected Expo", "NFC"],
+		tags: [
+			"React Native",
+			"web3.js",
+			"Ejected Expo",
+			"NFC",
+			"NPM Package Development",
+		],
 		logo: "/img/logos/tapme.png",
 		date: ["Oct 2022", "Present"],
 		icons: [
+			{
+				icon: <FaBrandsGithub />,
+				link: "https://github.com/TAP-io/client",
+				label: "Tap Contacts Github",
+			},
 			{
 				icon: <FiExternalLink />,
 				link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
@@ -79,10 +129,16 @@ export const projects: ProjectCard[] = [
 				content:
 					"Tap Contacts is a React Native project that I worked on during the ETH Bogotá 2022 Hackathon. It is a contacts book for blockchain wallets. It also uses ejected Expo and a NFC library to facilitate transactions by tapping two phones together. This makes it possible to interact with crypto currency without ever seeing an address.  ",
 			},
+			{
+				type: "text",
+				content:
+					"We got lots of great feedback while we were in Bogotá. Following the hackathon, we talked about developing a SDK. I got started with React and React Native npm libraries, but the semester and work related to Quae took precedence. Over winter break we plan on finishing and releasing the @tapcontacts/tools library as a version 1. If we get a good response, I'll finish the UI npm packages.",
+			},
 		],
 	},
 	{
 		title: "Cabal Protocol",
+		type: "Web App",
 		class: "cabal-protocol",
 		subText: "Own Your Data",
 		link: "https://ethglobal.com/showcase/cabal-jgj8g",
@@ -90,6 +146,11 @@ export const projects: ProjectCard[] = [
 		logo: "/img/logos/oath.png",
 		date: ["Jul 2022"],
 		icons: [
+			{
+				icon: <FaBrandsGithub />,
+				link: "https://github.com/marcusats/Cabal-ETHNYC",
+				label: "Cabal Protocol's Github",
+			},
 			{
 				icon: <FiExternalLink />,
 				link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
@@ -102,10 +163,16 @@ export const projects: ProjectCard[] = [
 				content:
 					"The Cabal Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract. ",
 			},
+			{
+				type: "text",
+				content:
+					"Work did not continue after the ETH NYC hackathon, but I'm happy to share that my friend and co-founder, Sam Schmitt is continuing to work on this as part of his Senior Design Project. ",
+			},
 		],
 	},
 	{
 		title: "Quae Web App",
+		type: "Web App",
 		class: "quae-web-app",
 		subText: "Vote Every Day",
 		link: "https://web.quae.app",
@@ -140,6 +207,7 @@ export const projects: ProjectCard[] = [
 
 	{
 		title: "LeaveNow",
+		type: "Mobile App",
 		class: "leave-now",
 		subText: "Be on time, every time",
 		link: "https://leavenow.app",
@@ -171,6 +239,7 @@ export const projects: ProjectCard[] = [
 	},
 	{
 		title: "PixlowChat",
+		type: "Web App",
 		class: "Pixlow-chat",
 		subText: "Chat room with an 8-bit aesthetic",
 		tags: ["React Native", "Tailwind", "Web Sockets"],
@@ -203,6 +272,7 @@ export const projects: ProjectCard[] = [
 	},
 	{
 		title: "Quae Mobile App",
+		type: "Mobile App",
 		class: "quae-mobile-app",
 		subText: "Vote Every Day",
 		link: "app store link",
@@ -236,6 +306,7 @@ export const projects: ProjectCard[] = [
 	},
 	{
 		title: "Quae Landing Page",
+		type: "Landing Page",
 		class: "quae-landing-page",
 		subText: "Vote Every Day",
 		tags: ["HTML", "SCSS", "Vanilla JS", "Landing Page", "SEO Optimized"],
@@ -257,8 +328,26 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"The Quae landing page helped me hone my design skills. I also got to explore several options for web styling.",
+					"The Quae landing page helped me hone my design skills. I also got to explore several options for web styling. Starting with inline styles for V0.1 when I didn't know any better, to experimenting with Tailwind.css, and finally ending up with SCSS.",
 			},
 		],
 	},
 ];
+export function filterByType(type: ProjectType) {
+	setFilteringFor(type);
+	console.log();
+	let result: ProjectCard[] = [];
+	if (type === null) {
+		setFilteredProjects(projects);
+	}
+	projects.forEach((item) => {
+		if (item.type === type) {
+			result.push(item);
+		}
+	});
+	setFilteredProjects(result);
+	// return result;
+}
+// export const filteredProjects: ProjectCard[] = filterByType(null);
+export const [filteringFor, setFilteringFor] = createSignal();
+export const [filteredProjects, setFilteredProjects] = createSignal(projects);

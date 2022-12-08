@@ -17,6 +17,7 @@
 		.buttons {
 			width: min(100%, 45rem);
 			padding: 2rem;
+			padding-bottom: 1rem;
 			@include flex-container(row, space-around, center, wrap);
 			gap: 1rem;
 			button {
@@ -26,9 +27,27 @@
 				text-align: center;
 				border: 1px solid colors.$border;
 				border-radius: 1rem;
-				&:hover {
+				&:hover,
+				&.selected {
 					background-color: colors.$fg;
 				}
+			}
+		}
+		.filter-btn {
+			border: 1px solid colors.$border;
+			border-radius: 0.5rem;
+			padding: 0.5rem 1rem;
+			margin-bottom: 1.5rem;
+			opacity: 0;
+			&:hover {
+				background-color: colors.$bg;
+			}
+			&.hidden {
+				opacity: 0;
+			}
+			&.visible {
+				opacity: 1;
+				transition: opacity 0.25s ease-in;
 			}
 		}
 	}
@@ -267,6 +286,16 @@ $card-width: 70%;
 	#projects-module {
 		.project-preview {
 			grid-template-columns: 1fr;
+		}
+		.project-card {
+			@include flex-container(row-reverse, flex-end, center, nowrap);
+			img,
+			.img {
+				height: 3rem;
+				width: 3rem;
+				margin: auto 1rem auto 0.5rem;
+				border-radius: 0.5rem;
+			}
 		}
 	}
 }

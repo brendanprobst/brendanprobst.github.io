@@ -1,12 +1,12 @@
 import ProjectIcon from "../ui/projectIcon";
 import Block from "./block";
-import { projects } from "./projectsData";
+import { projects, filteredProjects } from "./projectsData";
 export default function ProjectsList({}) {
 	return (
 		<div class="projects-container">
-			{projects.map((item) => {
+			{filteredProjects().map((item) => {
 				return (
-					<div id={item.class}>
+					<div class={item.class}>
 						<div class={`project-card `}>
 							<div class="header">
 								<img src={item.logo} alt={`${item.title} logo`} />
