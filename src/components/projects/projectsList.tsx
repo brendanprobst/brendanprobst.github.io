@@ -6,8 +6,8 @@ export default function ProjectsList({}) {
 		<div class="projects-container">
 			{filteredProjects().map((item) => {
 				return (
-					<div class={item.class}>
-						<div class={`project-card `}>
+					<div id={item.class}>
+						<div class={`project-card`}>
 							<div class="header">
 								<img src={item.logo} alt={`${item.title} logo`} />
 								<div class="content">
