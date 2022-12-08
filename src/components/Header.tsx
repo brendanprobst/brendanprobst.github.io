@@ -32,7 +32,7 @@ export default function Header() {
 				scrolled() ? "scrolled" : ""
 			}`}>
 			<a href="/" class="logo">
-				<img src="white_logo.png" alt="my logo" />
+				<img src="/white_logo.png" alt="my logo" />
 			</a>
 			<div class={`links ${mobileVisible() ? "show" : ""}`} id="nav-links">
 				<a href="/" class="home">
