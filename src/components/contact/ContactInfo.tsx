@@ -52,15 +52,19 @@ export default function ContactInfo({}) {
 								<p>{item.value}</p>
 							</div>
 							<div class="icons">
-								<button onClick={() => handleOpen(item.value, item.type)}>
+								<button
+									onClick={() => handleOpen(item.value, item.type)}
+									type="button">
 									<VsLinkExternal class="icon" />
 									<span class="hidden">open in app</span>
 								</button>
-								<button onclick={() => handleCopy(item.value)}>
+								<button onclick={() => handleCopy(item.value)} type="button">
 									<BiRegularCopy class="icon" />
 									<span class="hidden">copy value</span>
 								</button>
-								<button onclick={() => handleQRCode(item.value, item.type)}>
+								<button
+									onclick={() => handleQRCode(item.value, item.type)}
+									type="button">
 									<BiRegularQr class="icon" />
 									<span class="hidden">open qr code</span>
 								</button>
