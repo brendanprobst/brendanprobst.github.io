@@ -53,16 +53,17 @@
 			.getElementById("my-form")
 			.addEventListener("submit", function (event) {
 				event.preventDefault();
+				console.log(this);
 				// generate a five digit number for the contact_number variable
-				// this.contact_number.value = (Math.random() * 100000) | 0;
+				this.contact_number.value = (Math.random() * 100000) | 0;
 				// these IDs from the previous steps
-				this.to_name = document.getElementById("name").value;
-				this.to_email = document.getElementById("email").value;
+				// this.to_name = document.getElementById("name").value;
+				// this.to_email = document.getElementById("email").value;
 
-				this.contact_me = document.getElementById("contact").value;
-				this.message = document.getElementById("message").value;
+				// this.contact_me = document.getElementById("contact").value;
+				// this.message = document.getElementById("message").value;
 
-				this.reply_to = "bprobst1029@gmail.com";
+				// this.reply_to = "bprobst1029@gmail.com";
 				console.log(this.to_email);
 				emailjs.sendForm("service_niusmnj", "template_dgjuocy", this).then(
 					function () {
@@ -79,31 +80,31 @@
 	<form id="my-form">
 		<h2>Get In Touch Today</h2>
 		<div class="form-group">
-			<label for="name">Name</label>
+			<label for="to_name">Name *</label>
 			<input
 				required
 				type="text"
-				id="name"
-				name="name"
+				id="to_name"
+				name="to_name"
 				placeholder="What do people call you?"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="email">What's your email?</label>
+			<label for="to_email">What's your email? *</label>
 			<input
 				required
 				type="email"
-				id="email"
-				name="email"
+				id="to_email"
+				name="to_email"
 				placeholder="yourname@email.com"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="contact">What's the best way to reach you?</label>
+			<label for="contact_me">What's the best way to reach you?</label>
 			<input
 				type="text"
-				id="contact"
-				name="contact"
+				id="contact_me"
+				name="contact_me"
 				placeholder="phone, email, name of your carrier pidgeon, ect. "
 			/>
 		</div>
@@ -115,9 +116,14 @@
 				rows="5"
 				placeholder="The floor is yours!"></textarea>
 		</div>
-		<div class="check-box">
-			<input type="checkbox" id="wants-to-meet" name="wants-to-meet" checked />
-			<label for="wants-to-eat">I want to set up a meeting</label>
+
+		<div>
+			<input
+				type="text"
+				class="hidden"
+				name="contact_number"
+				id="contact_number"
+			/>
 		</div>
 		<button id="form-button">Send</button>
 	</form>

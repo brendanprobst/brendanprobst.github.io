@@ -19,6 +19,7 @@
 		"@types/three": "^0.146.0",
 		"astro": "^1.6.10",
 		"global": "^4.4.0",
+		"qrcode": "^1.5.1",
 		"sass": "^1.56.1",
 		"solid-icons": "^1.0.4",
 		"solid-js": "^1.4.3",
