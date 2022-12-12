@@ -21,12 +21,6 @@
 				margin-bottom: 1rem;
 				font-family: var.$font-title;
 			}
-			#line-container::before {
-				content: "";
-				background-color: red;
-				height: 100%;
-				width: 100%;
-			}
 			#line-container {
 				font-size: 2rem;
 				min-height: 50%;
@@ -132,8 +126,9 @@
 				width: 100%;
 			}
 			.hero-content {
+				flex: 0.75;
 				.text {
-					margin-top: 30%;
+					margin-top: 15%;
 				}
 			}
 			.hero-images {

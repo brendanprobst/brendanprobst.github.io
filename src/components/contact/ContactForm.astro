@@ -38,16 +38,64 @@
 // form.addEventListener("submit", handleSubmit);
 ---
 
+<script
+	type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+	(function () {
+		emailjs.init("Oei7EkPgwBIu6Twf1");
+	})();
+</script>
+<script type="text/javascript">
+	window.onload = function () {
+		document
+			.getElementById("my-form")
+			.addEventListener("submit", function (event) {
+				event.preventDefault();
+				// generate a five digit number for the contact_number variable
+				// this.contact_number.value = (Math.random() * 100000) | 0;
+				// these IDs from the previous steps
+				this.to_name = document.getElementById("name").value;
+				this.to_email = document.getElementById("email").value;
+
+				this.contact_me = document.getElementById("contact").value;
+				this.message = document.getElementById("message").value;
+
+				this.reply_to = "bprobst1029@gmail.com";
+				console.log(this.to_email);
+				emailjs.sendForm("service_niusmnj", "template_dgjuocy", this).then(
+					function () {
+						console.log("SUCCESS!");
+					},
+					function (error) {
+						console.log("FAILED...", error);
+					}
+				);
+			});
+	};
+</script>
 <section>
-	<form id="my-form" action="https://formspree.io/f/xkneeeez" method="POST">
+	<form id="my-form">
 		<h2>Get In Touch Today</h2>
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input
+				required
 				type="text"
 				id="name"
 				name="name"
 				placeholder="What do people call you?"
+			/>
+		</div>
+		<div class="form-group">
+			<label for="email">What's your email?</label>
+			<input
+				required
+				type="email"
+				id="email"
+				name="email"
+				placeholder="yourname@email.com"
 			/>
 		</div>
 		<div class="form-group">
@@ -69,7 +117,7 @@
 		</div>
 		<div class="check-box">
 			<input type="checkbox" id="wants-to-meet" name="wants-to-meet" checked />
-			<label for="wants-to-eat">Do you want to set up a meeting?</label>
+			<label for="wants-to-eat">I want to set up a meeting</label>
 		</div>
 		<button id="form-button">Send</button>
 	</form>
