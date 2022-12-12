@@ -4,5 +4,5 @@
 		"titleBar.activeBackground": "#034A33",
 		"titleBar.activeForeground": "#EDFEF9"
 	},
-	"cSpell.words": ["Pixlow", "websockets"]
+	"cSpell.words": ["astro", "astrojs", "Pixlow", "websockets"]
 }
