@@ -43,11 +43,11 @@ export default function ContactInfo({}) {
 		QRCode.toDataURL("I am a pony!")
 			.then((url) => {
 				console.log(url);
+				generateQR(url);
 			})
 			.catch((err) => {
 				console.error(err);
 			});
-
 		// With async/await
 	}
 	const generateQR = async (text) => {
