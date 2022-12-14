@@ -1,0 +1,47 @@
+---
+import { BiRegularQr, BiSolidCopy } from "solid-icons/bi";
+import { VsLinkExternal } from "solid-icons/vs";
+
+const {
+	item: { icon, value, link },
+} = Astro.props;
+---
+
+<!-- 
+<script>
+	// const { item } = Astro.props;
+
+	const copyButton = document.getElementById(`${value}-link-button`);
+	copyButton?.addEventListener("click", () => {
+		console.log("here, copied");
+		navigator.clipboard.writeText(value);
+	});
+</script> -->
+<li>
+	<div class="icon">{icon}</div>
+	<div class="info">
+		<p>{value}</p>
+	</div>
+	<div class="icons">
+		<a
+			id={value + "-link-button"}
+			class="button"
+			href={link}
+			target="_blank"
+			rel="noopener"
+			type="button"
+		>
+			<VsLinkExternal class="icon" />
+			<span class="hidden">open in app</span>
+		</a>
+
+		<button id={value + "-copy-button"} type="button">
+			<BiSolidCopy class="icon" />
+			<span class="hidden">open qr code</span>
+		</button>
+		<button id={value + "-qr-button"} type="button">
+			<BiRegularQr class="icon" />
+			<span class="hidden">open qr code</span>
+		</button>
+	</div>
+</li>
