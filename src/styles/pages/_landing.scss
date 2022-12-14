@@ -120,10 +120,10 @@
 	#landing {
 		#hero {
 			@include flex-container(column, center, center, nowrap);
-
+			width: 100%;
 			.hero-content,
 			.hero-images {
-				width: 100%;
+				width: 100vw;
 			}
 			.hero-content {
 				flex: 0.75;
