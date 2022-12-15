@@ -8,9 +8,9 @@
 		background-size: cover;
 		.hero-content {
 			position: relative;
-			background-color: rgba(153, 224, 247, 0.1);
-			backdrop-filter: blur(100px);
+			background: rgba(153, 224, 247, 0.1);
 			-webkit-backdrop-filter: (100px);
+			backdrop-filter: blur(100px);
 			.text {
 				padding: 1rem;
 				overflow: hidden;
@@ -81,8 +81,8 @@
 		}
 		.hero-images {
 			background: rgba(153, 224, 247, 0.1);
-			backdrop-filter: blur(25px);
 			-webkit-backdrop-filter: blur(25px);
+			backdrop-filter: blur(25px);
 			@include flex-container(column, flex-end, center, nowrap);
 			padding: 2rem 0;
 			height: 100%;
