@@ -124,9 +124,10 @@
 			.hero-content,
 			.hero-images {
 				width: 100vw;
+				min-height: 20rem;
+				flex: 1;
 			}
 			.hero-content {
-				flex: 0.75;
 				.text {
 					margin-top: 15%;
 				}
