@@ -6,9 +6,10 @@
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
+
 		> .hero-content {
 			position: relative;
-			backgroun-color: rgba(20, 37, 42, 0.198) !important;
+			background-color: rgba(20, 37, 42, 0.198) !important;
 			-webkit-backdrop-filter: (50px) !important;
 			backdrop-filter: blur(50px) !important;
 			.text {
