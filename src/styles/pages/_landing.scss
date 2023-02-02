@@ -6,7 +6,7 @@
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
-		.blur {
+		> .blur {
 			z-index: 1;
 			position: absolute;
 			top: 0;
@@ -20,10 +20,10 @@
 		> .hero-content {
 			z-index: 2;
 			position: relative;
-			// background-color: rgba(20, 37, 42, 0.198) !important;
-			// -webkit-backdrop-filter: (50px) !important;
-			// backdrop-filter: blur(50px) !important;
-			//
+			background-color: rgba(20, 37, 42, 0.198) !important;
+			-webkit-backdrop-filter: (50px) !important;
+			backdrop-filter: blur(50px) !important;
+
 			.text {
 				z-index: 4;
 				padding: 1rem;
