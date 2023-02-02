@@ -146,8 +146,11 @@
 			#hero-content {
 				height: 50vh !important;
 				width: 100vw !important;
-				display: block;
 				flex: 0.75;
+				background-color: rgba(20, 37, 42, 0.198) !important;
+				backdrop-filter: blur(50px) !important;
+				-webkit-backdrop-filter: (50px) !important;
+
 				.text {
 					margin-top: 15%;
 				}
