@@ -6,17 +6,17 @@
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
-		> .blur {
-			z-index: 1;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(20, 37, 42, 0.198) !important;
-			backdrop-filter: blur(50px) !important;
-			-webkit-backdrop-filter: (50px) !important;
-		}
+		// > .blur {
+		// 	z-index: 1;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color: rgba(20, 37, 42, 0.198) !important;
+		// 	backdrop-filter: blur(50px) !important;
+		// 	-webkit-backdrop-filter: (50px) !important;
+		// }
 		#hero-content {
 			z-index: 2;
 			position: relative;
