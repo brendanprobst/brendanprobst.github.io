@@ -1,68 +1,3 @@
-@media screen and (min-width: 0px) and (max-width: 799px) {
-	#landing {
-		#hero {
-			@include flex-container(column, center, center, nowrap);
-			width: 100%;
-			.hero-content,
-			.hero-images {
-				width: 100vw;
-				min-height: 20rem;
-				flex: 1;
-			}
-			.hero-content {
-				height: 50vh !important;
-				-webkit-backdrop-filter: (50px);
-				backdrop-filter: blur(50px);
-				.text {
-					margin-top: 15%;
-				}
-			}
-			.hero-images {
-				padding: 0.5rem;
-				.img-container {
-					.container {
-						h4 {
-							font-size: 1.5rem;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media screen and (min-width: 800px) {
-	#landing {
-		#hero {
-			height: 70vh;
-			@include flex-container(row, center, center, nowrap);
-			.hero-content,
-			.hero-images {
-				flex: 1;
-				height: 100%;
-			}
-			.hero-content {
-				padding-top: min(30%, 10rem);
-				@include flex-container(column, flex-end, flex-end, nowrap);
-				.text {
-					padding-right: 2rem;
-					.title {
-						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
-					}
-					.sub-titles {
-						font-size: min(calc(1.5vw + 1rem), 3rem);
-					}
-				}
-			}
-			.hero-images {
-				padding: 3rem;
-				@include flex-container(column, flex-end, flex-start, nowrap);
-				.img-container {
-					max-width: 50rem;
-				}
-			}
-		}
-	}
-}
 #landing {
 	#hero {
 		z-index: 1;
@@ -71,11 +6,11 @@
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
-		.hero-content {
+		> .hero-content {
 			position: relative;
-			background: rgba(20, 37, 42, 0.198);
-			-webkit-backdrop-filter: (50px);
-			backdrop-filter: blur(50px);
+			background: rgba(20, 37, 42, 0.198) !important;
+			-webkit-backdrop-filter: (50px) !important;
+			backdrop-filter: blur(50px) !important;
 			.text {
 				padding: 1rem;
 				overflow: hidden;
@@ -144,7 +79,7 @@
 				}
 			}
 		}
-		.hero-images {
+		> .hero-images {
 			background: rgba(153, 224, 247, 0.1);
 			backdrop-filter: blur(25px);
 			-webkit-backdrop-filter: blur(25px);
@@ -175,6 +110,74 @@
 				}
 				.icon {
 					font-size: inherit;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 799px) {
+	#landing {
+		#hero {
+			@include flex-container(column, center, center, nowrap);
+			width: 100%;
+			> .hero-content,
+			> .hero-images {
+				width: 100vw;
+				min-height: 20rem;
+			}
+			> .hero-content {
+				height: 50vh !important;
+				-webkit-backdrop-filter: (50px);
+				backdrop-filter: blur(50px);
+				flex: 0.75;
+				.text {
+					margin-top: 15%;
+				}
+			}
+			> .hero-images {
+				flex: 1;
+
+				padding: 1rem;
+				.img-container {
+					.container {
+						h4 {
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 800px) {
+	#landing {
+		#hero {
+			height: 70vh;
+			@include flex-container(row, center, center, nowrap);
+			> .hero-content,
+			> .hero-images {
+				flex: 1;
+				height: 100%;
+			}
+			> .hero-content {
+				padding-top: min(30%, 10rem);
+				@include flex-container(column, flex-end, flex-end, nowrap);
+				.text {
+					padding-right: 2rem;
+					.title {
+						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
+					}
+					.sub-titles {
+						font-size: min(calc(1.5vw + 1rem), 3rem);
+					}
+				}
+			}
+			> .hero-images {
+				padding: 3rem;
+				@include flex-container(column, flex-end, flex-start, nowrap);
+				.img-container {
+					max-width: 50rem;
 				}
 			}
 		}
