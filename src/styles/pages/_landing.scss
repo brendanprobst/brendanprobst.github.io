@@ -1,18 +1,31 @@
 #landing {
 	#hero {
-		z-index: 1;
+		z-index: -1;
 		overflow: hidden;
 		background-image: url("/img/shapes/shapes.svg");
 		background-position: top-left;
 		background-repeat: repeat;
 		background-size: cover;
-
-		> .hero-content {
-			position: relative;
+		.blur {
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			background-color: rgba(20, 37, 42, 0.198) !important;
 			-webkit-backdrop-filter: (50px) !important;
 			backdrop-filter: blur(50px) !important;
+		}
+		> .hero-content {
+			z-index: 2;
+			position: relative;
+			// background-color: rgba(20, 37, 42, 0.198) !important;
+			// -webkit-backdrop-filter: (50px) !important;
+			// backdrop-filter: blur(50px) !important;
+			//
 			.text {
+				z-index: 4;
 				padding: 1rem;
 				overflow: hidden;
 			}
@@ -23,6 +36,7 @@
 				font-family: var.$font-title;
 			}
 			#line-container {
+				z-index: 4 !important;
 				font-size: 2rem;
 				min-height: 50%;
 				overflow: hidden;
@@ -81,12 +95,14 @@
 			}
 		}
 		> .hero-images {
+			z-index: 2;
 			background-color: rgba(153, 224, 247, 0.1);
 			backdrop-filter: blur(25px);
 			-webkit-backdrop-filter: blur(25px);
 			@include flex-container(column, flex-end, center, nowrap);
 			padding: 2rem 0;
 			height: 100%;
+			border-radius: 0 0 0 1rem;
 			.img-container {
 				@include flex-container(column, flex-end, center, nowrap);
 				gap: 1rem;
@@ -188,6 +204,7 @@
 $grid-blur: 50px;
 
 #grid {
+	z-index: 3;
 	max-width: 100ch;
 	padding: 0 1rem;
 	margin: 2rem auto;
@@ -198,6 +215,7 @@ $grid-blur: 50px;
 	& > div,
 	.skills,
 	.resume {
+		z-index: 3;
 		color: colors.$text;
 		text-decoration: none;
 		border-radius: 1rem;
