@@ -17,7 +17,7 @@
 			-webkit-backdrop-filter: (50px) !important;
 			backdrop-filter: blur(50px) !important;
 		}
-		> .hero-content {
+		#hero-content {
 			z-index: 2;
 			position: relative;
 			background-color: rgba(20, 37, 42, 0.198) !important;
@@ -94,7 +94,7 @@
 				}
 			}
 		}
-		> .hero-images {
+		#hero-images {
 			z-index: 2;
 			background-color: rgba(153, 224, 247, 0.1);
 			backdrop-filter: blur(25px);
@@ -138,12 +138,12 @@
 		#hero {
 			@include flex-container(column, center, center, nowrap);
 			width: 100%;
-			> .hero-content,
-			> .hero-images {
+			#hero-content,
+			#hero-images {
 				width: 100vw;
 				min-height: 20rem;
 			}
-			> .hero-content {
+			#hero-content {
 				height: 50vh !important;
 				width: 100vw !important;
 				display: block;
@@ -152,7 +152,7 @@
 					margin-top: 15%;
 				}
 			}
-			> .hero-images {
+			#hero-images {
 				flex: 1;
 
 				padding: 1rem;
@@ -172,12 +172,12 @@
 		#hero {
 			height: 70vh;
 			@include flex-container(row, center, center, nowrap);
-			> .hero-content,
-			> .hero-images {
+			#hero-content,
+			#hero-images {
 				flex: 1;
 				height: 100%;
 			}
-			> .hero-content {
+			#hero-content {
 				padding-top: min(30%, 10rem);
 				@include flex-container(column, flex-end, flex-end, nowrap);
 				.text {
@@ -190,7 +190,7 @@
 					}
 				}
 			}
-			> .hero-images {
+			#hero-images {
 				padding: 3rem;
 				@include flex-container(column, flex-end, flex-start, nowrap);
 				.img-container {
