@@ -8,7 +8,7 @@
 		background-size: cover;
 		> .hero-content {
 			position: relative;
-			background: rgba(20, 37, 42, 0.198) !important;
+			backgroun-color: rgba(20, 37, 42, 0.198) !important;
 			-webkit-backdrop-filter: (50px) !important;
 			backdrop-filter: blur(50px) !important;
 			.text {
@@ -80,7 +80,7 @@
 			}
 		}
 		> .hero-images {
-			background: rgba(153, 224, 247, 0.1);
+			background-color: rgba(153, 224, 247, 0.1);
 			backdrop-filter: blur(25px);
 			-webkit-backdrop-filter: blur(25px);
 			@include flex-container(column, flex-end, center, nowrap);
@@ -130,10 +130,6 @@
 				height: 50vh !important;
 				width: 100vw !important;
 				display: block;
-				outline: 10px solid red;
-				outline-offset: -10px;
-				-webkit-backdrop-filter: (50px);
-				backdrop-filter: blur(50px);
 				flex: 0.75;
 				.text {
 					margin-top: 15%;
