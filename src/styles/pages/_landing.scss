@@ -1,4 +1,4 @@
-@media screen and (max-width: 799px) {
+@media screen and (min-width: 0px) and (max-width: 799px) {
 	#landing {
 		#hero {
 			@include flex-container(column, center, center, nowrap);
@@ -6,11 +6,13 @@
 			.hero-content,
 			.hero-images {
 				width: 100vw;
-				height: 50vh;
 				min-height: 20rem;
 				flex: 1;
 			}
 			.hero-content {
+				height: 50vh !important;
+				-webkit-backdrop-filter: (50px);
+				backdrop-filter: blur(50px);
 				.text {
 					margin-top: 15%;
 				}
@@ -72,8 +74,8 @@
 		.hero-content {
 			position: relative;
 			background: rgba(20, 37, 42, 0.198);
-			-webkit-backdrop-filter: (25px);
-			backdrop-filter: blur(25px);
+			-webkit-backdrop-filter: (50px);
+			backdrop-filter: blur(50px);
 			.text {
 				padding: 1rem;
 				overflow: hidden;
