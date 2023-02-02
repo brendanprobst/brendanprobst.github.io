@@ -128,6 +128,10 @@
 			}
 			> .hero-content {
 				height: 50vh !important;
+				width: 100vw !important;
+				display: block;
+				outline: 10px solid red;
+				outline-offset: -10px;
 				-webkit-backdrop-filter: (50px);
 				backdrop-filter: blur(50px);
 				flex: 0.75;
