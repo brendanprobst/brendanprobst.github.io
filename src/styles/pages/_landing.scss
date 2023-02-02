@@ -1,3 +1,66 @@
+@media screen and (max-width: 799px) {
+	#landing {
+		#hero {
+			@include flex-container(column, center, center, nowrap);
+			width: 100%;
+			.hero-content,
+			.hero-images {
+				width: 100vw;
+				height: 50vh;
+				min-height: 20rem;
+				flex: 1;
+			}
+			.hero-content {
+				.text {
+					margin-top: 15%;
+				}
+			}
+			.hero-images {
+				padding: 0.5rem;
+				.img-container {
+					.container {
+						h4 {
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 800px) {
+	#landing {
+		#hero {
+			height: 70vh;
+			@include flex-container(row, center, center, nowrap);
+			.hero-content,
+			.hero-images {
+				flex: 1;
+				height: 100%;
+			}
+			.hero-content {
+				padding-top: min(30%, 10rem);
+				@include flex-container(column, flex-end, flex-end, nowrap);
+				.text {
+					padding-right: 2rem;
+					.title {
+						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
+					}
+					.sub-titles {
+						font-size: min(calc(1.5vw + 1rem), 3rem);
+					}
+				}
+			}
+			.hero-images {
+				padding: 3rem;
+				@include flex-container(column, flex-end, flex-start, nowrap);
+				.img-container {
+					max-width: 50rem;
+				}
+			}
+		}
+	}
+}
 #landing {
 	#hero {
 		z-index: 1;
@@ -116,69 +179,6 @@
 	}
 }
 
-@media screen and (max-width: 799px) {
-	#landing {
-		#hero {
-			@include flex-container(column, center, center, nowrap);
-			width: 100%;
-			.hero-content,
-			.hero-images {
-				width: 100vw;
-				height: 50vh;
-				min-height: 20rem;
-				flex: 1;
-			}
-			.hero-content {
-				.text {
-					margin-top: 15%;
-				}
-			}
-			.hero-images {
-				padding: 0.5rem;
-				.img-container {
-					.container {
-						h4 {
-							font-size: 1.5rem;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media screen and (min-width: 800px) {
-	#landing {
-		#hero {
-			height: 70vh;
-			@include flex-container(row, center, center, nowrap);
-			.hero-content,
-			.hero-images {
-				flex: 1;
-				height: 100%;
-			}
-			.hero-content {
-				padding-top: min(30%, 10rem);
-				@include flex-container(column, flex-end, flex-end, nowrap);
-				.text {
-					padding-right: 2rem;
-					.title {
-						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
-					}
-					.sub-titles {
-						font-size: min(calc(1.5vw + 1rem), 3rem);
-					}
-				}
-			}
-			.hero-images {
-				padding: 3rem;
-				@include flex-container(column, flex-end, flex-start, nowrap);
-				.img-container {
-					max-width: 50rem;
-				}
-			}
-		}
-	}
-}
 $grid-blur: 50px;
 
 #grid {
