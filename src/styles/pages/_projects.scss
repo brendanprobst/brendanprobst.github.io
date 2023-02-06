@@ -70,50 +70,50 @@
 	.projects-container {
 		width: 100vw;
 		padding: 1rem;
-		.project-card {
-			margin: 0 auto 2rem;
-			width: clamp(8rem, 100%, 60rem);
-			@include flex-container(row, center, flex-start, wrap);
-			background-color: rgba(53, 137, 197, 0.3);
-			border-radius: 1.75rem;
-			.header {
-				display: grid;
-				width: 100%;
+	}
+}
+.project-card {
+	margin: 0 auto 2rem;
+	width: clamp(8rem, 100%, 60rem);
+	@include flex-container(row, center, flex-start, wrap);
+	background-color: rgba(53, 137, 197, 0.3);
+	border-radius: 1.75rem;
+	.header {
+		display: grid;
+		width: 100%;
 
-				.content {
-					grid-area: content;
-					h3,
-					h4 {
-						margin: 0;
-					}
-					.sub-title {
-						font-style: italic;
-						font-weight: 400;
-					}
-				}
-				.icons {
-					grid-area: icons;
-					a {
-						color: colors.$text;
-					}
-				}
-				img {
-					flex: 0.75;
-					border-radius: 1rem;
-					grid-area: logo;
-				}
-				.content {
-					flex: 1;
-					.title {
-						font-size: 2rem;
-					}
-				}
+		.content {
+			grid-area: content;
+			h3,
+			h4 {
+				margin: 0;
 			}
-
-			.blocks {
-				padding-inline: 1rem;
+			.sub-title {
+				font-style: italic;
+				font-weight: 400;
 			}
 		}
+		.icons {
+			grid-area: icons;
+			a {
+				color: colors.$text;
+			}
+		}
+		img {
+			flex: 0.75;
+			border-radius: 1rem;
+			grid-area: logo;
+		}
+		.content {
+			flex: 1;
+			.title {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.blocks {
+		padding-inline: 1rem;
 	}
 }
 
@@ -203,80 +203,103 @@ $card-opacity: 0%;
 $card-width: 70%;
 #projects-module {
 	overflow: hidden;
+	position: relative;
 	#projects-controls {
-		@include flex-container(row, flex-start, center, nowrap);
-		gap: 1rem;
-		button {
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		@include flex-container(row, center, flex-end, nowrap);
+		.prev,
+		.next {
+			flex: 1;
 			font-size: 1.5rem;
 			border-radius: 0.25rem;
 			@include flex-container(column, center, center, nowrap);
-			height: 100%;
-			aspect-ratio: 1/1;
 			padding: 0.5rem;
 			background-color: transparent;
-			transition: background-color 0.25s ease-in-out;
+		}
+		.prev {
+			@include flex-container(row, flex-start, center, nowrap);
 			&:hover {
 				transition: background-color 0.25s ease-in-out;
-				background-color: colors.$glass;
+				background: linear-gradient(to right, colors.$glass, transparent);
+			}
+		}
+		.next {
+			@include flex-container(row, flex-end, center, nowrap);
+			&:hover {
+				transition: background-color 0.25s ease-in-out;
+				background: linear-gradient(to left, colors.$glass, transparent);
 			}
 		}
 	}
 	.project-preview {
-		// flex: 1;
-		// width: 100%;
-		// position: relative;
-		// @include flex-container(row, flex-start, flex-start, wrap);
-		display: grid;
-
-		gap: 1rem;
-		// height: 100rem;
-		justify-items: stretch;
-		align-items: stretch;
-		// height: 20rem;
+		z-index: 2;
+		@include flex-container(row, center, center, nowrap);
+		gap: 0.5rem;
+		overflow: hidden;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 25rem;
+		position: relative;
+		width: clamp(5rem, 70%, 250rem);
+		margin: auto auto;
 	}
-	.project-card {
-		text-decoration: none;
-		color: colors.$text;
-		background-color: rgba(0, 0, 0, 0.3);
-		border-radius: 0.5rem;
-		@include flex-container(column, flex-start, center, nowrap);
-		// width: 50%;
-		// position: absolute;
-		// height: 20rem;
-		img,
-		.img {
-			height: 10rem;
-			border-radius: 1.5rem;
-			margin-bottom: 1rem;
-		}
-		.img {
-			opacity: 0.6;
-		}
+	.project-wrapper {
+		// &.focused {
+		// 	position: absolute;
+		// 	background-color: red;
+		// }
+		@include flex-container(column, center, center, nowrap);
+		height: 100%;
+		margin: auto auto;
+
 		&.focused {
 			left: 0;
 			right: 0;
 			margin: 0 auto;
 			opacity: 1;
-			animation: handleFocused 1.5s linear;
-		}
-		&.focused-prev {
-			left: 0;
-			opacity: $card-opacity;
-			transform: translateX(-150%);
-			animation: handlePrev 1.5s linear;
-		}
-		&.focused-next {
-			right: 0;
-			opacity: $card-opacity;
-			transform: translateX(50%);
-			animation: handleNext 1.5s linear;
+			position: absolute;
+			display: block;
+			// animation: handleFocused 1.5s linear;
 		}
 		&.not-focused {
-			opacity: 0;
-			animation: handleNotFocused 1.5s linear 0.5s;
+			// height: 1rem;
+			// width: 1rem;
+			// border-radius: 0.5rem;
+
+			display: none;
+		}
+	}
+	.project-card {
+		// min-width: 20rem;
+		margin: auto auto;
+		text-decoration: none;
+		color: colors.$text;
+		border-radius: 0.5rem;
+		@include flex-container(column, center, center, nowrap);
+		gap: 0.5rem;
+		background-color: rgba(16, 60, 91, 1);
+		padding: 1rem;
+		img,
+		.img {
+			height: 8rem;
+			border-radius: 1.5rem;
+		}
+		.img {
+			opacity: 0.6;
+		}
+		h3,
+		p {
+			padding: 0;
 		}
 
 		.tag-container {
+			gap: 0.5rem;
 			justify-content: center;
 		}
 	}
@@ -284,11 +307,30 @@ $card-width: 70%;
 
 @media screen and (max-width: 799px) {
 	#projects-module {
+		#projects-controls {
+			height: 2rem;
+			bottom: 0;
+			margin-top: auto;
+
+			.prev {
+				align-items: flex-start;
+				transition: background-color 0.25s ease-in-out;
+				background: linear-gradient(to right, colors.$glass, transparent);
+			}
+			.next {
+				align-items: flex-end;
+				transition: background-color 0.25s ease-in-out;
+				background: linear-gradient(to left, colors.$glass, transparent);
+			}
+		}
 		.project-preview {
 			grid-template-columns: 1fr;
 		}
+		.project-wrapper {
+			height: max-content;
+		}
 		.project-card {
-			@include flex-container(row-reverse, flex-end, center, nowrap);
+			@include flex-container(column, flex-end, center, nowrap);
 			img,
 			.img {
 				height: 3rem;
@@ -301,6 +343,29 @@ $card-width: 70%;
 }
 
 @media screen and (min-width: 800px) {
+	#project-controls {
+		button.prev {
+			@include flex-container(row, flex-start, center, nowrap);
+			transition: background-color 0.25s ease-in-out;
+			align-items: flex-start;
+			background: transparent;
+			&:hover {
+				transition: background-color 0.25s ease-in-out;
+				background: linear-gradient(to right, colors.$glass, transparent);
+			}
+		}
+		button.next {
+			@include flex-container(row, flex-end, center, nowrap);
+
+			transition: background-color 0.25s ease-in-out;
+			align-items: flex-end;
+			background: transparent;
+			&:hover {
+				transition: background-color 0.25s ease-in-out;
+				background: linear-gradient(to left, colors.$glass, transparent);
+			}
+		}
+	}
 	#projects-module {
 		.project-preview {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -309,13 +374,6 @@ $card-width: 70%;
 	}
 }
 
-@media screen and (max-width: 799px) {
-	#projects-module {
-		.project-card {
-			width: 100%;
-		}
-	}
-}
 @keyframes handleFocused {
 	from {
 		right: 0;
