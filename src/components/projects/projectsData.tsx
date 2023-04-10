@@ -41,6 +41,42 @@ export function ClearFilter() {}
 
 export const projects: ProjectCard[] = [
 	{
+		title: "zk.fund",
+		type: "Web App",
+		class: "zk-fund",
+		subText: "A platform for anonymously donating to charities.",
+		link: "https://zkfund.org",
+		tags: [
+			"Next.js",
+			"Web3",
+			"Smart Contract Development",
+			"Solidity",
+			"Ethereum",
+			"Hardhat",
+		],
+		logo: "/img/logos/zkfundlogo.png",
+		date: ["Sept 2021", "Present"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				label: "zk.fund site",
+				link: "https://zkfund.org",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"zk.fund is a Senior Design Project that I contributed to as a front-end developer and smart contract developer. It is a platform that allows users to make safe, secure, and anonymous donations to verified charities, ensuring that people can support the causes they believe in without fear of backlash or persecution.",
+			},
+			{
+				type: "text",
+				content:
+					"Throughout the project, we built a Minimum Viable Product (MVP) and focused on addressing the challenges of verifying legitimate charities to prevent misuse of the platform. After graduation, we plan to collaborate with Cabal Labs to open source the project, expanding the validator network and growing the list of charities.",
+			},
+		],
+	},
+	{
 		title: "My Portfolio Site",
 		type: "Landing Page",
 		class: "cabal-landing-page",
@@ -64,7 +100,7 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"In the next dev sprint for my portfoio site, I want to continue to expand my horizion. I've been interested in Three.js and WebGL for a long time. I want to add 3D graphics here. I think it will take my site to the next level.",
+					"In the next dev sprint for my portfolio site, I want to continue to expand my horizons. I've been interested in Three.js and WebGL for a long time. I want to add 3D graphics here. I think it will take my site to the next level.",
 			},
 		],
 	},
