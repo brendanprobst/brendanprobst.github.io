@@ -41,6 +41,40 @@ export function ClearFilter() {}
 
 export const projects: ProjectCard[] = [
 	{
+		title: "Smile Now",
+		type: "Mobile App",
+		class: "smile-now",
+		subText: "An app that makes taking photos fun",
+		link: "https://smilenow.app",
+		tags: ["React Native", "Expo", "Mobile App"],
+		logo: "/img/logos/smile_now.png",
+		date: ["April 2023", "Present"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://smile.samschmitt.net",
+				label: "Smile Now Landing Page",
+			},
+			{
+				icon: <FaBrandsAppStore />,
+				link: "https://apps.apple.com/app/id6449005895",
+				label: "Quae on the app store",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Smile Now is a mobile app that I'm working on with my friend Sam. We have built many apps together and believed we could finish an MVP of smile now in 1 weekend. We hosted a live stream to showcase the work that goes into building an app - but mostly to be able to generate footage for tik toks 🙈 ",
+			},
+			{
+				type: "text",
+				content:
+					"Smile Now solves the problem of going to parties, events, or just hanging out with friends and not having any photos to remember the moment. It does this by 1) making it stupid simple to create & join events quickly. 2) We notify people at random times to take a photo. 3) Share your photos with everyone in the party in a fun and unique way. With our MVP, we've accomplished 1 and 2 and we're excited to experiment with the sharing experience in the next few weeks.",
+			},
+		],
+	},
+	{
 		title: "zk.fund",
 		type: "Web App",
 		class: "zk-fund",
@@ -55,7 +89,7 @@ export const projects: ProjectCard[] = [
 			"Hardhat",
 		],
 		logo: "/img/logos/zkfundlogo.png",
-		date: ["Sept 2021", "Present"],
+		date: ["Sept 2021", "May 2023"],
 		icons: [
 			{
 				icon: <FiExternalLink />,
@@ -146,7 +180,7 @@ export const projects: ProjectCard[] = [
 			"NPM Package Development",
 		],
 		logo: "/img/logos/tapme.png",
-		date: ["Oct 2022", "Present"],
+		date: ["Oct 2022"],
 		icons: [
 			{
 				icon: <FaBrandsGithub />,
@@ -214,13 +248,8 @@ export const projects: ProjectCard[] = [
 		link: "https://web.quae.app",
 		tags: ["Next.js", "SCSS", "Responsive Web Page"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Jul 2021", "Present"],
+		date: ["Jul 2021", "Apr 2023"],
 		icons: [
-			{
-				icon: <CgWebsite />,
-				link: "https://web.quae.app",
-				label: "Quae web app",
-			},
 			{
 				icon: <AiFillInfoCircle />,
 				link: "https://quae.app",
@@ -314,17 +343,12 @@ export const projects: ProjectCard[] = [
 		link: "app store link",
 		tags: ["React Native", "Expo", "Mobile App"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Jan 2021", "Present"],
+		date: ["Jan 2021", "Apr 2023"],
 		icons: [
 			{
-				icon: <FaBrandsAppStore />,
-				link: "https://apps.apple.com/us/app/quae/id1555653993",
-				label: "Quae on the app store",
-			},
-			{
-				icon: <FaBrandsGooglePlay />,
-				link: "https://play.google.com/store/apps/details?id=com.quae.quaeapp&hl=en_US&gl=US",
-				label: "quae on the play store",
+				icon: <CgWebsite />,
+				link: "https://quae.app",
+				label: "Quae landing app",
 			},
 		],
 		blocks: [
@@ -347,7 +371,7 @@ export const projects: ProjectCard[] = [
 		subText: "Vote Every Day",
 		tags: ["HTML", "SCSS", "Vanilla JS", "Landing Page", "SEO Optimized"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Sept 2020", "Present"],
+		date: ["Sept 2020", "Apr 2023"],
 		icons: [
 			{
 				icon: <CgWebsite />,

@@ -1,9 +1,18 @@
 import { BiRegularQr, BiSolidCopy } from "solid-icons/bi";
 import { VsLinkExternal } from "solid-icons/vs";
-import { BiRegularCopy } from "solid-icons/bi";
 import { ContactData, Contact } from "./contactData";
-import { createEffect, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
+import toast, { Toaster } from "solid-toast";
 export default function ContactList({}) {
+	function handleCopy(value: string) {
+		console.log("Here");
+		try {
+			navigator.clipboard.writeText(value);
+			toast.success(`${value} copied to clipboard!`);
+		} catch (err) {
+			console.error("Could not copy text: ", err);
+		}
+	}
 	const [useWindow, setUseWindow] = createSignal();
 	function handleQRCode(value: string, type: string) {
 		// 	QRCode.toDataURL("I am a pony!")
@@ -23,7 +32,6 @@ export default function ContactList({}) {
 		// 		console.error(err);
 		// 	}
 	}
-	function handleCopy(value: string, type: string) {}
 
 	return (
 		<section id="contact-info">
@@ -47,21 +55,23 @@ export default function ContactList({}) {
 							</a>
 
 							<button
-								onclick={() => handleCopy(item.value, item.type)}
-								type="button">
+								onclick={() => handleCopy(item.value)}
+								type="button"
+								id="copy-button">
 								<BiSolidCopy class="icon" />
-								<span class="hidden">open qr code</span>
+								<span class="hidden">copy email</span>
 							</button>
-							<button
+							{/* <button
 								onclick={() => handleQRCode(item.value, item.type)}
 								type="button">
 								<BiRegularQr class="icon" />
 								<span class="hidden">open qr code</span>
-							</button>
+							</button> */}
 						</div>
 					</li>
 				))}
 			</ul>
+			<Toaster />
 		</section>
 	);
 }

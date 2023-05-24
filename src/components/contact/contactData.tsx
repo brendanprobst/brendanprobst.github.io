@@ -25,12 +25,6 @@ export const ContactData: Contact[] = [
 		link: "mailto:bprobst@stevens.edu",
 	},
 	{
-		type: "mail",
-		icon: <IoMailOpen />,
-		value: "bprobst@quae.app",
-		link: "mailto:bprobst@quae.app",
-	},
-	{
 		type: "discord",
 		icon: <FaBrandsDiscord />,
 		value: "brendo13#4482",
