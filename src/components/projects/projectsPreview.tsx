@@ -1,7 +1,47 @@
-import { createSignal, onCleanup } from "solid-js";
-import { ProjectCard, projects } from "./projectsData";
+import { createSignal, onCleanup, onMount } from "solid-js";
+import { ProjectCardType, projects } from "./projectsData";
 import { AiOutlineLeft, AiOutlineRight } from "solid-icons/ai";
 import { FaRegularFileCode } from "solid-icons/fa";
+import ProjectsList from "./projectsList";
+interface ProjectCardProps {
+	project: ProjectCardType;
+	idx: number;
+}
+function ProjectCard({ project, idx }: ProjectCardProps) {
+	let el;
+	// onMount(() => {
+	// 	const animation = el.animate({
+	// 		duration: ProjectsList.length * 1000,
+	// 		iterations: Infinity,
+	// 		delay: idx * 1000,
+	// 	});
+
+	// 	onCleanup(() => animation.cancel());
+	// });
+
+	return (
+		<a href={`/projects#${project.class}`}>
+			<p class="hidden">{project.title}</p>
+			<div
+				class={`project-slide`}
+				ref={el}
+				style={`background-color: ${project.color || "#5f5ccf"}`}>
+				<div class={`project-card`}>
+					<h3 class="title">{project.title}</h3>
+					<img src={project.logo} alt={`${project.title} logo`} />
+					<p class="date">
+						{project.date[0]} {project.date[1] ? `- ${project.date[1]}` : ""}
+					</p>
+					<div class="tag-container">
+						{project.tags.map((item: string) => {
+							return <div class="tag">{item}</div>;
+						})}
+					</div>
+				</div>
+			</div>
+		</a>
+	);
+}
 export default function ProjectsPreview() {
 	const [duration, setDuration] = createSignal(3000);
 	const [focus, setFocus] = createSignal(0);
@@ -15,6 +55,14 @@ export default function ProjectsPreview() {
 			return focus() + 1;
 		}
 	}
+	function handleClass(idx: number) {
+		let baseClass = "";
+
+		if (idx === focus()) {
+			return baseClass + " focused";
+		}
+		return baseClass + " not-focused";
+	}
 	function handlePrev() {
 		if (focus() === 0) {
 			return projectLength;
@@ -22,71 +70,18 @@ export default function ProjectsPreview() {
 			return focus() - 1;
 		}
 	}
-	function handleClass(idx: number) {
-		let baseClass = "";
 
-		if (idx === focus()) {
-			return baseClass + " focused";
-		}
-		// else {
-
-		// }
-		// if (idx === focus() - 1) {
-		// 	return baseClass + " focused-prev";
-		// }
-		// if (idx === focus() + 1) {
-		// 	return baseClass + " focused-next";
-		// }
-		// if (idx === 0 && focus() === projectLength) {
-		// 	return baseClass + " focused-next";
-		// }
-		// if (focus() === 0 && idx === projectLength) {
-		// 	return baseClass + " focused-prev";
-		// }
-
-		return baseClass + " not-focused";
+	function startAutoScroll() {
+		setDuration(3000);
 	}
-
+	function stopAutoScroll() {
+		setDuration(0);
+	}
 	return (
 		<>
-			<div id="projects-controls">
-				<button
-					class="prev"
-					onClick={() => setFocus(handlePrev())}
-					type="button">
-					<p class="hidden">previous</p>
-					<AiOutlineLeft />
-				</button>
-
-				<button
-					class="next"
-					onClick={() => setFocus(handleNext())}
-					type="button">
-					<p class="hidden">next</p>
-					<AiOutlineRight />
-				</button>
-			</div>
-			<div class="project-preview">
-				{projects.map((item: ProjectCard, idx: number) => {
-					return (
-						<a
-							class={`project-wrapper ${handleClass(idx)}`}
-							href={`/projects#${item.class}`}>
-							<p class="hidden">{item.title}</p>
-							<div class={`project-card ${handleClass(idx)}`}>
-								<h3>{item.title}</h3>
-								<img src={item.logo} alt={`${item.title} logo`} />
-								<p>
-									{item.date[0]} {item.date[1] ? `- ${item.date[1]}` : ""}
-								</p>
-								<div class="tag-container">
-									{item.tags.map((item) => {
-										return <div class="tag">{item}</div>;
-									})}
-								</div>
-							</div>
-						</a>
-					);
+			<div class="project-slide-deck">
+				{projects.map((item: ProjectCardType, idx: number) => {
+					return <ProjectCard project={item} idx={idx} />;
 				})}
 			</div>
 		</>

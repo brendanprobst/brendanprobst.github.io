@@ -13,7 +13,7 @@ import {
 import { FiExternalLink } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
-export type ProjectCard = {
+export type ProjectCardType = {
 	title: string;
 	class: string;
 	subText?: string;
@@ -25,6 +25,7 @@ export type ProjectCard = {
 	type: ProjectType;
 	icons?: IconType[];
 	blocks?: BlockType[];
+	color?: string;
 };
 export type IconType = {
 	icon: JSXElement;
@@ -36,10 +37,54 @@ export type BlockType = {
 	content: string;
 	imgAlt?: string;
 };
-export type ProjectType = "Web App" | "Mobile App" | "Landing Page" | null;
+export type ProjectType =
+	| "Web App"
+	| "Mobile App"
+	| "Landing Page"
+	| string
+	| null;
 export function ClearFilter() {}
 
-export const projects: ProjectCard[] = [
+export const projects: ProjectCardType[] = [
+	{
+		title: "Cabal Protocol",
+		type: "Web App",
+		class: "cabal-protocol",
+		subText: "A DAO for sponsored Hackathon Trips",
+		link: "https://cabalprotocol.com",
+		tags: ["Next.js", "Ethers.js", "Wallet Connect", "The Safe", "Unlock"],
+		logo: "/img/logos/cabal-protocol.png",
+		date: ["Oct 2021"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://cabalprotocol.com",
+				label: "Cabal Protocol Website",
+			},
+			{
+				icon: <FaBrandsGithub />,
+				link: "",
+				label: "Cabal Protocol Github",
+			},
+		],
+	},
+	{
+		title: "DeEHR Market",
+		type: "Hackathon Project",
+		class: "deehr-market",
+		subText: "A marketplace for Electronic Health Records",
+		link: "https://ethglobal.com/showcase/deehr-market-mvpzu",
+		tags: ["Next.js", "Ethers.js", "Solidity", "Wallet Connect", "Biconomy"],
+		logo: "/img/logos/deehr.png",
+		date: ["Oct 2023"],
+		icons: [
+			{
+				icon: <FaBrandsGithub />,
+				link: "",
+				label: "DeEHR Market Github",
+			},
+		],
+	},
 	{
 		title: "zk.fund",
 		type: "Web App",
@@ -372,7 +417,7 @@ export const projects: ProjectCard[] = [
 export function filterByType(type: ProjectType) {
 	setFilteringFor(type);
 	console.log();
-	let result: ProjectCard[] = [];
+	let result: ProjectCardType[] = [];
 	if (type === null) {
 		setFilteredProjects(projects);
 	}

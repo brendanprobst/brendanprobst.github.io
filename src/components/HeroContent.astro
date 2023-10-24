@@ -35,17 +35,14 @@
 		lines.shift();
 		lines.push(first);
 
-		// Update the DOM to reflect the new array order
-		if (!container) {
-			return;
-		}
-		container.innerHTML = "";
-		lines.forEach((str) => {
-			const elem = document.createElement("p");
-			elem.textContent = str;
-			container?.appendChild(elem);
-		});
-	}, 2000);
+	lines.forEach((line, index) => {
+		let elem = document.createElement("p");
+		elem.classList.add("line");
+		elem.textContent = line;
+		// Stagger the start of the animation for each line
+		elem.style.animationDelay = `-${index * 2}s`;
+		container?.appendChild(elem);
+	});
 </script>
 
 <section id="hero-content">
