@@ -82,7 +82,7 @@ export const projects: ProjectCard[] = [
 		title: "Cabal Protocol",
 		type: "Hackathon Project",
 		class: "cabal-protocol",
-		logo: "/img/logos/Cabal_Protocol.png",
+		logo: "/img/logos/cabalprotocol.png",
 		subText: "Subsudized Hackathon Trips - Decentralized",
 		link: "https://ethglobal.com/showcase/cabal-protocol-pa734",
 		date: ["September 2023", "Present"],
