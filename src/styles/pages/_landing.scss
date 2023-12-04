@@ -275,6 +275,10 @@ $grid-blur: 50px;
 		background-repeat: repeat;
 		filter: drop-shadow(0px 0px 50px rgba(47, 210, 246, 0.1));
 	}
+	#smilenow-module {
+		grid-area: smilenow;
+		background-image: url("/img/shapes/cabal_labs_bg.svg");
+	}
 	#quae-module {
 		// background-color: purple;
 		grid-area: quae;
@@ -365,18 +369,21 @@ $grid-blur: 50px;
 		grid-template-rows: repeat(auto, 10);
 		grid-template-areas:
 			"bio bio"
-			"quae quae"
+			"smilenow smilenow"
 			"cabal cabal"
+			"quae quae"
 			"projects projects";
 	}
 }
 @media screen and (min-width: 800px) {
 	#grid {
 		grid-template-columns: repeat(1fr, 2);
-		grid-template-rows: repeat(auto, 4);
+		grid-template-rows: repeat(auto, 6);
 		grid-template-areas:
-			"quae  bio"
+			"smilenow  bio"
 			"cabal bio"
+			"cabal quae"
+			"cabal quae"
 			"projects projects";
 	}
 }

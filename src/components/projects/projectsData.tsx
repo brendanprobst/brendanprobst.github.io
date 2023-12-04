@@ -32,7 +32,7 @@ export type IconType = {
 	label: string;
 };
 export type BlockType = {
-	type: string | "text" | "image";
+	type: string | "text" | "image" | "title" | "subtitle";
 	content: string;
 	imgAlt?: string;
 };

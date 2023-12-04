@@ -6,7 +6,11 @@ export default function Block({ type, content, imgAlt }: BlockType) {
 		return <SolidMarkdown class="block" children={content} />;
 	} else if (type === "image") {
 		return <img src={content} alt={imgAlt} />;
+	} else if (type === "title") {
+		return <h1>{content}</h1>;
+	} else if (type === "subtitle") {
+		return <h3>{content}</h3>;
 	} else {
-		return <></>;
+		return <>{content}</>;
 	}
 }
