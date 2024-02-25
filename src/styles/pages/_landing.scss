@@ -72,6 +72,9 @@ $animation-height: 30vh;
 				height: $animation-height;
 				overflow: hidden;
 				font-size: 2rem;
+				width: 100%;
+				min-width: 100px;
+				max-width: 600px;
 			}
 
 			.line {
@@ -275,9 +278,13 @@ $grid-blur: 50px;
 		background-repeat: repeat;
 		filter: drop-shadow(0px 0px 50px rgba(47, 210, 246, 0.1));
 	}
+	#plm-module {
+		grid-area: plm;
+		background-image: url("/img/shapes/plm_bg.svg");
+	}
 	#smilenow-module {
 		grid-area: smilenow;
-		background-image: url("/img/shapes/cabal_labs_bg.svg");
+		background-image: url("/img/shapes/smile_now_bg.svg");
 	}
 	#quae-module {
 		// background-color: purple;
@@ -380,9 +387,9 @@ $grid-blur: 50px;
 		grid-template-columns: repeat(1fr, 2);
 		grid-template-rows: repeat(auto, 6);
 		grid-template-areas:
+			"plm bio"
 			"smilenow  bio"
-			"cabal bio"
-			"cabal quae"
+			"smilenow quae"
 			"cabal quae"
 			"projects projects";
 	}

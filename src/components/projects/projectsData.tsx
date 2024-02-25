@@ -1,13 +1,7 @@
 import { createSignal, JSXElement } from "solid-js";
 import {
 	FaBrandsGithub,
-	FaSolidCircleInfo,
-	FaBrandsInstagram,
-	FaBrandsTwitter,
-	FaBrandsMedium,
-	FaBrandsLinkedin,
 	FaBrandsAppStore,
-	FaBrandsGooglePlay,
 	FaBrandsYoutube,
 } from "solid-icons/fa";
 import { FiExternalLink, FiGithub } from "solid-icons/fi";
@@ -41,13 +35,14 @@ export type ProjectType =
 	| "Mobile App"
 	| "Landing Page"
 	| "Hackathon Project"
+	| "Other"
 	| null;
 export function ClearFilter() {}
 
 export const projects: ProjectCard[] = [
 	{
 		title: "Cabal Sorel",
-		type: "Hackathon Project",
+		type: "Other",
 		link: "https://ethglobal.com/showcase/cabal-sorel-uwvfa",
 		class: "cabal-sorel",
 		logo: "/img/logos/cabal_sorel.png",
@@ -141,7 +136,7 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"DeEHR market was the project I worked on at [ETH Paris 2023](https://ethglobal.com/events/paris2023). It's purpose was to demonstrate 1 use case of decentralized Electronic Health Records (EHR's). This focus of DeEHR Market was to connect patients (who own their data) and researchers (who want to buy medical data),allow for patient data to be trained on anonymously using [bacalau](https://www.bacalhau.org/) and homomorphic encryption, and compensate patients with the fees charged to researchers. ",
+					"DeEHR market was the project I worked on at [ETH Paris 2023](https://ethglobal.com/events/paris2023). It's purpose was to demonstrate 1 use case of decentralized Electronic Health Records (EHR's). This focus of DeEHR Market was to connect patients (who own their data) and researchers (who want to buy medical data),allow for patient data to be trained on anonymously using [bacalhau](https://www.bacalhau.org/) and homomorphic encryption, and compensate patients with the fees charged to researchers. ",
 			},
 			{
 				type: "text",
@@ -175,7 +170,7 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Smile Now is a mobile app that I'm working on with my friend Sam. We have built many apps together and believed we could finish an MVP of smile now in 1 weekend. We hosted a live stream to showcase the work that goes into building an app - but mostly to be able to generate footage for tik toks 🙈 ",
+					"Smile Now is a mobile app that I'm working on with my friend Sam. We have built many apps together and believed we could finish an MVP of smile now in 1 weekend. We hosted a live stream to showcase the work that goes into building an app - but mostly to be able to generate footage for tik tok's 🙈 ",
 			},
 			{
 				type: "text",
@@ -240,11 +235,6 @@ export const projects: ProjectCard[] = [
 				type: "text",
 				content:
 					"I built this site using Astro.js and Solid.js to dip my toes into some new web technologies I had never used before. It was a fun process, I got to make my site easier to maintain, and I overcame some hesitation that we all inevitably feel when we try new things.",
-			},
-			{
-				type: "text",
-				content:
-					"In the next dev sprint for my portfolio site, I want to continue to expand my horizons. I've been interested in Three.js and WebGL for a long time. I want to add 3D graphics here. I think it will take my site to the next level.",
 			},
 		],
 	},
@@ -375,7 +365,7 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
+					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week of working literally around the clock, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
 			},
 		],
 	},

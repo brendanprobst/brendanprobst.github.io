@@ -18,7 +18,7 @@
 	let lines: string[] = [
 		"I'm a Developer",
 		"I'm a Entrepreneur",
-		"I'm a Foodie",
+		"I'm a Home Cook",
 		"I'm a Cat Owner",
 		"I'm a Software Engineer",
 		"I'm a Problem Solver",
@@ -37,7 +37,9 @@
 		elem.textContent = line;
 		// Stagger the start of the animation for each line
 		elem.style.animationDelay = `-${index * 2}s`;
-		container.appendChild(elem);
+		if (!!container) {
+			container.appendChild(elem);
+		}
 	});
 </script>
 

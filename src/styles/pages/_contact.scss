@@ -111,12 +111,12 @@
 			border-radius: 0.5rem;
 			position: relative;
 			cursor: pointer !important;
-			@include flex-container(row, flex-start, center, wrap);
+			@include flex-container(row, flex-start, center, nowrap);
 
 			&:hover {
 				background-color: colors.$fg;
+				transition: all 0.25s ease-in-out;
 				.icons {
-					display: block;
 					opacity: 1;
 				}
 			}
@@ -131,20 +131,21 @@
 				margin: 0.5rem;
 			}
 			.icons {
-				position: absolute;
 				margin-left: auto;
-				padding-left: 2rem;
-				right: 0;
-				background: linear-gradient(to right, transparent, colors.$fg 20%);
 				border-radius: 0.25rem;
 				opacity: 0;
-				.icon {
-					font-size: 1.75rem;
-					line-height: 2rem;
-					margin: 0 0.5rem;
-					color: colors.$border !important;
-					&:hover {
-						color: colors.$text !important;
+				@include flex-container(row, flex-end, center, nowrap);
+				a.button,
+				button {
+					@include flex-container(column, center, center, nowrap);
+					svg {
+						width: 30px;
+						height: 30px;
+						margin: 0.5rem;
+						color: colors.$border !important;
+						&:hover {
+							color: colors.$text !important;
+						}
 					}
 				}
 				&:hover {

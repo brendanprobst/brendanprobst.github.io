@@ -14,7 +14,7 @@ export type Contact = {
 export const ContactData: Contact[] = [
 	{
 		type: "mail",
-		icon: () => <IoMailOpen />,
+		icon: <IoMailOpen />,
 		value: "bprobst1029@gmail.com",
 		link: "mailto:bprobst1029@gmail.com",
 	},
@@ -27,8 +27,8 @@ export const ContactData: Contact[] = [
 	{
 		type: "discord",
 		icon: <FaBrandsDiscord />,
-		value: "brendo13#4482",
-		link: "https://discordapp.com/users/brendo13#4482",
+		value: "brendo13",
+		link: "https://discordapp.com/users/brendo13",
 	},
 	{
 		type: "telegram",
