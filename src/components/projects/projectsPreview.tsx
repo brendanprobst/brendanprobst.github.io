@@ -3,9 +3,9 @@ import { ProjectCardType, projects } from "./projectsData";
 import "solid-slider/slider.css";
 import { Slider, SliderProvider, SliderButton } from "solid-slider";
 export default function ProjectsPreview() {
-	const [duration, setDuration] = createSignal(3000);
+	const duration = 3000;
 	const [focus, setFocus] = createSignal(0);
-	const timer = setInterval(() => setFocus(handleNext()), duration());
+	const timer = setInterval(() => setFocus(handleNext()), duration);
 	onCleanup(() => clearInterval(timer));
 	const projectLength = projects?.length - 1;
 	function handleNext() {
@@ -13,21 +13,6 @@ export default function ProjectsPreview() {
 			return 0;
 		} else {
 			return focus() + 1;
-		}
-	}
-	function handleClass(idx: number) {
-		let baseClass = "";
-
-		if (idx === focus()) {
-			return baseClass + " focused";
-		}
-		return baseClass + " not-focused";
-	}
-	function handlePrev() {
-		if (focus() === 0) {
-			return projectLength;
-		} else {
-			return focus() - 1;
 		}
 	}
 
@@ -39,7 +24,7 @@ export default function ProjectsPreview() {
 						return (
 							<a
 								class={`project-wrapper`}
-								id={`${item.class}-wrapper}`}
+								id={`${item.class}-wrapper-${idx}`}
 								href={`/projects#${item.class}`}>
 								<p class="hidden">{item.title}</p>
 								<div class={`project-card`} id={`${item.class}-card`}>

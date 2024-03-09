@@ -41,45 +41,45 @@ export type ProjectType =
 export function ClearFilter() {}
 
 export const projects: ProjectCardType[] = [
-	{
-		title: "Cabal Protocol",
-		type: "Web App",
-		class: "cabal-protocol",
-		subText: "A DAO for sponsored Hackathon Trips",
-		link: "https://cabalprotocol.com",
-		tags: ["Next.js", "Ethers.js", "Wallet Connect", "The Safe", "Unlock"],
-		logo: "/img/logos/cabal-protocol.png",
-		date: ["Oct 2021"],
-		icons: [
-			{
-				icon: <FiExternalLink />,
-				link: "https://cabalprotocol.com",
-				label: "Cabal Protocol Website",
-			},
-			{
-				icon: <FaBrandsGithub />,
-				link: "",
-				label: "Cabal Protocol Github",
-			},
-		],
-	},
-	{
-		title: "DeEHR Market",
-		type: "Hackathon Project",
-		class: "deehr-market",
-		subText: "A marketplace for Electronic Health Records",
-		link: "https://ethglobal.com/showcase/deehr-market-mvpzu",
-		tags: ["Next.js", "Ethers.js", "Solidity", "Wallet Connect", "Biconomy"],
-		logo: "/img/logos/deehr.png",
-		date: ["Oct 2023"],
-		icons: [
-			{
-				icon: <FaBrandsGithub />,
-				link: "",
-				label: "DeEHR Market Github",
-			},
-		],
-	},
+	// {
+	// 	title: "Cabal Protocol",
+	// 	type: "Web App",
+	// 	class: "cabal-protocol",
+	// 	subText: "A DAO for sponsored Hackathon Trips",
+	// 	link: "https://cabalprotocol.com",
+	// 	tags: ["Next.js", "Ethers.js", "Wallet Connect", "The Safe", "Unlock"],
+	// 	logo: "/img/logos/cabal-protocol.png",
+	// 	date: ["Oct 2021"],
+	// 	icons: [
+	// 		{
+	// 			icon: <FiExternalLink />,
+	// 			link: "https://cabalprotocol.com",
+	// 			label: "Cabal Protocol Website",
+	// 		},
+	// 		{
+	// 			icon: <FaBrandsGithub />,
+	// 			link: "",
+	// 			label: "Cabal Protocol Github",
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	title: "DeEHR Market",
+	// 	type: "Hackathon Project",
+	// 	class: "deehr-market",
+	// 	subText: "A marketplace for Electronic Health Records",
+	// 	link: "https://ethglobal.com/showcase/deehr-market-mvpzu",
+	// 	tags: ["Next.js", "Ethers.js", "Solidity", "Wallet Connect", "Biconomy"],
+	// 	logo: "/img/logos/deehr.png",
+	// 	date: ["Oct 2023"],
+	// 	icons: [
+	// 		{
+	// 			icon: <FaBrandsGithub />,
+	// 			link: "",
+	// 			label: "DeEHR Market Github",
+	// 		},
+	// 	],
+	// },
 	{
 		title: "Cabal Sorel",
 		type: "Other",
@@ -117,8 +117,8 @@ export const projects: ProjectCardType[] = [
 		title: "Cabal Protocol",
 		type: "Hackathon Project",
 		class: "cabal-protocol",
-		logo: "/img/logos/cabalprotocol.png",
-		subText: "Subsudized Hackathon Trips - Decentralized",
+		logo: "/img/logos/cabal-protocol.png",
+		subText: "Subsidized Hackathon Trips - Decentralized",
 		link: "https://ethglobal.com/showcase/cabal-protocol-pa734",
 		date: ["September 2023", "Present"],
 		tags: ["Next.js", "Web3", "Unlock Protocol", "Wallet Connect"],
@@ -158,7 +158,7 @@ export const projects: ProjectCardType[] = [
 			"Ethereum",
 			"Hardhat",
 		],
-		logo: "/img/logos/deehr_market.png",
+		logo: "/img/logos/deehr.png",
 		date: ["July 2023"],
 		icons: [
 			{
@@ -258,7 +258,7 @@ export const projects: ProjectCardType[] = [
 	{
 		title: "My Portfolio Site",
 		type: "Landing Page",
-		class: "cabal-landing-page",
+		class: "my-landing-page",
 		subText: "A simple portfolio site",
 		tags: ["Astro.js", "Solid.js", "SCSS", "Landing Page"],
 		logo: "/white_logo.png",
@@ -347,9 +347,9 @@ export const projects: ProjectCardType[] = [
 		],
 	},
 	{
-		title: "Cabal Protocol",
+		title: "Cabal",
 		type: "Web App",
-		class: "cabal-protocol",
+		class: "cabal-ethnyc",
 		subText: "Own Your Data",
 		link: "https://ethglobal.com/showcase/cabal-jgj8g",
 		tags: ["Next.js", "web3.js", "Wallet Connect"],
@@ -359,19 +359,19 @@ export const projects: ProjectCardType[] = [
 			{
 				icon: <FaBrandsGithub />,
 				link: "https://github.com/marcusats/Cabal-ETHNYC",
-				label: "Cabal Protocol's Github",
+				label: "Oath Protocol's Github",
 			},
 			{
 				icon: <FiExternalLink />,
-				link: "https://ethglobal.com/showcase/tap-contacts-s3ds7",
-				label: "Cabal Protocol's ETH NYC Submission",
+				link: "https://ethglobal.com/showcase/cabal-jgj8g",
+				label: "Oath Protocol's ETH NYC Submission",
 			},
 		],
 		blocks: [
 			{
 				type: "text",
 				content:
-					"The Cabal Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract. ",
+					"The Oauth Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract. ",
 			},
 			{
 				type: "text",
@@ -546,15 +546,7 @@ export function filterByType(type: ProjectType) {
 		}
 	});
 	setFilteredProjects(result);
-	// return result;
 }
 // export const filteredProjects: ProjectCard[] = filterByType(null);
 export const [filteringFor, setFilteringFor] = createSignal();
 export const [filteredProjects, setFilteredProjects] = createSignal(projects);
-
-function logData() {
-	console.log("blah");
-}
-const logData2 = () => {
-	console.log("blah");
-};

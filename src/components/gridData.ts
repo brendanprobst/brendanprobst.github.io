@@ -27,7 +27,7 @@ export const cabalProps: GridSectionType = {
 		{
 			type: "text",
 			content:
-				"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bogotá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology",
+				"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bogotá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology.",
 		},
 		{
 			type: "text",
