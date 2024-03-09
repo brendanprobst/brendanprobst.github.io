@@ -203,10 +203,8 @@
 		padding: 0.25rem;
 	}
 }
-// HOME PAGE
 $card-opacity: 0%;
 $card-width: 70%;
-$animation-time: 1s;
 #projects-module {
 	overflow: hidden;
 	position: relative;
@@ -226,32 +224,7 @@ $animation-time: 1s;
 		margin: auto auto;
 	}
 	.project-card {
-		position: relative;
-		background-color: transparent;
-		height: 25rem;
-		width: 5rem;
-		border-radius: 0;
-		box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.25);
-		.title {
-			position: absolute;
-			transform: rotate(-90deg);
-			bottom: 10%;
-			text-align: left;
-			width: max-content;
-		}
-		img,
-		.tag-container,
-		.date {
-			position: absolute;
-			opacity: 0;
-			transition: opacity $animation-time ease-in-out;
-		}
-	}
-	.project-card.focused {
-		min-width: 80vw;
-		min-height: 20rem;
-		height: 100%;
-		flex: 1;
+		// min-width: 20rem;
 		margin: auto auto;
 		text-decoration: none;
 		color: colors.$text;
@@ -265,7 +238,6 @@ $animation-time: 1s;
 		.img {
 			height: 8rem;
 			border-radius: 1.5rem;
-			opacity: 1;
 		}
 		.img {
 			opacity: 0.6;
