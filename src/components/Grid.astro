@@ -1,0 +1,42 @@
+---
+import GridSection from "./gridSection";
+import ProjectsPreview from "./projects/projectsPreview";
+import {
+	plmProps,
+	cabalProps,
+	smileNowProps,
+	aboutMeProps,
+	quaeProps,
+	projectsProps,
+} from "./gridData";
+---
+
+<section id="grid">
+	<div id="plm-module">
+		<GridSection {...plmProps} client:load />-
+	</div>
+	<div id="cabal-module">
+		<GridSection {...cabalProps} client:load />
+	</div>
+	<div id="smilenow-module">
+		<GridSection {...smileNowProps} client:load />
+	</div>
+	<div id="bio-module">
+		<GridSection {...aboutMeProps}>
+			<div id="resume-module" class="sub-module">
+				<GridSection title="My Resume">
+					<a href="/public/brendan_probst_resume.pdf" download> Download</a>
+				</GridSection>
+			</div>
+		</GridSection>
+	</div>
+	<div id="quae-module">
+		<GridSection {...quaeProps} client:load />
+	</div>
+
+	<div id="projects-module">
+		<GridSection {...projectsProps} client:load>
+			<ProjectsPreview client:load />
+		</GridSection>
+	</div>
+</section>

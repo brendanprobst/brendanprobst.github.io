@@ -1,0 +1,26 @@
+---
+import Resume from "../components/BrendanProbstResumeNovember2022.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Grid from "../components/Grid.astro";
+import Header from "../components/Header";
+import Hero from "../components/hero.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body id="resume" class="small-page">
+		<Header client:only />
+		<main>
+			<button class="download">download</button>
+			<div class="resume-container">
+				<Resume />
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,23 @@
+---
+import { Toaster } from "solid-toast";
+import BaseHead from "../components/BaseHead.astro";
+import ContactForm from "../components/contact/ContactForm.astro";
+import ContactList from "../components/contact/ContactList";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="small-page">
+		<Header client:only />
+		<main id="contact-me">
+			<ContactList client:load />
+			<ContactForm client:load />
+		</main>
+	</body>
+</html>
