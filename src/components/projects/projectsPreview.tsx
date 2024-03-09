@@ -42,7 +42,7 @@ export default function ProjectsPreview() {
 								id={`${item.class}-wrapper}`}
 								href={`/projects#${item.class}`}>
 								<p class="hidden">{item.title}</p>
-								<div class={`project-card `} id={`${item.title}-card}`}>
+								<div class={`project-card`} id={`${item.class}-card`}>
 									<h3>{item.title}</h3>
 									<img src={item.logo} alt={`${item.title} logo`} />
 									<p>
