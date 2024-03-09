@@ -1,47 +1,7 @@
-import { createSignal, onCleanup, onMount } from "solid-js";
-import { ProjectCardType, projects } from "./projectsData";
-import { AiOutlineLeft, AiOutlineRight } from "solid-icons/ai";
-import { FaRegularFileCode } from "solid-icons/fa";
-import ProjectsList from "./projectsList";
-interface ProjectCardProps {
-	project: ProjectCardType;
-	idx: number;
-}
-function ProjectCard({ project, idx }: ProjectCardProps) {
-	let el;
-	// onMount(() => {
-	// 	const animation = el.animate({
-	// 		duration: ProjectsList.length * 1000,
-	// 		iterations: Infinity,
-	// 		delay: idx * 1000,
-	// 	});
-
-	// 	onCleanup(() => animation.cancel());
-	// });
-
-	return (
-		<a href={`/projects#${project.class}`}>
-			<p class="hidden">{project.title}</p>
-			<div
-				class={`project-slide`}
-				ref={el}
-				style={`background-color: ${project.color || "#5f5ccf"}`}>
-				<div class={`project-card`}>
-					<h3 class="title">{project.title}</h3>
-					<img src={project.logo} alt={`${project.title} logo`} />
-					<p class="date">
-						{project.date[0]} {project.date[1] ? `- ${project.date[1]}` : ""}
-					</p>
-					<div class="tag-container">
-						{project.tags.map((item: string) => {
-							return <div class="tag">{item}</div>;
-						})}
-					</div>
-				</div>
-			</div>
-		</a>
-	);
-}
+import { createSignal, onCleanup } from "solid-js";
+import { ProjectCard, projects } from "./projectsData";
+import "solid-slider/slider.css";
+import { Slider, SliderProvider, SliderButton } from "solid-slider";
 export default function ProjectsPreview() {
 	const [duration, setDuration] = createSignal(3000);
 	const [focus, setFocus] = createSignal(0);
@@ -71,19 +31,44 @@ export default function ProjectsPreview() {
 		}
 	}
 
-	function startAutoScroll() {
-		setDuration(3000);
-	}
-	function stopAutoScroll() {
-		setDuration(0);
-	}
 	return (
-		<>
-			<div class="project-slide-deck">
-				{projects.map((item: ProjectCardType, idx: number) => {
-					return <ProjectCard project={item} idx={idx} />;
-				})}
-			</div>
-		</>
+		<div class="project-preview">
+			<SliderProvider>
+				<Slider options={{ loop: true }}>
+					{projects.map((item: ProjectCard, idx: number) => {
+						return (
+							<a
+								class={`project-wrapper`}
+								id={`${item.class}-wrapper}`}
+								href={`/projects#${item.class}`}>
+								<p class="hidden">{item.title}</p>
+								<div class={`project-card `} id={`${item.title}-card}`}>
+									<h3>{item.title}</h3>
+									<img src={item.logo} alt={`${item.title} logo`} />
+									<p>
+										{item.date[0]} {item.date[1] ? `- ${item.date[1]}` : ""}
+									</p>
+									<div class="tag-container">
+										{item.tags.map((item) => {
+											return <div class="tag">{item}</div>;
+										})}
+									</div>
+								</div>
+							</a>
+						);
+					})}
+				</Slider>
+
+				<div id="project-slider-controls">
+					<SliderButton prev class="prev">
+						Prev
+					</SliderButton>
+
+					<SliderButton next class="next">
+						Next
+					</SliderButton>
+				</div>
+			</SliderProvider>
+		</div>
 	);
 }

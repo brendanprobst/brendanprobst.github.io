@@ -1,10 +1,13 @@
-type GridSectionType = {
+import Block from "./projects/block";
+import type { BlockType } from "./projects/projectsData";
+
+export type GridSectionType = {
 	title?: string;
 	headline?: string;
 	subHeadline?: string;
 	link?: string;
 	linkText?: string;
-	blocks?: string[];
+	blocks?: BlockType[];
 	children?: any;
 };
 export default function GridSection({
@@ -34,7 +37,7 @@ export default function GridSection({
 				<h4 class="sub-headline">{subHeadline}</h4>
 			</div>
 			{blocks?.map((item) => {
-				return <p>{item}</p>;
+				return <Block {...item} />;
 			})}
 			{children}
 		</div>

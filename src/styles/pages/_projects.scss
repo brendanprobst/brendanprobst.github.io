@@ -55,7 +55,7 @@
 .skill-container {
 	@include flex-container(row, center, center, wrap);
 	max-width: 65rem;
-	margin: 0 auto;
+	margin: 0 auto 3rem;
 	.tag {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
@@ -113,6 +113,12 @@
 
 	.blocks {
 		padding-inline: 1rem;
+		.block {
+			flex: 0.5;
+			P {
+				flex: 1;
+			}
+		}
 	}
 }
 
@@ -172,7 +178,6 @@
 				padding-bottom: 1rem;
 				@include flex-container(row, flex-start, flex-start, wrap);
 				gap: 1rem;
-				p,
 				img {
 					flex: 0.5;
 					width: 50%;
@@ -205,54 +210,19 @@ $animation-time: 1s;
 #projects-module {
 	overflow: hidden;
 	position: relative;
-	height: 100%;
-	#projects-controls {
-		z-index: 1;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		@include flex-container(row, center, flex-end, nowrap);
-		.prev,
-		.next {
-			flex: 1;
-			font-size: 1.5rem;
-			border-radius: 0.25rem;
-			@include flex-container(column, center, center, nowrap);
-			padding: 0.5rem;
-			background-color: transparent;
-		}
-		.prev {
-			@include flex-container(row, flex-start, center, nowrap);
-			&:hover {
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to right, colors.$glass, transparent);
-			}
-		}
-		.next {
-			@include flex-container(row, flex-end, center, nowrap);
-			&:hover {
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to left, colors.$glass, transparent);
-			}
-		}
-	}
-	.project-slide-deck {
-		z-index: 2;
-		height: 25rem;
-		@include flex-container(row, flex-start, flex-start, nowrap);
-		// animation: horizontalScroll 30s linear infinite;
-		&:hover {
-			animation-play-state: paused;
-		}
 
-		&:active {
-			animation-play-state: paused;
-		}
+	.project-preview {
+		z-index: 2;
+		@include flex-container(column, flex-end, center, nowrap);
+		gap: 0.5rem;
+		overflow: hidden;
+		position: relative;
+		margin: auto auto;
 	}
-	.project-slide {
+	.project-wrapper {
 		@include flex-container(column, center, center, nowrap);
-		flex: 1;
+		height: 100%;
+		width: 100%;
 		margin: auto auto;
 	}
 	.project-card {
@@ -290,12 +260,7 @@ $animation-time: 1s;
 		gap: 0.5rem;
 		background-color: rgba(16, 60, 91, 1);
 		padding: 1rem;
-		.date,
-		img,
-		.img,
-		.tag-container {
-			transition: opacity $animation-time ease-in-out;
-		}
+		width: 80%;
 		img,
 		.img {
 			height: 8rem;
@@ -316,94 +281,99 @@ $animation-time: 1s;
 		}
 	}
 }
-
-@media screen and (max-width: 799px) {
-	#projects-module {
-		#projects-controls {
-			height: 2rem;
-			bottom: 0;
-			margin-top: auto;
-
-			.prev {
-				align-items: flex-start;
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to right, colors.$glass, transparent);
-			}
-			.next {
-				align-items: flex-end;
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to left, colors.$glass, transparent);
-			}
-		}
-
-		.project-card {
-			@include flex-container(column, flex-end, center, nowrap);
-			img,
-			.img {
-				height: 3rem;
-				width: 3rem;
-				margin: auto 1rem auto 0.5rem;
-				border-radius: 0.5rem;
-			}
-		}
+#project-slider-controls {
+	@include flex-container(row, center, space-between, nowrap);
+	width: 80%;
+	.prev,
+	.next {
+		flex: 1;
+		font-size: 1rem;
+		border-radius: 0.25rem;
+		@include flex-container(column, center, center, nowrap);
+		padding: 0.5rem;
+		background-color: transparent;
+		color: #000000;
 	}
-}
-
-@media screen and (min-width: 800px) {
-	#project-controls {
-		button.prev {
-			@include flex-container(row, flex-start, center, nowrap);
+	.prev {
+		@include flex-container(row, flex-start, center, nowrap);
+		&:hover {
 			transition: background-color 0.25s ease-in-out;
-			align-items: flex-start;
-			background: transparent;
-			&:hover {
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to right, colors.$glass, transparent);
-			}
+			background: linear-gradient(to right, colors.$glass, transparent);
 		}
-		button.next {
-			@include flex-container(row, flex-end, center, nowrap);
-
+	}
+	.next {
+		@include flex-container(row, flex-end, center, nowrap);
+		&:hover {
 			transition: background-color 0.25s ease-in-out;
-			align-items: flex-end;
-			background: transparent;
-			&:hover {
-				transition: background-color 0.25s ease-in-out;
-				background: linear-gradient(to left, colors.$glass, transparent);
-			}
+			background: linear-gradient(to left, colors.$glass, transparent);
 		}
 	}
-	#projects-module {
-	}
 }
-$animation-width: 50vw;
-@keyframes horizontalScroll {
-	0% {
-		transform: translateX(0%);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
-}
+// @media screen and (max-width: 799px) {
+// 	#projects-module {
+// 		#projects-controls {
+// 			height: 2rem;
+// 			bottom: 0;
+// 			margin-top: auto;
 
-@keyframes handlePrev {
-	from {
-		margin: 0 auto;
-		opacity: 1;
-		transform: translateX(0);
-	}
-	to {
-		margin-left: 0;
-		opacity: $card-opacity;
-		transform: translateX(-150%);
-	}
-}
-@keyframes handleNext {
-	from {
-		transform: translateX(150%);
-	}
-	to {
-		margin-left: auto;
-		transform: translateX(0%);
-	}
-}
+// 			.prev {
+// 				align-items: flex-start;
+// 				transition: background-color 0.25s ease-in-out;
+// 				background: linear-gradient(to right, colors.$glass, transparent);
+// 			}
+// 			.next {
+// 				align-items: flex-end;
+// 				transition: background-color 0.25s ease-in-out;
+// 				background: linear-gradient(to left, colors.$glass, transparent);
+// 			}
+// 		}
+// 		.project-preview {
+// 			grid-template-columns: 1fr;
+// 		}
+// 		.project-wrapper {
+// 			height: max-content;
+// 		}
+// 		.project-card {
+// 			@include flex-container(column, flex-end, center, nowrap);
+// 			img,
+// 			.img {
+// 				height: 3rem;
+// 				width: 3rem;
+// 				margin: auto 1rem auto 0.5rem;
+// 				border-radius: 0.5rem;
+// 			}
+// 		}
+// 	}
+// }
+
+// @media screen and (min-width: 800px) {
+// 	#project-controls {
+// 		button.prev {
+// 			@include flex-container(row, flex-start, center, nowrap);
+// 			transition: background-color 0.25s ease-in-out;
+// 			align-items: flex-start;
+// 			background: transparent;
+// 			&:hover {
+// 				transition: background-color 0.25s ease-in-out;
+// 				background: linear-gradient(to right, colors.$glass, transparent);
+// 			}
+// 		}
+// 		button.next {
+// 			@include flex-container(row, flex-end, center, nowrap);
+
+// 			transition: background-color 0.25s ease-in-out;
+// 			align-items: flex-end;
+// 			background: transparent;
+// 			&:hover {
+// 				transition: background-color 0.25s ease-in-out;
+// 				background: linear-gradient(to left, colors.$glass, transparent);
+// 			}
+// 		}
+// 	}
+// 	#projects-module {
+// 		.project-preview {
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 			grid-template-rows: 1fr 1fr 1fr;
+// 		}
+// 	}
+// }

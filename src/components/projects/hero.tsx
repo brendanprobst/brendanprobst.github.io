@@ -29,6 +29,12 @@ export default function ProjectHero() {
 					class={`${filteringFor() === "Landing Page" ? "selected" : ""}`}>
 					<h3>Landing Pages</h3>
 				</button>
+				<button
+					onClick={() => filterByType("Other")}
+					type={"button"}
+					class={`${filteringFor() === "Other" ? "selected" : ""}`}>
+					<h3>Other</h3>
+				</button>
 			</div>
 			<button
 				class={`filter-btn ${

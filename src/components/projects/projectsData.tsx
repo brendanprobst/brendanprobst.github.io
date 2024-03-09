@@ -1,16 +1,10 @@
 import { createSignal, JSXElement } from "solid-js";
 import {
 	FaBrandsGithub,
-	FaSolidCircleInfo,
-	FaBrandsInstagram,
-	FaBrandsTwitter,
-	FaBrandsMedium,
-	FaBrandsLinkedin,
 	FaBrandsAppStore,
-	FaBrandsGooglePlay,
 	FaBrandsYoutube,
 } from "solid-icons/fa";
-import { FiExternalLink } from "solid-icons/fi";
+import { FiExternalLink, FiGithub } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
 export type ProjectCardType = {
@@ -33,7 +27,7 @@ export type IconType = {
 	label: string;
 };
 export type BlockType = {
-	type: string | "text" | "image";
+	type: string | "text" | "image" | "title" | "subtitle";
 	content: string;
 	imgAlt?: string;
 };
@@ -41,7 +35,8 @@ export type ProjectType =
 	| "Web App"
 	| "Mobile App"
 	| "Landing Page"
-	| string
+	| "Hackathon Project"
+	| "Other"
 	| null;
 export function ClearFilter() {}
 
@@ -86,6 +81,145 @@ export const projects: ProjectCardType[] = [
 		],
 	},
 	{
+		title: "Cabal Sorel",
+		type: "Other",
+		link: "https://ethglobal.com/showcase/cabal-sorel-uwvfa",
+		class: "cabal-sorel",
+		logo: "/img/logos/cabal_sorel.png",
+		date: ["October 2023"],
+		subText:
+			"A reccomendation engine for decentralized apps - delived through a chrome extension",
+		tags: ["Chrome Extension", "Hackathon Project"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://ethglobal.com/showcase/cabal-sorel-uwvfa",
+				label: "ETH Online 2023 Submission",
+			},
+			{
+				icon: <FiGithub />,
+				link: "https://github.com/Cabal-Labs/Ethonline2023",
+				label: "Cabal Sorel Github",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content: `Cabal Sorel was the project I worked on at [ETH Online 2023](https://ethglobal.com/events/ethonline2023). We built a chrome extension that allows users to get personalized recommendations for decentralized apps. By using our extension, people can pull in data their wallet has stored from interactions on others sites, and optionally upload their twitter archive ([How?](https://www.theverge.com/23453703/twitter-archive-download-how-to-tweets)). Once setup, you would see a new button appear on our enabled sites (just hey.xyz for now). Click it and you'll see a new home feed with more personal recommendations.`,
+			},
+			{
+				type: "text",
+				content: `We used the Social Relation (SoRel) API from the [Mask Network](https://mask.io/), the [Next.ID SK](https://next.id/), and [Tableland](https://tableland.xyz/) to store persistent data. We won the *Mask Network — Most Innovative Social App* and the *Tableland Pool Prize*`,
+			},
+		],
+	},
+	{
+		title: "Cabal Protocol",
+		type: "Hackathon Project",
+		class: "cabal-protocol",
+		logo: "/img/logos/cabalprotocol.png",
+		subText: "Subsudized Hackathon Trips - Decentralized",
+		link: "https://ethglobal.com/showcase/cabal-protocol-pa734",
+		date: ["September 2023", "Present"],
+		tags: ["Next.js", "Web3", "Unlock Protocol", "Wallet Connect"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://ethglobal.com/showcase/cabal-protocol-pa734",
+				label: "ETH Global Submission",
+			},
+			{
+				icon: <FiGithub />,
+				link: "https://github.com/Cabal-Labs/CabalProtocol",
+				label: "Cabal Protocol Github",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content: `Cabal protocol was the project I worked on at [ETH NYC 2023](https://ethglobal.com/events/newyork2023). This was a project that I had dreamed of working on for over a year, and at ETH NYC '23 I was finally time to create an MVP. Over the weekend we were able to set up a treasury using the [Safe Wallet](), mock an application process and then lock reimbursement functionality to accepted hackers using [Unlock token gates]().`,
+			},
+			{
+				type: "text",
+				content: `While we did not win any prizes this hackathon, we did get a lot of great feedback and we're excited to continue working on this project. We plan on launching a beta version of the protocol in the next few months. `,
+			},
+		],
+	},
+	{
+		title: "DeEHR Market",
+		type: "Web App",
+		class: "deehr-market",
+		link: "https://ethglobal.com/showcase/deehr-market-mvpzu",
+		tags: [
+			"Next.js",
+			"Web3",
+			"Smart Contract Development",
+			"Solidity",
+			"Ethereum",
+			"Hardhat",
+		],
+		logo: "/img/logos/deehr_market.png",
+		date: ["July 2023"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://ethglobal.com/showcase/deehr-market-mvpzu",
+				label: "ETH GLobal Submission",
+			},
+			{
+				icon: <FiGithub />,
+				link: "https://github.com/Cabal-Labs/deehr-market-client",
+				label: "DeEHR Market Github",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"DeEHR market was the project I worked on at [ETH Paris 2023](https://ethglobal.com/events/paris2023). It's purpose was to demonstrate 1 use case of decentralized Electronic Health Records (EHR's). This focus of DeEHR Market was to connect patients (who own their data) and researchers (who want to buy medical data),allow for patient data to be trained on anonymously using [bacalhau](https://www.bacalhau.org/) and homomorphic encryption, and compensate patients with the fees charged to researchers. ",
+			},
+			{
+				type: "text",
+				content: `We won the *Filecoin — Best use of FVM & Bacalhau* prize. This project is special to me because the trip to attend ETH Paris was the first funded Cabal Hackathon Trip. It proved the concept that we had been working on since ETH Bogotá. 
+				`,
+			},
+		],
+	},
+	{
+		title: "Smile Now",
+		type: "Mobile App",
+		class: "smile-now",
+		subText: "An app that makes taking photos fun",
+		link: "https://smilenow.app",
+		tags: ["React Native", "Expo", "Mobile App"],
+		logo: "/img/logos/smile_now.png",
+		date: ["April 2023", "Present"],
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: "https://smile.samschmitt.net",
+				label: "Smile Now Landing Page",
+			},
+			{
+				icon: <FaBrandsAppStore />,
+				link: "https://apps.apple.com/app/id6449005895",
+				label: "Quae on the app store",
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content:
+					"Smile Now is a mobile app that I'm working on with my friend Sam. We have built many apps together and believed we could finish an MVP of smile now in 1 weekend. We hosted a live stream to showcase the work that goes into building an app - but mostly to be able to generate footage for tik tok's 🙈 ",
+			},
+			{
+				type: "text",
+				content:
+					"Smile Now solves the problem of going to parties, events, or just hanging out with friends and not having any photos to remember the moment. It does this by 1) making it stupid simple to create & join events quickly. 2) We notify people at random times to take a photo. 3) Share your photos with everyone in the party in a fun and unique way. With our MVP, we've accomplished 1 and 2 and we're excited to experiment with the sharing experience in the next few weeks.",
+			},
+		],
+	},
+	{
 		title: "zk.fund",
 		type: "Web App",
 		class: "zk-fund",
@@ -100,7 +234,7 @@ export const projects: ProjectCardType[] = [
 			"Hardhat",
 		],
 		logo: "/img/logos/zkfundlogo.png",
-		date: ["Sept 2021", "Present"],
+		date: ["Sept 2021", "May 2023"],
 		icons: [
 			{
 				icon: <FiExternalLink />,
@@ -141,11 +275,6 @@ export const projects: ProjectCardType[] = [
 				type: "text",
 				content:
 					"I built this site using Astro.js and Solid.js to dip my toes into some new web technologies I had never used before. It was a fun process, I got to make my site easier to maintain, and I overcame some hesitation that we all inevitably feel when we try new things.",
-			},
-			{
-				type: "text",
-				content:
-					"In the next dev sprint for my portfolio site, I want to continue to expand my horizons. I've been interested in Three.js and WebGL for a long time. I want to add 3D graphics here. I think it will take my site to the next level.",
 			},
 		],
 	},
@@ -191,7 +320,7 @@ export const projects: ProjectCardType[] = [
 			"NPM Package Development",
 		],
 		logo: "/img/logos/tapme.png",
-		date: ["Oct 2022", "Present"],
+		date: ["Oct 2022"],
 		icons: [
 			{
 				icon: <FaBrandsGithub />,
@@ -259,13 +388,8 @@ export const projects: ProjectCardType[] = [
 		link: "https://web.quae.app",
 		tags: ["Next.js", "SCSS", "Responsive Web Page"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Jul 2021", "Present"],
+		date: ["Jul 2021", "Apr 2023"],
 		icons: [
-			{
-				icon: <CgWebsite />,
-				link: "https://web.quae.app",
-				label: "Quae web app",
-			},
 			{
 				icon: <AiFillInfoCircle />,
 				link: "https://quae.app",
@@ -281,7 +405,7 @@ export const projects: ProjectCardType[] = [
 			{
 				type: "text",
 				content:
-					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
+					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week of working literally around the clock, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
 			},
 		],
 	},
@@ -359,17 +483,12 @@ export const projects: ProjectCardType[] = [
 		link: "app store link",
 		tags: ["React Native", "Expo", "Mobile App"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Jan 2021", "Present"],
+		date: ["Jan 2021", "Apr 2023"],
 		icons: [
 			{
-				icon: <FaBrandsAppStore />,
-				link: "https://apps.apple.com/us/app/quae/id1555653993",
-				label: "Quae on the app store",
-			},
-			{
-				icon: <FaBrandsGooglePlay />,
-				link: "https://play.google.com/store/apps/details?id=com.quae.quaeapp&hl=en_US&gl=US",
-				label: "quae on the play store",
+				icon: <CgWebsite />,
+				link: "https://quae.app",
+				label: "Quae landing app",
 			},
 		],
 		blocks: [
@@ -392,7 +511,7 @@ export const projects: ProjectCardType[] = [
 		subText: "Vote Every Day",
 		tags: ["HTML", "SCSS", "Vanilla JS", "Landing Page", "SEO Optimized"],
 		logo: "/img/logos/quae_logo.png",
-		date: ["Sept 2020", "Present"],
+		date: ["Sept 2020", "Apr 2023"],
 		icons: [
 			{
 				icon: <CgWebsite />,
@@ -432,3 +551,10 @@ export function filterByType(type: ProjectType) {
 // export const filteredProjects: ProjectCard[] = filterByType(null);
 export const [filteringFor, setFilteringFor] = createSignal();
 export const [filteredProjects, setFilteredProjects] = createSignal(projects);
+
+function logData() {
+	console.log("blah");
+}
+const logData2 = () => {
+	console.log("blah");
+};

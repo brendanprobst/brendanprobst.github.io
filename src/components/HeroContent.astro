@@ -16,24 +16,18 @@
 
 <script>
 	let lines: string[] = [
-		"I'm a Developer",
-		"I'm a Entrepreneur",
-		"I'm a Foodie",
-		"I'm a Cat Owner",
+		"I'm a developer",
+		"I'm a entrepreneur",
+		"I'm a home cook",
+		"I'm a cat owner",
 		"I'm a Software Engineer",
-		"I'm a Problem Solver",
-		"I'm a MotorSport Fan",
-		"I'm a Sim Racer",
-		"I'm a UI/UX Designer",
-		"I'm a Builder",
+		"I'm a problem solver",
+		"I'm a motorsport fan",
+		"I'm a UI/UX designer",
 	];
 	const container = document.getElementById("line-container");
 
-	setInterval(() => {
-		// Move the first element to the end of the array
-		let first = lines[0];
-		lines.shift();
-		lines.push(first);
+	// Create elements once and store references
 
 	lines.forEach((line, index) => {
 		let elem = document.createElement("p");
@@ -41,25 +35,18 @@
 		elem.textContent = line;
 		// Stagger the start of the animation for each line
 		elem.style.animationDelay = `-${index * 2}s`;
-		container?.appendChild(elem);
+		if (!!container) {
+			container.appendChild(elem);
+		}
 	});
 </script>
 
 <section id="hero-content">
 	<div class="text">
-		<h1 class="title">Hi, I'm Brendan</h1>
-		<div id="line-container">
-			<p>I'm a Developer</p>
-			<p>I'm a Entrepreneur</p>
-			<p>I'm a Foodie</p>
-			<p>I'm a Cat Owner</p>
-			<p>I'm a Software Engineer</p>
-			<p>I'm a Problem Solver</p>
-			<p>I'm a MotorSport Fan</p>
-			<p>I'm a Sim Racer</p>
-			<p>I'm a UI/UX Designer</p>
-			<p>I'm a Builder</p>
+		<div class="title-container">
+			<h1 class="title">Hi, I'm Brendan</h1>
 		</div>
+		<div id="line-container"></div>
 	</div>
 	<img src="/img/shapes/ring1.svg" class="ring ring1" alt="a colorful ring" />
 	<img src="/img/shapes/ring2.svg" class="ring ring2" alt="a colorful ring" />

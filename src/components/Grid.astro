@@ -1,65 +1,37 @@
 ---
 import GridSection from "./gridSection";
 import ProjectsPreview from "./projects/projectsPreview";
-
-const quaeProps = {
-	title: "Quae",
-	headline: "Community Voting App",
-	subHeadline: "Co-founder",
-	link: "https://quae.app",
-	blocks: [
-		"I founded Quae to address a problem I saw in the world: people aren't listened to by their leaders. Quae empowers people to be heard in their community and those elected to represent them.",
-		"Quae solves this problem by taking a new approach to how we vote. Right now, you only get to vote once every 4 years. Some problems can't wait 4 years. To take action today, people can use Quae to verifiably vote on projects, problems, or concerns in their community and use the results to create the chagne that is needed today.",
-	],
-};
-const cabalProps = {
-	title: "Cabal Labs",
-	headline: "Web3 Research & Devleopment Group",
-	subHeadline: "Co-founder",
-	link: "https://caballabs.com",
-	blocks: [
-		"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bototá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology",
-	],
-};
-const aboutMeProps = {
-	title: "About Me",
-	headline: "Software Engineer",
-	subHeadline: "Full Stack Developer | Focus on Front-End ",
-	blocks: [
-		"Hi! I'm Brendan",
-		"I'm a software engineer, entreprenure, and a builder. I'm a full stack engineer, but I have focused mostly on front-end devleopment. The skills I've learned have helped me build beautiful user interfaces captivatig landig pages for the initiatives I'm working on. ",
-		" For the past 2+ years, I've been dedicated to building Quae.  ",
-		"In my spare time, I love cooking, mototsport, and coding, and video games (specificaly racing games)",
-	],
-};
-
-const projectsProps = {
-	title: "My Projects",
-	link: "/projects",
-	linkText: "See All Projects",
-};
+import {
+	plmProps,
+	cabalProps,
+	smileNowProps,
+	aboutMeProps,
+	quaeProps,
+	projectsProps,
+} from "./gridData";
 ---
 
 <section id="grid">
-	<div id="quae-module">
-		<GridSection {...quaeProps} client:load />
+	<div id="plm-module">
+		<GridSection {...plmProps} client:load />-
 	</div>
 	<div id="cabal-module">
 		<GridSection {...cabalProps} client:load />
 	</div>
+	<div id="smilenow-module">
+		<GridSection {...smileNowProps} client:load />
+	</div>
 	<div id="bio-module">
 		<GridSection {...aboutMeProps}>
-			<div id="skills-module" class="sub-module">
-				<GridSection title="Skills">
-					<a href="/projects">See More</a>
-				</GridSection>
-			</div>
 			<div id="resume-module" class="sub-module">
 				<GridSection title="My Resume">
 					<a href="/public/brendan_probst_resume.pdf" download> Download</a>
 				</GridSection>
 			</div>
 		</GridSection>
+	</div>
+	<div id="quae-module">
+		<GridSection {...quaeProps} client:load />
 	</div>
 
 	<div id="projects-module">
