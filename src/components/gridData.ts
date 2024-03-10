@@ -27,16 +27,12 @@ export const cabalProps: GridSectionType = {
 		{
 			type: "text",
 			content:
-				"Cabal Labs is an organization I founded with 3 friends in the weeks following the ETH Bogotá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology.",
+				"Our mission is to make the tech industry accessible for the next generation of developers, builders, and creators. We believe that. I founded Cabal Labs with 3 friends following the ETH Bogotá 2022 Hackathon. It was the second hackathon we attended together and needed a way to showcase our projects and collaborate with others. We have a discord of over 40 members and have attended 6 ETH Global Hackathons.",
 		},
 		{
 			type: "text",
 			content:
-				"We have evolved Cabal labs into a DAO which has allowed us to collaborate with more people, build a community, and allocate funds.",
-		},
-		{
-			type: "text",
-			content: "We've been attending ETH Global Hackathon's. At these  ",
+				"Cabal labs is a DAO ([Decentralized Autonomous Organization](https://www.investopedia.com/tech/what-dao/)) which means we encourage any member to contribute and help us grow Cabal Labs. Outside of attending hackathons, I have taken lead on the landing page, communicating with sponsors, and planning for the future of Cabal Labs.",
 		},
 	],
 };
@@ -49,7 +45,7 @@ export const smileNowProps: GridSectionType = {
 		{
 			type: "text",
 			content:
-				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now [Cris](https://sosaoffician.com) onto the project",
+				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now and brought [Cris](https://sosaoffician.com) onto the project to help with marketing.",
 		},
 		{
 			type: "text",
@@ -75,12 +71,12 @@ export const aboutMeProps: GridSectionType = {
 		{
 			type: "text",
 			content:
-				"My journey began in in my Freshman Year at Stevens Institute of Technology. Specifically, Intro to Programming for Engineers. I fell in love with coding and my passion granted me an opportunity to apply for  Launchpad, a start accelerator. Launchpad gave me the opportunity, know-how, and support to start a Company.",
+				"My journey began in in my Freshman Year at Stevens Institute of Technology. Specifically, Intro to Programming for Engineers. I fell in love with coding and my passion granted me an opportunity to apply for  Launchpad, a start accelerator. Launchpad gave me the opportunity, know-how, and support to found a Company - [Quae](https://quae.app).",
 		},
 		{
 			type: "text",
 			content:
-				"Launchpad introduced me to some amazing people, (obviously, Sam my co-founder), but also [Bryan]() and [Marcos](). Together we began teaching ourselves about blockchain technology and learning about smart contract development. We began attending hackathons and formed Cabal Labs.",
+				"Launchpad introduced me to some amazing people, (obviously, [Sam](https://samschmitt.net) my co-founder), but also [Bryan]() and [Marcos](). Together we taught ourselves about blockchain technology and smart contract development. We put our knowledge to work by attending ETH Global hackathons and founded a DAO together - [Cabal Labs](https://caballabs.com).",
 		},
 		{
 			type: "text",

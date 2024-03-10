@@ -70,9 +70,12 @@
 	.projects-container {
 		width: 100vw;
 		padding: 1rem;
+		@include flex-container(column, center, flex-start, nowrap);
+		gap: 2rem;
 	}
 }
 .project-card {
+	margin-inline: auto;
 	width: clamp(8rem, 100%, 60rem);
 	@include flex-container(row, center, flex-start, wrap);
 	background-color: rgba(53, 137, 197, 0.3);
