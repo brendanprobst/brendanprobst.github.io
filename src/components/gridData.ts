@@ -45,7 +45,7 @@ export const smileNowProps: GridSectionType = {
 		{
 			type: "text",
 			content:
-				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now and brought [Cris](https://sosaoffician.com) onto the project to help with marketing.",
+				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now and brought [Cris](https://sosaofficial.com) onto the project to help with marketing.",
 		},
 		{
 			type: "text",
