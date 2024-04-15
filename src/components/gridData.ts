@@ -61,22 +61,22 @@ export const smileNowProps: GridSectionType = {
 };
 export const aboutMeProps: GridSectionType = {
 	title: "About Me",
-	headline: "Software Engineer | Full Stack Dev | Designer",
+	headline: "Who is Brendan?",
 	blocks: [
 		{
 			type: "text",
 			content:
-				"I'm a software engineer, entrepreneur, and a builder. I'm a full stack engineer, but I have focused mostly on front-end development. The skills I've learned have helped me build beautiful user interfaces captivating landing pages for the initiatives I'm working on. ",
+				"I'm a software engineer, entrepreneur, and a builder. My passion for web development was born with a focus on front-end development and design. Countless hours watching youtube tutorials and reading documentation have helped me build a strong skill set for front-end web development and has helped me build beautiful user interfaces captivating landing pages for the initiatives I'm working on. With more experience, and with my degree in Software Engineering from Stevens Institute of Technology, I have expanded my skill set to include back-end development, blockchain technology, and mobile app development. I am always looking for new opportunities to learn and grow.",
 		},
 		{
 			type: "text",
 			content:
-				"My journey began in in my Freshman Year at Stevens Institute of Technology. Specifically, Intro to Programming for Engineers. I fell in love with coding and my passion granted me an opportunity to apply for  Launchpad, a start accelerator. Launchpad gave me the opportunity, know-how, and support to found a Company - [Quae](https://quae.app).",
+				"My journey began in in my Freshman Year at Stevens Institute of Technology. Specifically, *Intro to Programming for Engineers*. I fell in love with coding and my passion granted me an opportunity to apply for  Launchpad, a start accelerator. Launchpad gave me the opportunity, know-how, and support to found a Company - [Quae](https://quae.app).",
 		},
 		{
 			type: "text",
 			content:
-				"Launchpad introduced me to some amazing people, (obviously, [Sam](https://samschmitt.net) my co-founder), but also [Bryan]() and [Marcos](). Together we taught ourselves about blockchain technology and smart contract development. We put our knowledge to work by attending ETH Global hackathons and founded a DAO together - [Cabal Labs](https://caballabs.com).",
+				"Through Launchpad, I took an interest in blockchain technology. I joined a group of like-minded Launchpad members in a weekly study group called the *Crypto Cabal*. Together we taught ourselves about blockchain technology and smart contract development. We put our knowledge to work by attending ETH Global hackathons and founded a DAO together - [Cabal Labs](https://caballabs.com).",
 		},
 		{
 			type: "text",
@@ -87,7 +87,8 @@ export const aboutMeProps: GridSectionType = {
 };
 export const plmProps = {
 	title: "PLM Fleet",
-	headline: "Associate Software Engineer",
+	headline: "Refrigerated Fleet Management",
+	subHeadline: "Associate Software Engineer",
 	link: "www.plmfleet.com",
 	blocks: [
 		{

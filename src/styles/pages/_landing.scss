@@ -385,11 +385,10 @@ $grid-blur: 50px;
 @media screen and (min-width: 800px) {
 	#grid {
 		grid-template-columns: repeat(1fr, 2);
-		grid-template-rows: repeat(auto, 6);
+		grid-template-rows: repeat(auto, 5);
 		grid-template-areas:
 			"plm bio"
 			"smilenow  bio"
-			"smilenow quae"
 			"cabal quae"
 			"projects projects";
 	}
