@@ -39,14 +39,14 @@ export const cabalProps: GridSectionType = {
 export const smileNowProps: GridSectionType = {
 	title: "Smile Now",
 	headline: "Capture Moments",
-	subHeadline: "Mobile App Dev & Co-founder",
-	link: "htpps://smile.samschmitt.net",
+	subHeadline: "Mobile App Developer",
+	link: "https://smile.samschmitt.net",
 	blocks: [
 		{
 			type: "text",
 			content:
 				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now and brought [Cris](https://sosaofficial.com) onto the project to help with marketing.",
-		},
+		}, //TODO: get cris' website
 		{
 			type: "text",
 			content:
@@ -98,7 +98,7 @@ export const plmProps = {
 		{
 			type: "text",
 			content:
-				'Within 3 months there, I was leading development on 2 projects there "long overdue" (according to the business).  These included rebuilding their website for selling end of life trailers, and integrating Power BI into the customer Portal.',
+				'Within 3 months there, I was leading development on 2 projects that were "long overdue" (according to the business).  These included rebuilding their website for selling end of life trailers, and integrating Power BI into the customer Portal.',
 		},
 	],
 };

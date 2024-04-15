@@ -256,9 +256,14 @@ $card-width: 70%;
 		}
 	}
 }
+.carousel-control {
+	font-size: 3rem;
+	font-weight: bold;
+}
 #project-slider-controls {
 	@include flex-container(row, center, space-between, nowrap);
 	width: 80%;
+
 	.prev,
 	.next {
 		flex: 1;
@@ -267,7 +272,7 @@ $card-width: 70%;
 		@include flex-container(column, center, center, nowrap);
 		padding: 0.5rem;
 		background-color: transparent;
-		color: #000000;
+		color: #daffdc;
 	}
 	.prev {
 		@include flex-container(row, flex-start, center, nowrap);

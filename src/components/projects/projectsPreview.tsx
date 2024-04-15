@@ -46,11 +46,11 @@ export default function ProjectsPreview() {
 
 				<div id="project-slider-controls">
 					<SliderButton prev class="prev">
-						Prev
+						<span class="carousel-control">&lsaquo;</span>
 					</SliderButton>
 
 					<SliderButton next class="next">
-						Next
+						<span class="carousel-control">&rsaquo;</span>
 					</SliderButton>
 				</div>
 			</SliderProvider>
