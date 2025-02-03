@@ -41,6 +41,10 @@ jobs:
         with:
           path: ./dist
           name: deployment
+      - name: Debug artifact
+        run: |
+          echo "Checking artifacts directory"
+          ls -la ${{ runner.temp }}/_github_pages
 
   deploy:
     needs: build
