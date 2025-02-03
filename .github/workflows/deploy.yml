@@ -42,6 +42,7 @@ jobs:
           name: github-pages
           path: dist
           artifact: github-pages
+          if-no-files-found: error
 
       - name: Debug artifact
         run: |
@@ -59,12 +60,20 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Debug directory before download
+        run: pwd && ls -la
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: github-pages
           path: ./dist
 
+      - name: List artifact content
+        run: ls -la dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          path: "."
