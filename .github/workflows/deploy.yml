@@ -39,12 +39,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
-          name: deployment
+          path: dist
+
       - name: Debug artifact
         run: |
-          echo "Checking artifacts directory"
-          ls -la ${{ runner.temp }}/_github_pages
+          echo "Checking runner temp directory:"
+          ls -la ${{ runner.temp }}
+          echo "Checking GitHub workspace:"
+          ls -la ${{ github.workspace }}
+          echo "Checking artifact directory structure:"
+          find ${{ runner.temp }} -name "github-pages*" -type d
 
   deploy:
     needs: build
