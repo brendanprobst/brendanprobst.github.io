@@ -3246,10 +3246,15 @@
   dependencies:
     "type-fest" "^0.13.1"
 
-"seroval@^0.12.0":
-  "integrity" "sha512-5WDeMpv7rmEylsypRj1iwRVHE/QLsMLiZ+9savlNNQEVdgGia1iRMb7qyaAagY0wu/7+QTe6d2wldk/lgaLb6g=="
-  "resolved" "https://registry.npmjs.org/seroval/-/seroval-0.12.3.tgz"
-  "version" "0.12.3"
+"seroval-plugins@^1.1.0":
+  "integrity" "sha512-H5vs53+39+x4Udwp4J5rNZfgFuA+Lt+uU+09w1gYBVWomtAl98B+E9w7yC05Xc81/HgLvJdlyqJbU0fJCKCmdw=="
+  "resolved" "https://registry.npmjs.org/seroval-plugins/-/seroval-plugins-1.2.1.tgz"
+  "version" "1.2.1"
+
+"seroval@^1.0", "seroval@^1.1.0":
+  "integrity" "sha512-yBxFFs3zmkvKNmR0pFSU//rIsYjuX418TnlDmc2weaq5XFDqDIV/NOMPBoLrbxjLH42p4UzRuXHryXh9dYcKcw=="
+  "resolved" "https://registry.npmjs.org/seroval/-/seroval-1.2.1.tgz"
+  "version" "1.2.1"
 
 "set-blocking@^2.0.0":
   "integrity" "sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw=="
@@ -3316,13 +3321,14 @@
   "resolved" "https://registry.npmjs.org/solid-icons/-/solid-icons-1.0.4.tgz"
   "version" "1.0.4"
 
-"solid-js@*", "solid-js@^1.4.3", "solid-js@^1.5.4", "solid-js@^1.6.0", "solid-js@^1.6.12", "solid-js@^1.7.11":
-  "integrity" "sha512-xvtJvzJzWbsn35oKFhW9kNwaxG1Z/YLMsDp4tLVcYZTMPzvzQ8vEZuyDQ6nt7xDArVgZJ7TUFrJUwrui/oq53A=="
-  "resolved" "https://registry.npmjs.org/solid-js/-/solid-js-1.8.5.tgz"
-  "version" "1.8.5"
+"solid-js@*", "solid-js@^1.4.3", "solid-js@^1.5.4", "solid-js@^1.6.0", "solid-js@^1.6.12", "solid-js@^1.7.11", "solid-js@^1.9.5":
+  "integrity" "sha512-ogI3DaFcyn6UhYhrgcyRAMbu/buBJitYQASZz5WzfQVPP10RD2AbCoRZ517psnezrasyCbWzIxZ6kVqet768xw=="
+  "resolved" "https://registry.npmjs.org/solid-js/-/solid-js-1.9.5.tgz"
+  "version" "1.9.5"
   dependencies:
     "csstype" "^3.1.0"
-    "seroval" "^0.12.0"
+    "seroval" "^1.1.0"
+    "seroval-plugins" "^1.1.0"
 
 "solid-markdown@^2.0.0":
   "integrity" "sha512-TttuvRaAuvHNIOZ2Weqfi4C16SAE5QaWA4qLwZY8Ad/g7gQyE3aUenXK4sgy9spM/uumz150JIc2oxDGiNLfEw=="
