@@ -33,22 +33,10 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: List build output files
-        run: ls -la dist
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: dist
-
-      - name: Debug artifact
-        run: |
-          echo "Checking runner temp directory:"
-          ls -la ${{ runner.temp }}
-          echo "Checking GitHub workspace:"
-          ls -la ${{ github.workspace }}
-          echo "Checking artifact directory structure:"
-          find ${{ runner.temp }} -name "github-pages*" -type d
 
   deploy:
     needs: build
@@ -57,20 +45,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Debug directory before download
-        run: pwd && ls -la
-
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: github-pages
-          path: ./dist
-
-      - name: List artifact content
-        run: ls -la dist
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          path: "."
