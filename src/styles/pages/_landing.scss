@@ -10,6 +10,7 @@ $animation-height: 30vh;
 #landing {
 	#hero {
 		width: 100vw;
+		height: 100vh;
 		overflow: hidden;
 		z-index: -1;
 		background-image: url("/img/shapes/shapes.svg");
@@ -31,86 +32,97 @@ $animation-height: 30vh;
 			z-index: 2;
 			position: relative;
 			background-color: rgba(20, 37, 42, 0.198) !important;
-			backdrop-filter: blur(50px) !important;
-			-webkit-backdrop-filter: (50px) !important;
+			-webkit-backdrop-filter: (30px) !important;
+			backdrop-filter: blur(30px) !important;
 
-			.text {
+			.container {
 				z-index: 4;
 				padding: 1rem;
-				padding-bottom: 0;
-			}
-			.title {
-				font-size: 2.5rem;
-				padding-right: 1.5rem;
-				position: relative;
-				margin-bottom: 1rem;
-				font-family: var.$font-title;
-				z-index: 6;
-			}
-			.title-container {
-				z-index: 5;
-			}
-			.title-container::after {
-				content: "";
-				z-index: 3;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				transform: translateY(3rem) rotate(-10deg);
-				width: 150%;
-				height: 6rem;
-				border-radius: 168rem;
-				background-color: colors.$bg;
-				filter: blur(30px);
-				box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5);
-			}
 
-			#line-container {
-				position: relative;
-				z-index: 2 !important;
-				height: $animation-height;
-				overflow: hidden;
-				font-size: 2rem;
-				width: 100%;
-				min-width: 100px;
-				max-width: 600px;
-			}
-
-			.line {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-
-				text-align: left;
-				transform-origin: 0% 50%;
-				animation: growAndRise 20s infinite linear;
-			}
-
-			@keyframes growAndRise {
-				0% {
-					transform: translateY($animation-height) scale(0.25);
-					opacity: 0.1;
+				img {
+					border-radius: 1rem;
+					object-fit: contain;
+					object-position: center;
+					width: 100%;
 				}
+				.title {
+					font-size: 2.5rem;
+					padding-right: 1.5rem;
+					position: relative;
+					margin-bottom: 1rem;
+					font-family: var.$font-title;
+					z-index: 6;
+				}
+				.title-container {
+					z-index: 5;
+				}
+				// .title-container::before {
+				// 	content: "";
+				// 	z-index: 0;
+				// 	position: absolute;
+				// 	top: 0;
+				// 	left: 0;
+				// 	right: 0;
+				// 	transform: translateY(3rem) rotate(-10deg);
+				// 	width: 150%;
+				// 	height: 6rem;
+				// 	border-radius: 168rem;
+				// 	background-color: colors.$bg;
+				// 	filter: blur(30px);
+				// 	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5);
+				// }
 
-				50% {
-					transform: translateY(calc($animation-height * -1)) scale(1);
-					opacity: 1;
-				}
-				51% {
-					transform: translateY(calc($animation-height * -1)) scale(1);
-					opacity: 0;
-				}
-				52% {
-					transform: translateY($animation-height) scale(0.25);
-					opacity: 0;
-				}
-				100% {
-					transform: translateY($animation-height) scale(0.25);
-					opacity: 0.1;
+				.subtitle {
+					font-size: 2rem;
+					width: 100%;
+					min-width: 100px;
+					max-width: 600px;
 				}
 			}
-			// #line-container {
+
+			// #scrolling-line-container {
+			// 	position: relative;
+			// 	z-index: 2 !important;
+			// 	height: $animation-height;
+			// 	font-size: 2rem;
+			// 	width: 100%;
+			// 	min-width: 100px;
+			// 	max-width: 600px;
+			// }
+			// .line {
+			// 	position: absolute;
+			// 	bottom: 0;
+			// 	left: 0;
+
+			// 	text-align: left;
+			// 	transform-origin: 0% 50%;
+			// 	animation: growAndRise 20s infinite linear;
+			// }
+
+			// @keyframes growAndRise {
+			// 	0% {
+			// 		transform: translateY($animation-height) scale(0.25);
+			// 		opacity: 0.1;
+			// 	}
+
+			// 	50% {
+			// 		transform: translateY(calc($animation-height * -1)) scale(1);
+			// 		opacity: 1;
+			// 	}
+			// 	51% {
+			// 		transform: translateY(calc($animation-height * -1)) scale(1);
+			// 		opacity: 0;
+			// 	}
+			// 	52% {
+			// 		transform: translateY($animation-height) scale(0.25);
+			// 		opacity: 0;
+			// 	}
+			// 	100% {
+			// 		transform: translateY($animation-height) scale(0.25);
+			// 		opacity: 0.1;
+			// 	}
+			// }
+			// #subtitle {
 			// 	animation: scroll 20s linear infinite;
 			// 	font-size: 2rem;
 
@@ -124,11 +136,11 @@ $animation-height: 30vh;
 			// 	}
 			// }
 		}
-		#hero-images {
+		#quick-links {
 			z-index: 2;
 			background-color: rgba(153, 224, 247, 0.1);
-			backdrop-filter: blur(45px);
 			-webkit-backdrop-filter: blur(45px);
+			backdrop-filter: blur(45px);
 			@include flex-container(column, flex-end, center, nowrap);
 			padding: 2rem 0;
 			height: 100%;
@@ -137,10 +149,8 @@ $animation-height: 30vh;
 				@include flex-container(column, flex-end, flex-start, nowrap);
 				gap: 1rem;
 			}
-			img {
-				border-radius: 1rem;
-			}
-			.container {
+
+			.quick-link {
 				background: rgba(0, 0, 0, 0.3);
 				color: colors.$text;
 				text-decoration: none;
@@ -150,6 +160,29 @@ $animation-height: 30vh;
 				height: min-content;
 				@include flex-container(row, space-between, center, nowrap);
 				font-size: 1.5rem;
+				position: relative;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				overflow: hidden;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: -150%;
+					left: -150%;
+					width: 400%;
+					height: 400%;
+					background: linear-gradient(
+						135deg,
+						transparent 0%,
+						transparent 40%,
+						rgba(255, 255, 255, 0.08) 50%,
+						transparent 60%,
+						transparent 100%
+					);
+					transition: transform 0.8s ease;
+					filter: blur(8px);
+				}
+
 				h4 {
 					margin: 0;
 					padding-right: 1rem;
@@ -158,6 +191,24 @@ $animation-height: 30vh;
 					font-size: inherit;
 				}
 			}
+			.quick-link:hover {
+				transform: translateY(-4px);
+				box-shadow: 
+					0 4px 12px rgba(0, 0, 0, 0.2),
+					0 2px 4px rgba(0, 0, 0, 0.1);
+
+				&::before {
+					transform: translate(60%, 60%);
+				}
+			}
+			.quick-link:active {
+				transform: translateY(-2px);
+				box-shadow: 
+					0 2px 6px rgba(0, 0, 0, 0.2),
+					0 1px 2px rgba(0, 0, 0, 0.1);
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
 		}
 	}
 }
@@ -168,44 +219,52 @@ $animation-height: 30vh;
 		#hero {
 			@include flex-container(column, center, center, nowrap);
 			width: 100%;
+			height: min-content;
 			#hero-content,
-			#hero-images {
+			#quick-links {
 				width: 100vw;
-				min-height: 20rem;
 			}
 			#hero-content {
-				height: 70vh !important;
+				height: 10vh !important;
 				width: 100vw !important;
 				flex: 0.75;
+				margin-right: auto;
 				background: linear-gradient(
 					to bottom right,
 					colors.$accent-default,
 					colors.$accent-light
 				);
+				padding: 1rem 0.5rem 3rem 1rem;
 				webkit-box-shadow: inset 0px -20px 50px 4px colors.$primary-default;
 				-moz-box-shadow: inset 0px -20px 50px 4px colors.$primary-default;
 				box-shadow: inset 0px -20px 50px 4px colors.$primary-default;
-
-				.text {
+				.container {
 					flex: 1;
 					margin-top: 15%;
-				}
-				.title-container::after {
-					height: 8rem;
-					transform: translateY(6rem) rotate(-10deg) scale(1.5);
-				}
-				.ring {
-					z-index: 5;
+					.title {
+						margin-top: 0.5rem;
+						margin-bottom: 0rem;
+						font-size: 1.5rem;
+					}
+					.subtitle {
+						font-size: 1rem;
+					}
+					img {
+						max-width: 30rem;
+					}
+					.title-container::before {
+						height: 8rem;
+						transform: translateY(6rem) rotate(-10deg) scale(1.5);
+					}
 				}
 			}
-			#hero-images {
+			#quick-links {
+				flex: 0.25;
+				max-height: 50vh;
 				padding: 1rem;
 				.content-container {
 					gap: 1rem;
-					img {
-						max-height: 50%;
-					}
-					.container {
+					.quick-link {
 						h4 {
 							font-size: 1.5rem;
 						}
@@ -218,36 +277,44 @@ $animation-height: 30vh;
 @media screen and (min-width: 800px) {
 	#landing {
 		#hero {
-			height: 70vh;
+			height: 90vh;
 			@include flex-container(row, center, center, nowrap);
 			#hero-content,
-			#hero-images {
+			#quick-links {
 				height: 100%;
 			}
 
 			#hero-content {
 				flex: 0.7;
-				padding-top: min(30%, 10rem);
 				@include flex-container(column, flex-end, flex-end, nowrap);
-				.text {
+				.container {
 					padding-right: 2rem;
-					transform: translateX(-10vw);
-
+					height: 80%;
+					width: 100%;
+					max-width: 40rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
 					.title {
-						font-size: min(calc(1.6vw + 1.5rem), 3.5rem);
+						font-size: 2rem;
 					}
 					.sub-titles {
-						font-size: min(calc(1.5vw + 1rem), 3rem);
+						font-size: 1rem;
+					}
+					img {
+						max-width: 25rem;
+						margin-right: auto;
+						object-fit: fill;
+						object-position: center;
 					}
 				}
 			}
-			#hero-images {
+			#quick-links {
 				flex: 0.3;
 				padding: 3rem;
 				@include flex-container(column, flex-end, flex-start, nowrap);
 				.content-container {
 					max-width: 60rem;
-					transform: translateX(-10vw);
 				}
 			}
 		}

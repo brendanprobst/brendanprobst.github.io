@@ -1,6 +1,6 @@
 ---
 // function render() {
-// 	const container = document.getElementById("line-container");
+// 	const container = document.getElementById("subtitle");
 // 	if (!container) {
 // 		return;
 // 	}
@@ -15,40 +15,38 @@
 ---
 
 <script>
-	let lines: string[] = [
-		"I'm a developer",
-		"I'm a entrepreneur",
-		"I'm a home cook",
-		"I'm a cat owner",
-		"I'm a Software Engineer",
-		"I'm a problem solver",
-		"I'm a motorsport fan",
-		"I'm a UI/UX designer",
-	];
-	const container = document.getElementById("line-container");
+	// let lines: string[] = [
+	// 	"I'm a developer",
+	// 	"I'm a entrepreneur",
+	// 	"I'm a home cook",
+	// 	"I'm a cat owner",
+	// 	"I'm a Software Engineer",
+	// 	"I'm a problem solver",
+	// 	"I'm a motorsport fan",
+	// 	"I'm a UI/UX designer",
+	// ];
+	// const container = document.getElementById("subtitle");
 
 	// Create elements once and store references
 
-	lines.forEach((line, index) => {
-		let elem = document.createElement("p");
-		elem.classList.add("line");
-		elem.textContent = line;
-		// Stagger the start of the animation for each line
-		elem.style.animationDelay = `-${index * 2}s`;
-		if (!!container) {
-			container.appendChild(elem);
-		}
-	});
+	// lines.forEach((line, index) => {
+	// 	let elem = document.createElement("p");
+	// 	elem.classList.add("line");
+	// 	elem.textContent = line;
+	// 	// Stagger the start of the animation for each line
+	// 	elem.style.animationDelay = `-${index * 2}s`;
+	// 	if (!!container) {
+	// 		container.appendChild(elem);
+	// 	}
+	// });
 </script>
 
 <section id="hero-content">
-	<div class="text">
+	<div class="container">
+		<img src={"/img/brendan_probst4.jpeg"} alt="picture of me" />
 		<div class="title-container">
 			<h1 class="title">Hi, I'm Brendan</h1>
 		</div>
-		<div id="line-container"></div>
+		<div class="subtitle">Thanks for stopping by!</div>
 	</div>
-	<img src="/img/shapes/ring1.svg" class="ring ring1" alt="a colorful ring" />
-	<img src="/img/shapes/ring2.svg" class="ring ring2" alt="a colorful ring" />
-	<img src="/img/shapes/ring3.svg" class="ring ring3" alt="a colorful ring" />
 </section>

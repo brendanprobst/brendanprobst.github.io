@@ -1,7 +1,7 @@
-import type { JSXElement } from "solid-js";
+import { JSX } from "astro/jsx-runtime";
 
 export type IconType = {
-	icon: JSXElement;
+	icon: JSX.Element;
 	link: string;
 	label: string;
 };

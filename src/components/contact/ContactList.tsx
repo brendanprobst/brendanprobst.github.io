@@ -1,6 +1,6 @@
 import { BiRegularQr, BiSolidCopy } from "solid-icons/bi";
 import { VsLinkExternal } from "solid-icons/vs";
-import { ContactData, Contact } from "./contactData";
+import { ContactData, type Contact } from "./contactData";
 import { createSignal } from "solid-js";
 import toast, { Toaster } from "solid-toast";
 export default function ContactList({}) {

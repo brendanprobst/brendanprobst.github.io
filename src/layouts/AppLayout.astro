@@ -1,21 +1,21 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-// import ContactForm from "../components/contact/ContactForm.astro";
-import ContactList from "../components/contact/ContactList";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+const { title, description, id } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="small-page">
+	<body id={id ?? "page"}>
 		<Header client:only />
-		<main id="contact-me">
-			<ContactList client:load />
-			<!-- <ContactForm client:load /> -->
+		<main>
+			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

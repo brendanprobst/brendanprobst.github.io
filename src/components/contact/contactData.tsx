@@ -1,12 +1,10 @@
-import { BiRegularQr } from "solid-icons/bi";
 import { IoMailOpen } from "solid-icons/io";
 import { FaBrandsDiscord } from "solid-icons/fa";
 import { BiLogosTelegram } from "solid-icons/bi";
-import { VsLinkExternal } from "solid-icons/vs";
-import { BiRegularCopy } from "solid-icons/bi";
-import type { JSXElement } from "solid-js";
+import { JSX } from "astro/jsx-runtime";
+
 export type Contact = {
-	icon: JSXElement | null;
+	icon: JSX.Element | null;
 	value: string;
 	type: string;
 	link?: string;

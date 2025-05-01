@@ -1,25 +1,12 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header";
 import Hero from "../components/projects/hero";
 import ProjectsList from "../components/projects/projectsList";
 import SkillList from "../components/skills";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import AppLayout from "../layouts/AppLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="small-page" id="projects">
-		<Header client:only />
-		<main>
-			<Hero client:load />
-			<ProjectsList client:load />
-			<SkillList />
-			<Footer />
-		</main>
-	</body>
-</html>
+<AppLayout title="Projects" description="Projects" id="projects">
+	<Hero client:load />
+	<ProjectsList client:load />
+	<SkillList />
+</AppLayout>

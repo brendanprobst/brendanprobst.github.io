@@ -1,4 +1,4 @@
-import { createSignal, JSXElement } from "solid-js";
+import { createSignal } from "solid-js";
 import {
 	FaBrandsGithub,
 	FaBrandsAppStore,
@@ -7,6 +7,7 @@ import {
 import { FiExternalLink, FiGithub } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
+import { JSX } from "astro/jsx-runtime";
 export type ProjectCard = {
 	title: string;
 	class: string;
@@ -21,7 +22,7 @@ export type ProjectCard = {
 	blocks?: BlockType[];
 };
 export type IconType = {
-	icon: JSXElement;
+	icon: JSX.Element;
 	link: string;
 	label: string;
 };
