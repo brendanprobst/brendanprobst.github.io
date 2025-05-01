@@ -37,7 +37,7 @@ jobs:
         run: ls -la dist
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -61,7 +61,7 @@ jobs:
         run: pwd && ls -la
 
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: github-pages
           path: ./dist
