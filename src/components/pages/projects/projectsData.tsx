@@ -7,37 +7,8 @@ import {
 import { FiExternalLink, FiGithub } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
-import { JSX } from "astro/jsx-runtime";
-export type ProjectCard = {
-	title: string;
-	class: string;
-	subText?: string;
-	link?: string;
-	tags: string[];
-	logo: string;
-	date: string[];
-	description?: string;
-	type: ProjectType;
-	icons?: IconType[];
-	blocks?: BlockType[];
-};
-export type IconType = {
-	icon: JSX.Element;
-	link: string;
-	label: string;
-};
-export type BlockType = {
-	type: string | "text" | "image" | "title" | "subtitle";
-	content: string;
-	imgAlt?: string;
-};
-export type ProjectType =
-	| "Web App"
-	| "Mobile App"
-	| "Landing Page"
-	| "Hackathon Project"
-	| "Other"
-	| null;
+import type { ProjectCard, ProjectType } from "../../../types/Project";
+
 export function ClearFilter() {}
 
 export const projects: ProjectCard[] = [

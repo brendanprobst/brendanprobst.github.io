@@ -1,7 +1,7 @@
 import { SolidMarkdown } from "solid-markdown";
-import type { BlockType } from "./projectsData";
+import type { BlockType } from "../../types/ui";
 
-export default function Block({ type, content, imgAlt }: BlockType) {
+export default function ContentBlock({ type, content, imgAlt }: BlockType) {
 	if (type === "text") {
 		return <SolidMarkdown class="block" children={content} />;
 	} else if (type === "image") {

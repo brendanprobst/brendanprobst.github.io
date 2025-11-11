@@ -1,12 +1,12 @@
-import { JSX } from "astro/jsx-runtime";
+import type { JSX } from "astro/jsx-runtime";
 
-export type IconType = {
+export type IconWrapper = {
 	icon: JSX.Element;
 	link: string;
 	label: string;
 };
 
-export default function ProjectIcon<T>({ icon, link, label }: IconType) {
+export default function IconWrapper<T>({ icon, link, label }: IconWrapper) {
 	return (
 		<a href={link} target="_blank" rel="noopener" aria-label={label}>
 			{icon}

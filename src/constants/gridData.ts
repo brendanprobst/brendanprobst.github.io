@@ -1,5 +1,17 @@
-import type { GridSectionType } from "./gridSection";
+import type { GridSectionType } from "../components/pages/home/HomePageSection";
 
+export const traderProps: GridSectionType = {
+	title: "Trader Interactive",
+	headline: "Trader Interactive",
+	subHeadline: "Trader Interactive",
+	link: "https://traderinteractive.com",
+	blocks: [
+		{
+			type: "text",
+			content: "Trader Interactive is a trading platform that allows you to trade stocks, options, and futures.",
+		},
+	],
+};
 export const quaeProps: GridSectionType = {
 	title: "Quae",
 	headline: "Community Voting App",

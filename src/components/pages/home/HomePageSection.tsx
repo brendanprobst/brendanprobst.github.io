@@ -1,16 +1,7 @@
-import Block from "./projects/block";
-import type { BlockType } from "./projects/projectsData";
+import Block from "../../ui/ContentBlock";
+import type { HomePageSectionType } from "../../../types/Home.ts";
 
-export type GridSectionType = {
-	title?: string;
-	headline?: string;
-	subHeadline?: string;
-	link?: string;
-	linkText?: string;
-	blocks?: BlockType[];
-	children?: any;
-};
-export default function GridSection({
+export default function HomePageSection({
 	title = "",
 	headline,
 	subHeadline,
@@ -18,7 +9,7 @@ export default function GridSection({
 	linkText,
 	blocks,
 	children,
-}: GridSectionType) {
+}: HomePageSectionType) {
 	return (
 		<div class={`grid-section ${title?.toLowerCase()}`}>
 			<div class="header">

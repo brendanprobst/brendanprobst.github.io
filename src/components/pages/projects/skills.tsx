@@ -1,4 +1,4 @@
-import { projects } from "./projects/projectsData";
+import { projects } from "./projectsData";
 
 let skills: string[] = [];
 for (let project of projects) {

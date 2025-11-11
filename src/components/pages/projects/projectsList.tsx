@@ -1,6 +1,5 @@
-import ProjectIcon from "../ui/projectIcon";
-import Block from "./block";
-import { projects, filteredProjects } from "./projectsData";
+import { IconWrapper, ContentBlock } from "../../ui";
+import { filteredProjects } from "./projectsData";
 export default function ProjectsList({}) {
 	return (
 		<div class="projects-container">
@@ -19,7 +18,7 @@ export default function ProjectsList({}) {
 								</div>
 								<div class="icons">
 									{item.icons?.map((item) => {
-										return <ProjectIcon {...item} />;
+										return <IconWrapper {...item} />;
 									})}
 								</div>
 							</div>
@@ -30,7 +29,7 @@ export default function ProjectsList({}) {
 							</div>
 							<div class="blocks">
 								{item.blocks?.map((item) => {
-									return <Block {...item} />;
+									return <ContentBlock {...item} />;
 								})}
 							</div>
 						</div>

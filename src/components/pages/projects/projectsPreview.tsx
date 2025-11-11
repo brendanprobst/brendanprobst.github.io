@@ -1,5 +1,6 @@
 import { createSignal, onCleanup } from "solid-js";
-import { ProjectCard, projects } from "./projectsData";
+import { projects } from "./projectsData";
+import type { ProjectCard } from "../../../types/Project";
 import "solid-slider/slider.css";
 import { Slider, SliderProvider, SliderButton } from "solid-slider";
 export default function ProjectsPreview() {
