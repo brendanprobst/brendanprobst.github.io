@@ -8,6 +8,8 @@ import {
 import { BiRegularMenuAltRight } from "solid-icons/bi";
 import { createSignal } from "solid-js";
 import { AiOutlineClose } from "solid-icons/ai";
+// TODO: add a wrapper container so blur effect looks nice on bigger screens
+
 export default function Header() {
 	const [mobileVisible, setMobileVisible] = createSignal(false);
 	const [scrolled, setScrolled] = createSignal(false);

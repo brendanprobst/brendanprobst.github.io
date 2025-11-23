@@ -349,6 +349,10 @@ $grid-blur: 50px;
 		grid-area: plm;
 		background-image: url("/img/shapes/plm_bg.svg");
 	}
+	#trader-interactive-module {
+		grid-area: trader-interactive;
+		background-image: url("/img/shapes/trader_module_bg.svg");
+	}
 	#smilenow-module {
 		grid-area: smilenow;
 		background-image: url("/img/shapes/smile_now_bg.svg");
@@ -406,8 +410,13 @@ $grid-blur: 50px;
 	.grid-section {
 		// cursor: pointer !important;
 		background-color: rgb(153, 224, 247, 0.1);
+		// Use both legacy and modern syntax for maximum browser compatibility
 		-webkit-backdrop-filter: blur($grid-blur);
 		backdrop-filter: blur($grid-blur);
+		// Fallback for Firefox: use a semi-transparent background if backdrop-filter is not supported
+		@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+			background-color: rgba(153, 224, 247, 0.85);
+		}
 		width: 100%;
 		height: 100%;
 		padding: 1rem;
@@ -443,6 +452,7 @@ $grid-blur: 50px;
 		grid-template-rows: repeat(auto, 10);
 		grid-template-areas:
 			"bio bio"
+			"trader-interactive trader-interactive"
 			"plm plm"
 			"smilenow smilenow"
 			"cabal cabal"
@@ -455,10 +465,11 @@ $grid-blur: 50px;
 		grid-template-columns: repeat(1fr, 2);
 		grid-template-rows: repeat(auto, 6);
 		grid-template-areas:
-			"plm bio"
-			"smilenow  bio"
-			"smilenow quae"
-			"cabal quae"
-			"projects projects";
+			"bio bio"	
+			"trader-interactive trader-interactive"
+			"plm plm"
+			"cabal cabal"
+			"smilenow smilenow"
+			"quae quae";
 	}
 }
