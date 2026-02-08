@@ -46,9 +46,6 @@ export default function Header() {
 				{/* <a href="/about_me" class="about_me">
 					About Me
 				</a> */}
-				<a href="/contact_me" class="say_hello">
-					Say Hello!
-				</a>
 			</div>
 			<div class={`socials ${mobileVisible() ? "show" : ""}`} id="social-links">
 				<a
@@ -74,23 +71,6 @@ export default function Header() {
 					target="_blank"
 					rel="noopener noreferrer">
 					<FaBrandsInstagram />
-				</a>
-				<a
-					aria-label="visit my twitter page"
-					class="twitter"
-					href="https://twitter.com/brendanprobst"
-					target="_blank"
-					rel="noopener noreferrer">
-					<FaBrandsTwitter />
-				</a>
-
-				<a
-					aria-label="visit my medium page"
-					class="medium"
-					href="https://medium.com/@brendanprobst"
-					target="_blank"
-					rel="noopener noreferrer">
-					<FaBrandsMedium />
 				</a>
 			</div>
 			<button class="menu" onClick={() => handleShow()}>
