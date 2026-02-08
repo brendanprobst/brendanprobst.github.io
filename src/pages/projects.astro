@@ -1,12 +1,10 @@
 ---
-import Hero from "../components/projects/hero";
-import ProjectsList from "../components/projects/projectsList";
-import SkillList from "../components/skills";
 import AppLayout from "../layouts/AppLayout.astro";
+import {ProjectsHero, ProjectsList, ProjectSkills} from "../components/projects";
 ---
 
 <AppLayout title="Projects" description="Projects" id="projects">
-	<Hero client:load />
+	<ProjectsHero client:load />
 	<ProjectsList client:load />
-	<SkillList />
+	<ProjectSkills client:load />
 </AppLayout>

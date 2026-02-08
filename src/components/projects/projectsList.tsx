@@ -1,5 +1,5 @@
-import ProjectIcon from "../ui/projectIcon";
-import Block from "./block";
+import ProjectIcon from "../ui/linkIcon";
+import Block from "../ui/dynamicContentBlock";
 import { projects, filteredProjects } from "./projectsData";
 export default function ProjectsList({}) {
 	return (

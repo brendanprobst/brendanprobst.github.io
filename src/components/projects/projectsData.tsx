@@ -7,40 +7,40 @@ import {
 import { FiExternalLink, FiGithub } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
-import { JSX } from "astro/jsx-runtime";
-export type ProjectCard = {
-	title: string;
-	class: string;
-	subText?: string;
-	link?: string;
-	tags: string[];
-	logo: string;
-	date: string[];
-	description?: string;
-	type: ProjectType;
-	icons?: IconType[];
-	blocks?: BlockType[];
-};
-export type IconType = {
-	icon: JSX.Element;
-	link: string;
-	label: string;
-};
-export type BlockType = {
-	type: string | "text" | "image" | "title" | "subtitle";
-	content: string;
-	imgAlt?: string;
-};
-export type ProjectType =
-	| "Web App"
-	| "Mobile App"
-	| "Landing Page"
-	| "Hackathon Project"
-	| "Other"
-	| null;
+import type { JSX } from "astro/jsx-runtime";
+import type { ProjectCardType, ProjectType } from "../../types";
+
+
+
+
+
 export function ClearFilter() {}
 
-export const projects: ProjectCard[] = [
+export const projects: ProjectCardType[] = [
+	{
+		title: "Pool Cost Calculator",
+		type: "Web App",
+		class: "pool-cost-calculator",
+		logo: "/img/logos/pool_cost_calculator.png",
+		date: ["January 2026"],
+		tags: ["React"],
+		link: "https://apa-cost-splitter.brendanprobst.com",
+		subText: "A tool to calculate the cost of a pool",
+		icons: [],
+		visible: false
+	}
+	,{
+		title: 'Fuakata Salsa',
+		type: "Landing Page",
+		class: "fuakata",
+		logo: "/img/logos/fuakata.png",
+		date: ["January 2026"],
+		tags: ["React"],
+		link: "https://fuakata.com",
+		subText: "A landing page for a salsa school",
+		icons: [],
+		visible: false
+	},
 	{
 		title: "Cabal Sorel",
 		type: "Other",
@@ -73,6 +73,7 @@ export const projects: ProjectCard[] = [
 				content: `We used the Social Relation (SoRel) API from the [Mask Network](https://mask.io/), the [Next.ID SK](https://next.id/), and [Tableland](https://tableland.xyz/) to store persistent data. We won the *Mask Network — Most Innovative Social App* and the *Tableland Pool Prize*`,
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Cabal Protocol",
@@ -105,6 +106,7 @@ export const projects: ProjectCard[] = [
 				content: `While we did not win any prizes this hackathon, we did get a lot of great feedback and we're excited to continue working on this project. We plan on launching a beta version of the protocol in the next few months. `,
 			},
 		],
+		visible: true
 	},
 	{
 		title: "DeEHR Market",
@@ -145,6 +147,7 @@ export const projects: ProjectCard[] = [
 				`,
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Smile Now",
@@ -178,7 +181,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"Smile Now solves the problem of going to parties, events, or just hanging out with friends and not having any photos to remember the moment. It does this by 1) making it stupid simple to create & join events quickly. 2) We notify people at random times to take a photo. 3) Share your photos with everyone in the party in a fun and unique way. With our MVP, we've accomplished 1 and 2 and we're excited to experiment with the sharing experience in the next few weeks.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "zk.fund",
@@ -214,7 +218,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"Throughout the project, we built a Minimum Viable Product (MVP) and focused on addressing the challenges of verifying legitimate charities to prevent misuse of the platform. After graduation, we plan to collaborate with Cabal Labs to open source the project, expanding the validator network and growing the list of charities.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "My Portfolio Site",
@@ -238,6 +243,7 @@ export const projects: ProjectCard[] = [
 					"I built this site using Astro.js and Solid.js to dip my toes into some new web technologies I had never used before. It was a fun process, I got to make my site easier to maintain, and I overcame some hesitation that we all inevitably feel when we try new things.",
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Cabal Labs Landing Page",
@@ -266,6 +272,7 @@ export const projects: ProjectCard[] = [
 					"In the next few months, I'll be making consistent updates to this site as Cabal Labs grows. I also want to convert it to Astro.js to improve the maintenance and performance. ",
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Tap Contacts",
@@ -305,7 +312,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"We got lots of great feedback while we were in Bogotá. Following the hackathon, we talked about developing a SDK. I got started with React and React Native npm libraries, but the semester and work related to Quae took precedence. Over winter break we plan on finishing and releasing the @tapcontacts/tools library as a version 1. If we get a good response, I'll finish the UI npm packages.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "Cabal Protocol",
@@ -339,7 +347,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"Work did not continue after the ETH NYC hackathon, but I'm happy to share that my friend and co-founder, Sam Schmitt is continuing to work on this as part of his Senior Design Project. ",
 			},
-		],
+		],		
+		visible: true
 	},
 	{
 		title: "Quae Web App",
@@ -369,6 +378,7 @@ export const projects: ProjectCard[] = [
 					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week of working literally around the clock, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
 			},
 		],
+		visible: true
 	},
 
 	{
@@ -401,7 +411,8 @@ export const projects: ProjectCard[] = [
 				type: "text",
 				content: `Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was a fun project, but in the end we realized that it wasn't really a big enough problem for people to want to download an app for it. Maybe on a rainy day, I'll think about releasing it. `,
 			},
-		],
+		],		
+		visible: true
 	},
 	{
 		title: "PixlowChat",
@@ -434,7 +445,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "Quae Mobile App",
@@ -464,6 +476,7 @@ export const projects: ProjectCard[] = [
 					"Over the past 2 years, the app has gone through many iterations. During this time, I've learned a lot about mobile development, creating sleek UI's, and designing an amazing user experience.  ",
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Quae Landing Page",
@@ -492,12 +505,12 @@ export const projects: ProjectCard[] = [
 					"The Quae landing page helped me hone my design skills. I also got to explore several options for web styling. Starting with inline styles for V0.1 when I didn't know any better, to experimenting with Tailwind.css, and finally ending up with SCSS.",
 			},
 		],
+		visible: true
 	},
 ];
 export function filterByType(type: ProjectType) {
 	setFilteringFor(type);
-	console.log();
-	let result: ProjectCard[] = [];
+	let result: ProjectCardType[] = [];
 	if (type === null) {
 		setFilteredProjects(projects);
 	}
@@ -513,9 +526,4 @@ export function filterByType(type: ProjectType) {
 export const [filteringFor, setFilteringFor] = createSignal();
 export const [filteredProjects, setFilteredProjects] = createSignal(projects);
 
-function logData() {
-	console.log("blah");
-}
-const logData2 = () => {
-	console.log("blah");
-};
+
