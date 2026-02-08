@@ -1,3 +1,6 @@
+# Settings # 
+###################
+settings.json
 # Compiled source #
 ###################
 *.com
@@ -22,6 +25,7 @@
 */node_modules
 node_modules
 /node_modules
+package-lock.json
 /dist
 .env
 # Logs and databases #
