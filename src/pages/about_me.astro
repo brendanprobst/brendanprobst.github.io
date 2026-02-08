@@ -1,19 +1,18 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import { BaseHead } from "../components/layout";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
-import Header from "../components/Header.tsx";	
-import Hero from "../components/hero.astro";
+import Header from "../components/layout/Header.tsx";
 ---
-	
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header client:only />
-		<main>
-			<Hero />
-		</main>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:only />
+    <main>
+     <!-- TODO - Create Page Content -->
+    </main>
+  </body>
 </html>
