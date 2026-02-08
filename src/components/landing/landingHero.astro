@@ -1,0 +1,52 @@
+---
+// function render() {
+// 	const container = document.getElementById("subtitle");
+// 	if (!container) {
+// 		return;
+// 	}
+// 	container.innerHTML = "";
+// 	lines.forEach((str) => {
+// 		const elem = document.createElement("p");
+// 		elem.innerHTML = str;
+// 		container?.appendChild(elem);
+// 	});
+// }
+// render();
+---
+
+<script>
+	// let lines: string[] = [
+	// 	"I'm a developer",
+	// 	"I'm a entrepreneur",
+	// 	"I'm a home cook",
+	// 	"I'm a cat owner",
+	// 	"I'm a Software Engineer",
+	// 	"I'm a problem solver",
+	// 	"I'm a motorsport fan",
+	// 	"I'm a UI/UX designer",
+	// ];
+	// const container = document.getElementById("subtitle");
+
+	// Create elements once and store references
+
+	// lines.forEach((line, index) => {
+	// 	let elem = document.createElement("p");
+	// 	elem.classList.add("line");
+	// 	elem.textContent = line;
+	// 	// Stagger the start of the animation for each line
+	// 	elem.style.animationDelay = `-${index * 2}s`;
+	// 	if (!!container) {
+	// 		container.appendChild(elem);
+	// 	}
+	// });
+</script>
+
+<section id="hero-content">
+	<div class="container">
+		<img src={"/img/brendan_probst_pfp.jpeg"} alt="picture of me" />
+		<div class="title-container">
+			<h1 class="title">Hi, I'm Brendan</h1>
+		</div>
+		<div class="subtitle">Thanks for stopping by!</div>
+	</div>
+</section>
