@@ -3,3 +3,4 @@
     "development"
   ]
 }
+//todo enable env driven configuration, allow for "web-recommended" on deployed site 

@@ -29,15 +29,20 @@ header {
 	&.scrolled {
 		transition: background-color 0.5s ease-in-out;
 		background-color: colors.$glass;
+		-webkit-backdrop-filter: blur(25px);
 		backdrop-filter: blur(25px);
 		-webkit-backdrop-blur: (25px);
+		.links, .socials{
+			opacity: 1;
+			transition: opacity 2s ease-in-out;
+		}
 	}
-	a {
-		color: inherit;
-	}
+
+
 	.links,
 	.socials {
 		@include flex-container(row, flex-start, center, nowrap);
+		opacity: 0;
 		height: 100%;
 		flex: 1;
 		gap: 1rem;
@@ -53,6 +58,9 @@ header {
 				text-decoration: underline;
 			}
 		}
+	}
+	a {
+		color: inherit;
 	}
 	.logo {
 		width: 2.5rem;

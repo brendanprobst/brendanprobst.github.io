@@ -1,16 +1,8 @@
-import Block from "./projects/block";
-import type { BlockType } from "./projects/projectsData";
+import DynamicContentBlock from "../ui/dynamicContentBlock";
+import type { LandingModuleType } from "../../types/landing/landingModuleType";
 
-export type GridSectionType = {
-	title?: string;
-	headline?: string;
-	subHeadline?: string;
-	link?: string;
-	linkText?: string;
-	blocks?: BlockType[];
-	children?: any;
-};
-export default function GridSection({
+
+export default function LandingModule({
 	title = "",
 	headline,
 	subHeadline,
@@ -18,7 +10,7 @@ export default function GridSection({
 	linkText,
 	blocks,
 	children,
-}: GridSectionType) {
+}: LandingModuleType) {
 	return (
 		<div class={`grid-section ${title?.toLowerCase()}`}>
 			<div class="header">
@@ -37,7 +29,7 @@ export default function GridSection({
 				<h4 class="sub-headline">{subHeadline}</h4>
 			</div>
 			{blocks?.map((item) => {
-				return <Block {...item} />;
+				return <DynamicContentBlock {...item} />;
 			})}
 			{children}
 		</div>

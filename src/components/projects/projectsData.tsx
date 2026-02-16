@@ -7,40 +7,73 @@ import {
 import { FiExternalLink, FiGithub } from "solid-icons/fi";
 import { AiFillInfoCircle } from "solid-icons/ai";
 import { CgWebsite } from "solid-icons/cg";
-import { JSX } from "astro/jsx-runtime";
-export type ProjectCard = {
-	title: string;
-	class: string;
-	subText?: string;
-	link?: string;
-	tags: string[];
-	logo: string;
-	date: string[];
-	description?: string;
-	type: ProjectType;
-	icons?: IconType[];
-	blocks?: BlockType[];
-};
-export type IconType = {
-	icon: JSX.Element;
-	link: string;
-	label: string;
-};
-export type BlockType = {
-	type: string | "text" | "image" | "title" | "subtitle";
-	content: string;
-	imgAlt?: string;
-};
-export type ProjectType =
-	| "Web App"
-	| "Mobile App"
-	| "Landing Page"
-	| "Hackathon Project"
-	| "Other"
-	| null;
+import type { ProjectCardType, ProjectType } from "../../types";
+
+
 export function ClearFilter() {}
 
-export const projects: ProjectCard[] = [
+export const projects: ProjectCardType[] = [
+	{
+		title: "Pool Cost Calculator",
+		type: "Web App",
+		class: "pool-cost-calculator",
+		logo: "/img/logos/pool_cost_calculator.png",
+		date: ["January 2026"],
+		tags: ["React", "S3", "CloudFront", "Github Actions"],
+		link: "https://apa-cost-splitter.brendanprobst.com",
+		subText: "A tool to streamline cost splitting for my billiards league",
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: 'https://apa-cost-splitter.brendanprobst.com',
+				label: 'Pool Cost Calculator App'
+			},
+			{
+				icon: <FiGithub />,
+				link: 'https://github.com/brendanprobst/apa-cost-splitter/tree/main',
+				label: "Pool Cost Calculator Github"
+			}
+		],
+		blocks: [
+			{
+				type: "text",
+				content: "I'm on a billiards team in Brooklyn (APA 8-ball), every week we needed to coordinate splitting the league dues, table fees, and any extra shared costs. I realized that it would be a hassle to do the math every week to calculate the amount everyone owed.I made a Google Sheet calculator, used it once, and realized it sucked. So I built a proper app (using vanilla react, tailwind, and a cookie). "
+			},
+			{
+				type: "text",
+				content: "Each week the person handling the expenses will compete a short form. The output is a view breaking down the expenses and two copyable text blurs (one for the groupchat and one for the memo of the *League Fees Zelle*). After positive feedback on the MVP, I updated the styles, added support for people to save rosters for multiple teams, and added a feature to consolidate payments to eliminate payments."
+			}
+		],
+		visible: true
+	}
+	,{
+		title: 'Fuakata Salsa',
+		type: "Landing Page",
+		class: "fuakata",
+		logo: "/img/logos/fuakata_logo.png",
+		date: ["January 2026"],
+		tags: ["React"],
+		link: "https://salsanyc.com",
+		subText: "A landing page for a salsa school",
+		icons: [
+			{
+				icon: <FiExternalLink />,
+				link: 'https://fuakata.org/en',
+				label: 'Pool Cost Calculator App'
+			},
+		],
+		blocks: [
+			{
+				type: "text",
+				content: "Since 2023 I've been taking salsa lessons. I started salsa dancing because of my friend, and co-founder of Cabal Labs, [Marco](https://www.marcosalazar.xyz/) (I ended up meeting my girlfriend through salsa, so I owe Marco one).I noticed the website for the school needed some updating. I approached the salsa teacher with a mockup of a simple 1-page landing page, he loved it and asked if I could build something bigger"
+			},
+			{
+				type: "text",
+				content: "Luckily, I had the aforementioned Marco, he was happy to help with the project. Together we built a multi-page, feature-rich landing page. The new site gave info about the history of the school, the teachers, and the rich history of cuban salsa. We also built features for the instructor to update the class schedule, handle payments, and accept private lesson appointments."
+			}
+		],
+		visible: true
+	},
 	{
 		title: "Cabal Sorel",
 		type: "Other",
@@ -49,7 +82,7 @@ export const projects: ProjectCard[] = [
 		logo: "/img/logos/cabal_sorel.png",
 		date: ["October 2023"],
 		subText:
-			"A reccomendation engine for decentralized apps - delived through a chrome extension",
+			"A recommendation engine for decentralized apps - get a better timeline through a chrome extension",
 		tags: ["Chrome Extension", "Hackathon Project"],
 		icons: [
 			{
@@ -73,13 +106,14 @@ export const projects: ProjectCard[] = [
 				content: `We used the Social Relation (SoRel) API from the [Mask Network](https://mask.io/), the [Next.ID SK](https://next.id/), and [Tableland](https://tableland.xyz/) to store persistent data. We won the *Mask Network — Most Innovative Social App* and the *Tableland Pool Prize*`,
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Cabal Protocol",
 		type: "Hackathon Project",
 		class: "cabal-protocol",
 		logo: "/img/logos/cabalprotocol.png",
-		subText: "Subsudized Hackathon Trips - Decentralized",
+		subText: "Subsidized Hackathon Trips - Decentralized",
 		link: "https://ethglobal.com/showcase/cabal-protocol-pa734",
 		date: ["September 2023", "Present"],
 		tags: ["Next.js", "Web3", "Unlock Protocol", "Wallet Connect"],
@@ -105,6 +139,7 @@ export const projects: ProjectCard[] = [
 				content: `While we did not win any prizes this hackathon, we did get a lot of great feedback and we're excited to continue working on this project. We plan on launching a beta version of the protocol in the next few months. `,
 			},
 		],
+		visible: false
 	},
 	{
 		title: "DeEHR Market",
@@ -145,9 +180,10 @@ export const projects: ProjectCard[] = [
 				`,
 			},
 		],
+		visible: true
 	},
 	{
-		title: "Smile Now",
+		title: "Smile Now Mobile App",
 		type: "Mobile App",
 		class: "smile-now",
 		subText: "An app that makes taking photos fun",
@@ -162,23 +198,24 @@ export const projects: ProjectCard[] = [
 				label: "Smile Now Landing Page",
 			},
 			{
-				icon: <FaBrandsAppStore />,
-				link: "https://apps.apple.com/app/id6449005895",
-				label: "Quae on the app store",
+				icon: <FaBrandsGithub />,
+				link: "https://github.com/SmileNowDev/SmileNowApp/tree/main", //TODO: dead link
+				label: "Smile Now App Github",
 			},
 		],
 		blocks: [
 			{
 				type: "text",
 				content:
-					"Smile Now is a mobile app that I'm working on with my friend Sam. We have built many apps together and believed we could finish an MVP of smile now in 1 weekend. We hosted a live stream to showcase the work that goes into building an app - but mostly to be able to generate footage for tik tok's 🙈 ",
+					"Smile Now was a React-Native app built with expo and homebrew minimalist style system. I built this add during a 24 hour self-imposed hackathon with [Sam](https://samschmitt.net) and [Cris](https://sosaofficial.com).",
 			},
 			{
 				type: "text",
 				content:
 					"Smile Now solves the problem of going to parties, events, or just hanging out with friends and not having any photos to remember the moment. It does this by 1) making it stupid simple to create & join events quickly. 2) We notify people at random times to take a photo. 3) Share your photos with everyone in the party in a fun and unique way. With our MVP, we've accomplished 1 and 2 and we're excited to experiment with the sharing experience in the next few weeks.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "zk.fund",
@@ -200,21 +237,22 @@ export const projects: ProjectCard[] = [
 			{
 				icon: <FiExternalLink />,
 				label: "zk.fund site",
-				link: "https://zkfund.org",
+				link: "https://zkfund.org",//TODO: dead link
 			},
 		],
 		blocks: [
 			{
 				type: "text",
 				content:
-					"zk.fund is a Senior Design Project that I contributed to as a front-end developer and smart contract developer. It is a platform that allows users to make safe, secure, and anonymous donations to verified charities, ensuring that people can support the causes they believe in without fear of backlash or persecution.",
+					"zk.fund was built a platform that allows users to make safe, secure, and anonymous donations to verified charities. I focused on the design and UX of the interface and developed solidity smart contracts for processing transactions.  My team and I using Chai and Hardhat to test all actions related to processing transactions.",
 			},
 			{
 				type: "text",
 				content:
-					"Throughout the project, we built a Minimum Viable Product (MVP) and focused on addressing the challenges of verifying legitimate charities to prevent misuse of the platform. After graduation, we plan to collaborate with Cabal Labs to open source the project, expanding the validator network and growing the list of charities.",
+					"This project was a prompt for a bounty hosted by the Aztec Network, their goal with this project was to be used by people in countries that don't have freedom to express their views through charitable donations. The platform aimed to give them an avenue without fear of backlash or persecution.",
 			},
-		],
+		],	
+		visible: false
 	},
 	{
 		title: "My Portfolio Site",
@@ -235,9 +273,10 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"I built this site using Astro.js and Solid.js to dip my toes into some new web technologies I had never used before. It was a fun process, I got to make my site easier to maintain, and I overcame some hesitation that we all inevitably feel when we try new things.",
+					"I built this site using Astro.js and Solid.js, I had heard some good things about the two technologies and wanted to try using them. I don't think the scope of this site has given me a proper understanding of their tradeoffs, but I can't complain so far.",
 			},
 		],
+		visible: false
 	},
 	{
 		title: "Cabal Labs Landing Page",
@@ -258,14 +297,10 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Cabal Labs is an open source Web3 Research Lab. The Cabal's mission is to liberate people from outdated system by supporting and maintaining a portfolio of companies. I built this site using HTML, vanilla javascript, and SCSS. ",
-			},
-			{
-				type: "text",
-				content:
-					"In the next few months, I'll be making consistent updates to this site as Cabal Labs grows. I also want to convert it to Astro.js to improve the maintenance and performance. ",
+					"Cabal Labs is an Web3 Research Lab I co-founded. I built this site using Framer, and it was the first time I had ever used a site-builder. I realized I should see how these tools compared to building a landing page with code. I can't say I loved the experience, but I can see it being a better effort-to-outcome solution for simple sites, but also how any custom integrations are 10x harder than they're worth. ",
 			},
 		],
+		visible: false
 	},
 	{
 		title: "Tap Contacts",
@@ -298,14 +333,15 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"Tap Contacts is a React Native project that I worked on during the ETH Bogotá 2022 Hackathon. It is a contacts book for blockchain wallets. It also uses ejected Expo and a NFC library to facilitate transactions by tapping two phones together. This makes it possible to interact with crypto currency without ever seeing an address.  ",
+					"Tap Contacts is a React Native project that I worked on during the ETH Bogotá 2022 Hackathon. It is a contacts book for blockchain wallets. The inspiration for this project was the hassle of sharing on-chain social profiles. What if you could have a contact book of people? We asked ourselves. The break-neck speed of a hackathon makes it difficult to guarantee you'll build exactly what you think you are. n the end, we ended up creating an MVP for what is especially \"Crypto Venmo\". What set our project apart was the way you were able to share contacts. I used an NFC library for React Native to enable transactions by tapping two phones together or a phone to a payment terminal. This made it possible to interact with crypto currency or other on-chain-assets without ever dealing with an address; just tap.",
 			},
 			{
 				type: "text",
-				content:
-					"We got lots of great feedback while we were in Bogotá. Following the hackathon, we talked about developing a SDK. I got started with React and React Native npm libraries, but the semester and work related to Quae took precedence. Over winter break we plan on finishing and releasing the @tapcontacts/tools library as a version 1. If we get a good response, I'll finish the UI npm packages.",
+				content: 
+					"This hackathon project received the most positive reaction from judges of all hackathon projects I have ever created. Picture me and my friends: running on no sleep, N + 1 litter the floor, and one of us is narrating what they're doing as as they code, to nobody, because the \"inside thoughts stopped working a while ago\". Nobody was paying attention to the time. With 40 minutes to go, I realized and starting working on the submission. The submission page crashed 3 times while was trying to submit, completely clearing my progress. I ended up getting it to submit 5 minutes after submission. We were disqualified from judging, a fun fact we learned after presenting to judges from all the bounties we qualifed for. I can now look back on this and laugh, but in the moment we were crushed.  My team implemented a new rule - 60 minutes until the deadline, stop mid-line-of-code and start working on the submission.",
 			},
-		],
+		],	
+		visible: true
 	},
 	{
 		title: "Cabal Protocol",
@@ -332,14 +368,10 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"The Cabal Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract. ",
-			},
-			{
-				type: "text",
-				content:
-					"Work did not continue after the ETH NYC hackathon, but I'm happy to share that my friend and co-founder, Sam Schmitt is continuing to work on this as part of his Senior Design Project. ",
-			},
-		],
+					"The Cabal Protocol is a project I worked on during the ETH NYC 2022 Hackathon. It is a protocol that allows users to grant Dapps (Decentralized Apps) access to personal information using access tokens that can be revoked at any time. I worked on the user interface and integration with the smart contract, which used Wallet Connect. ",
+			}
+		],		
+		visible: false
 	},
 	{
 		title: "Quae Web App",
@@ -361,14 +393,15 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"The Quae web app is currently on version 2. The first version was built on using React, Material UI, and SCSS. But, with any long term project, we reached a point where we decided to rebuilt it from the ground up to alleviate technical debt and simplify the overall structure of the app. ",
+					"The Quae web app accompanied the mobile app. The first version was built on using React. We were . But, with any long term project, and this being my first production front-end application, we reached a point where we decided to rebuilt it from the ground up. First, my team and I did a system design audit, restructured the architecture to lower operational costs while also improving performance. For the client application was redesigned to use Next.js,   to alleviate technical debt and simplify the overall structure of the app. ",
 			},
 			{
 				type: "text",
 				content:
-					"The current version of the Quae web app uses Next.js and Chakra.ui. The rebuilt took a little over a week of working literally around the clock, but has paid dividends in the amount of times it has saved our team, and the value that we can provide to our users.",
+					"The rebuild took a little over a week of working literally around the clock over winter break. I find that sometimes the biggest tasks are best done as quickly as possible. The effort paid dividends in the experience I gained with server-side rendering, improved performance and SEO, and it gave me a chance to fix some looming tech debt. My favorite component to build was the text editor for long-form posts.",
 			},
 		],
+		visible: false
 	},
 
 	{
@@ -401,7 +434,8 @@ export const projects: ProjectCard[] = [
 				type: "text",
 				content: `Flash forward 2 months and my professor for my Engineering Design class tells the class that you can make up a project if you don't like any of the suggested projects. I enlisted the help of a few other friends and we make it happen. It was a fun project, but in the end we realized that it wasn't really a big enough problem for people to want to download an app for it. Maybe on a rainy day, I'll think about releasing it. `,
 			},
-		],
+		],		
+		visible: false
 	},
 	{
 		title: "PixlowChat",
@@ -434,7 +468,8 @@ export const projects: ProjectCard[] = [
 				content:
 					"We used react with tailwind css. My main takeaway from this project was that I personally do not like working with tailwind. I had used it once before (the Quae landing page. Looking back, my dislike was exacerbated by not using Tailwind components. If I ever reconsider using Tailwind, I will absolutely learn how to implement components.",
 			},
-		],
+		],	
+		visible: false
 	},
 	{
 		title: "Quae Mobile App",
@@ -456,14 +491,15 @@ export const projects: ProjectCard[] = [
 			{
 				type: "text",
 				content:
-					"The Quae Mobile app was the first serious React-Native app that I worked on. In 1 month of working every day with my co-founder, we had a basic MVP that could connect to a database and server.",
+					"The Quae Mobile app was the first serious React-Native app that I worked on. In 1 month of working every day with my co-founder, we had a basic MVP that could connect connect a client to a server securely with JWT. At that time, that was a huge deal for us.",
 			},
 			{
 				type: "text",
 				content:
-					"Over the past 2 years, the app has gone through many iterations. During this time, I've learned a lot about mobile development, creating sleek UI's, and designing an amazing user experience.  ",
+					"Over the next 3 years, the app has would go through many iterations. During that time, I learned a lot about mobile development. I learned about best practices for accessability and performance, designing user-flows, and accepting feedback on the app's \"evolving\" (that's putting it nicely) UI/UX and how to turn it into improvements.",
 			},
 		],
+		visible: true
 	},
 	{
 		title: "Quae Landing Page",
@@ -492,12 +528,12 @@ export const projects: ProjectCard[] = [
 					"The Quae landing page helped me hone my design skills. I also got to explore several options for web styling. Starting with inline styles for V0.1 when I didn't know any better, to experimenting with Tailwind.css, and finally ending up with SCSS.",
 			},
 		],
+		visible: false
 	},
 ];
 export function filterByType(type: ProjectType) {
 	setFilteringFor(type);
-	console.log();
-	let result: ProjectCard[] = [];
+	let result: ProjectCardType[] = [];
 	if (type === null) {
 		setFilteredProjects(projects);
 	}
@@ -513,9 +549,4 @@ export function filterByType(type: ProjectType) {
 export const [filteringFor, setFilteringFor] = createSignal();
 export const [filteredProjects, setFilteredProjects] = createSignal(projects);
 
-function logData() {
-	console.log("blah");
-}
-const logData2 = () => {
-	console.log("blah");
-};
+

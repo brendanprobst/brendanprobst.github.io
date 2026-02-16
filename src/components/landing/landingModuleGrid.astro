@@ -1,6 +1,5 @@
 ---
-import GridSection from "./gridSection";
-import ProjectsPreview from "./projects/projectsPreview";
+import GridSection from "./landingModule";
 import {
 	plmProps,
 	cabalProps,
@@ -8,18 +7,12 @@ import {
 	aboutMeProps,
 	quaeProps,
 	TraderInteractiveProps,
-} from "./gridData";
+} from "./landingModuleData";
 ---
 
 <section id="grid">
 	<div id="bio-module">
-		<GridSection {...aboutMeProps}>
-			<!-- <div id="resume-module" class="sub-module">
-				<GridSection title="My Resume">
-					<a href="/public/brendan_probst_resume.pdf" download> Download</a>
-				</GridSection>
-			</div> -->
-		</GridSection>
+		<GridSection {...aboutMeProps} client:load />
 	</div>
 	<div id="trader-interactive-module">
 		<GridSection {...TraderInteractiveProps} client:load />

@@ -1,0 +1,1 @@
+export type { LandingModuleType } from "./landingModuleType";
