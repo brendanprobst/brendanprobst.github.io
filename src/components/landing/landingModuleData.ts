@@ -1,146 +1,123 @@
 import type { LandingModuleType } from "../../types";
-
+export const aboutMeProps: LandingModuleType = {
+  title: "About Me",
+  headline: "",
+  blocks: [
+    {
+      type: "text",
+      content: "Hi, I'm Brendan, a full-stack software engineer based in NYC.",
+    },
+    {
+      type: "text",
+      content:
+        "My career in software began while I was in college, where I was introduced to an organization on campus called [Launchpad](https://stevenslaunchpad.org/). Through launchpad, I was able to direct my newfound passion for software engineering towards solving a real-world problem. Through launchpad and the people that I would meet, I worked on [Quae](#quae-module), [Cabal Labs](#cabal-module), and [SmileNow](#smilenow-module).",
+    },
+    {
+      type: "text",
+      content:
+        "These days I'm focused on growing my skills as a software engineer, I'm currently working at [Trader Interactive](#trader-module), where I lead the Platform & Tooling Team.",
+    },
+    {
+      type: "text",
+      content:
+        "In my spare time, I love cycling 🚲, playing pool 🎱, cooking 🧑‍🍳, motor sports 🏎️, and I have two orange cats named Beans and Garbanzo 🐈🐈",
+    },
+  ],
+};
 export const quaeProps: LandingModuleType = {
-	title: "Quae",
-	headline: "Community Voting App",
-	subHeadline: "Co-founder",
-	link: "https://quae.app",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"I founded Quae to address a problem I saw in the world: people aren't listened to by their leaders. Quae empowers people to be heard in their community and those elected to represent them.",
-		},
-		{
-			type: "text",
-			content:
-				"Quae solves this problem by taking a new approach to how we vote. Right now, you only get to vote once every 4 years. Some problems can't wait 4 years. To take action today, people can use Quae to verifiably vote on projects, problems, or concerns in their community and use the results to create the change that is needed today.",
-		},
-	],
+  title: "Quae",
+  headline: "Community Voting App",
+  subHeadline: "Co-founder",
+  link: "https://quae.app",
+  blocks: [
+    {
+      type: "text",
+      content:
+        "I met [Sam](https://samschmitt.net) through Launchpad, we worked together to co-found Quae. Our mission was to address the issue that people aren't heard by their leaders. Quae sought to change how people were heard in their community by creating a dedicated online forum for verified referendum voting.",
+    },
+    {
+      type: "text",
+      content:
+        "We launched our app on campus and within the city of Hoboken. We knew we were on the right track when the Student Government Association adopted it as their official tool for student outreach, and posts on Quae began to introduce changes to campus policies. Hoboken City Council took interest to the idea as well, though it was never official adopted, it was mentioned during city council meetings. Quae taught me more about software development and what it means to be an engineer than any class I took during college.",
+    },
+  ],
 };
 export const cabalProps: LandingModuleType = {
-	title: "Cabal Labs",
-	headline: "Web3 Research & Development Group",
-	subHeadline: "Co-founder",
-	link: "https://caballabs.com",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"Cabal Labs is an organization I helped found with 3 friends in the weeks following the ETH Bogotá 2022 Hackathon. At its core, Cabal Labs stands to promote, build, and maintain software that aligns with our mission: liberation through technology",
-		},
-		{
-			type: "text",
-			content:
-				"We evolved Cabal labs into a DAO which has allowed us to collaborate with more people, build a community, and allocate funds.",
-		},
-		{
-			type: "text",
-			content: "As an organization, we attended 6 ETH Global Hackathon's. At these hackathons we were able to build a number of projects that were awarded prizes. These winnings were re-invested to help us continue to build and grow the community.",
-		},
-	],
+  title: "Cabal Labs",
+  headline: "Web3 Research & Development Group",
+  subHeadline: "Co-founder",
+  link: "https://caballabs.com",
+  blocks: [
+    {
+      type: "text",
+      content:
+        "In college I met some really cool people, being engineers, and cryptocurrency gaining popularity, some friends and I started a blockchain study group, we named the group chat \"The Crypto Cabal\". We began competing in ETH Global Hackathons using the \"Cabal\" moniker. We eventually put a formal name to our hackathon participation and founded Cabal Labs: a technology research firm.",
+    },
+    {
+      type: "text",
+      content:
+        "It started with 4 of us, but we grew a community 30+ engineers, 9 of which competed with us at hackathons. As an organization, we attended 6 ETH Global Hackathon's and won over 16 prize bounties. These winnings were re-invested to help us continue to build our community and were used for reimbursing travel expenses for hackers.",
+    },
+  ],
 };
 export const smileNowProps: LandingModuleType = {
-	title: "Smile Now",
-	headline: "Capture Moments",
-	subHeadline: "Mobile App Dev & Co-founder",
-	link: "https://smile.samschmitt.net",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"Smile Now started as a discord channel in a server I created for my birthday party. My friend (and co-founder of Quae)[Sam](https://samschmitt.net) saw what it could be if it was a stand alone app. He created an MVP and his family loved it. We decided to build Smile Now [Cris](https://sosaofficial.com) onto the project",
-		},
-		{
-			type: "text",
-			content:
-				"We wanted to get into a beta phase as quickly as possible - so we gathered in my kitchen and build a 99.9% shippable app in 24 hours. By the end of the week it was passed review and on the app store.",
-		},
-		{
-			type: "text",
-			content:
-				"Smile Now makes taking pictures fun. We made the process of creating and joining a party a total of only 3 clicks. Once a party has been activated random party goers will be notified to take a candid photo. By the end of the night, everyone will have gotten to take or pose for a photo. Nobody has to gather everyone to take a big group shot. ",
-		},
-	],
+  title: "Smile Now",
+  headline: "Capture Moments",
+  subHeadline: "Mobile App Dev & Co-founder",
+  link: "https://smile.samschmitt.net",
+  blocks: [
+    {
+      type: "text",
+      content:
+        "Smile Now started as a groupchat I created for my birthday party, I asked people to sporadically take photos throughout the night and send them to the chat. My friend [Sam](https://samschmitt.net) saw what it could be if it was a stand alone app and created an MVP. His family tried it during Thanksgiving and they loved it. We decided to build \"Smile Now\" and asked [Cris](https://sosaofficial.com) to help run marketing for the project.",
+    },
+    {
+      type: "text",
+      content:
+        "We wanted to get into a beta phase as quickly as possible - so we gathered in my kitchen and built a 99.9% shippable app in 24 hours (this was pre-ChatGPT mind you). By the end of the week it was passed review and was on the app store. The concept is simple, if you want a fun way to take pictures at an event you're attending, make a \"Smile Now Party\". We made the process of creating and joining a party a total of only 3 clicks. Once a party has been activated, random party goers will be notified to take a candid photo. By the end of the night, everyone will have gotten to take or pose for a photo, and everyone will be able to view all the photos.",
+    },
+    {
+      type: "text",
+      content:
+        "We were able to beta test it during the closing weeks of my senior year at university, and we reached over 50 users before we decided to pause work. It was a super fun experience working on this project, I still think there's some potential and hope to revisit this ideas some day.",
+    },
+  ],
 };
-export const aboutMeProps: LandingModuleType = {
-	title: "About Me",
-	headline: "Software Engineer | Full Stack Dev | Designer",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"I'm Brendan, a full-stack software engineer based in NYC. My experiences have taught me how to build beautiful user interfaces and captivating landing pages, as well as build backend services and APIs to support them.",
-		},
-		{
-			type: "text",
-			content:
-				"My journey began in in my Freshman Year at Stevens Institute of Technology. Specifically, Intro to Programming for Engineers. I fell in love with coding and my passion granted me an opportunity to apply for  Launchpad, a start accelerator. Launchpad gave me the opportunity, know-how, and support to start a Company: Quae.",
-		},
-		{
-			type: "text",
-			content:
-				"Launchpad introduced me to some amazing people and taught me how to build technology that could address real world problems. I began researching about blockchain technology and smart contract development, and soon began competing in ETH Global Hackathons. Over the course of 3 years, I formed Cabal Labs -  we built a number of projects that were awarded prizes at the hackathons, these winnings were re-invested to help us continue to build and grow the community.",
-		},
-		{
-				type: 'text',
-				content: "In the years since exiting Stevens and Launchpad, I've been focused on growing my skills at places such as PLM and Trader Interactive. My skill set has allowed me to make an impact at the places I work and grow my technical skills along the way. "
-		},
-		{
-			type: "text",
-			content:
-				"In my spare time, I love cycling 🚲, playing pool 🎱, cooking 🧑‍🍳, motor sports 🏎️, and I two orange cats named Beans and Garbanzo 🐈🐈",
-		},
-	],
-};
+
 export const plmProps: LandingModuleType = {
-	title: "PLM Fleet",
-	headline: "Associate Software Engineer",
-	link: "https://www.plmfleet.com",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"I worked as a Software Engineer at [PLM Fleet]('http://plmfleet.com'). I gained experience in .NET development and improved my proficiency with Azure App Services, Dev Ops, and Deployment. I also passed a Microsoft Certification in Dynamics 365 Fundamentals. ",
-		},
-		{
-			type: "text",
-			content:
-				'Within 3 months there, I was leading development on 2 "long overdue" projects that my skill set was best suited for.  I lead a team to rebuild the website for selling end-of-life trailers, which both improved the customer experience and reduced a 2 month manual process of populating the website at the end of every year to something that would be continuously updated via existing workflows and an integration to the core database. I also lead the development of integrating Power BI into the customer Portal, which allowed customers to dynamically visualize their data.',
-		},
-	],
+  title: "PLM Fleet",
+  headline: "Refrigerated Trailer Leasing",
+  subHeadline: "Associate Software Engineer",
+  link: "https://www.plmfleet.com",
+  blocks: [
+    {
+      type: "text",
+      content:
+        "My first \"office\" job as a Software Engineer was at [PLM Fleet]('http://plmfleet.com'). I learned how to develop on a new tech stack (.NET) and worked with Azure cloud services for the first time. I also experienced the joys of building on top of a legacy system for the first time.",
+    },
+    {
+      type: "text",
+      content:
+        'Within 3 months there, I was leading development on 2 "long overdue" projects that my skill set was best suited for.  I rebuild the website for selling end-of-life trailers. I built this using Next.js, isolated from the legacy stack, which marked the first step in a new direction for the team.  The new version added functionalities the old version lacked to improve the customer experience and replaced an annual 2-month-long manual-data-entry process for populating the website with an automated process. The second big project I worked on for PLM was to revamp the look and feel of the Customer Portal, I worked with a data scientist and product manager to redesign the key flows, updated the styles, and integrated Power BI for dynamic data visualizations.',
+    },
+  ],
 };
 
 export const TraderInteractiveProps: LandingModuleType = {
-	title: "Trader Interactive",
-	headline: "Software Engineer II",
-	link: "https://traderinteractive.com",
-	blocks: [
-		{
-			type: "text",
-			content:
-				"I'm currently a Software Engineer II at [Trader Interactive](https://traderinteractive.com). I began here as a software engineer focused on full-stack development using Node.js (especially NestJS), and got a lot of experience with AWS, APIs, and database design.",
-		},
-		{
-			type: "text",
-			content:
-				"Over time, I took on more responsibility as team lead for the Customer Management Project, where my team built a new API layer that brought together a bunch of external systems and really improved customer onboarding (cutting ticket times from several days to less than one). Making sense of legacy data and integrating it with our new platform was a big part of the challenge.",
-		},
-		{
-			type: "text",
-			content:
-				"After moving up to lead a pod of engineers, I started shaping the technical roadmap, prioritizing our work, and advocating for improvements to how we build and maintain things. I focused a lot on modernizing legacy systems, improving developer tools, and collaborating with product to push forward on modernization projects.",
-		},
-		{
-			type: "text",
-			content:
-				"I also helped onboard new hires, shared documentation, and worked to refine our agile processes—always looking for ways to streamline development and make sure we're keeping up with the needs of the business.",
-		},
-	],
-}
-export const projectsProps: LandingModuleType = {
-	title: "My Projects",
-	link: "/projects",
-	linkText: "See All Projects",
+  title: "Trader Interactive",
+  headline: "Online Vehicle Marketplace",
+  subHeadline: "Software Engineer II",
+  link: "https://traderinteractive.com",
+  blocks: [
+    {
+      type: "text",
+      content:
+        "I'm currently a Software Engineer II at [Trader Interactive](https://traderinteractive.com). I began here as a software engineer focused on full-stack development, leading the first node.js project for the department as apart of updated company standards. This leadership opportunity helped show me which areas I could improve, but I've grown into the role and I've gained experience with AWS services, API development, and system design. I'm currently the lead of the Software Engineering Pod and the Platform Engineering Team.",
+    },
+  ],
 };
- 
+export const projectsProps: LandingModuleType = {
+  title: "My Projects",
+  link: "/projects",
+  linkText: "See All Projects",
+};

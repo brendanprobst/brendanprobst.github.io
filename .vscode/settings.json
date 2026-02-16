@@ -9,7 +9,9 @@
 		"astrojs",
 		"Bacalhau",
 		"Filecoin",
+		"groupchat",
 		"Pixlow",
-		"websockets"
+		"websockets",
+		"Zelle"
 	]
 }

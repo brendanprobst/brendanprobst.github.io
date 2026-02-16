@@ -1,9 +1,18 @@
+import type { JSX } from "solid-js";
 import { SolidMarkdown } from "solid-markdown";
 import type { DynamicContentBlockType } from "../../types";
 
+const markdownComponents = {
+	a: (props: JSX.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+		<a {...props} target="_blank" rel="noopener noreferrer" />
+	),
+};
+
 export default function DynamicContentBlock({ type, content, imgAlt }: DynamicContentBlockType) {
 	if (type === "text") {
-		return <SolidMarkdown class="block" children={content} />;
+		return (
+			<SolidMarkdown class="block" components={markdownComponents} children={content} />
+		);
 	} else if (type === "image") {
 		return <img src={content} alt={imgAlt} />;
 	} else if (type === "title") {

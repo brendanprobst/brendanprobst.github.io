@@ -7,6 +7,10 @@
 	}
 }
 $animation-height: 30vh;
+html{
+
+	scroll-padding-top: 80px;
+}
 #landing {
 	#hero {
 		width: 100vw;
@@ -32,8 +36,8 @@ $animation-height: 30vh;
 			z-index: 2;
 			position: relative;
 			background-color: rgba(20, 37, 42, 0.198) !important;
-			-webkit-backdrop-filter: (30px) !important;
-			backdrop-filter: blur(30px) !important;
+			-webkit-backdrop-filter: (50px) !important;
+			backdrop-filter: blur(50px) !important;
 
 			.container {
 				z-index: 4;
@@ -139,8 +143,8 @@ $animation-height: 30vh;
 		#quick-links {
 			z-index: 2;
 			background-color: rgba(153, 224, 247, 0.1);
-			-webkit-backdrop-filter: blur(45px);
-			backdrop-filter: blur(45px);
+			-webkit-backdrop-filter: blur(90px);
+			backdrop-filter: blur(90px);
 			@include flex-container(column, flex-end, center, nowrap);
 			padding: 2rem 0;
 			height: 100%;
@@ -327,8 +331,8 @@ $grid-blur: 50px;
 	z-index: 3;
 	max-width: 100ch;
 	padding: 0 1rem;
-	margin: 2rem auto;
-	gap: 0.75rem;
+	margin: 8rem auto;
+	gap: 3.75rem;
 	background-color: colors.$bg;
 	display: grid;
 
@@ -409,13 +413,13 @@ $grid-blur: 50px;
 	}
 	.grid-section {
 		// cursor: pointer !important;
-		background-color: rgb(153, 224, 247, 0.1);
+		background-color: rgba(0, 0, 0, 0.325);
 		// Use both legacy and modern syntax for maximum browser compatibility
 		-webkit-backdrop-filter: blur($grid-blur);
 		backdrop-filter: blur($grid-blur);
 		// Fallback for Firefox: use a semi-transparent background if backdrop-filter is not supported
 		@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-			background-color: rgba(153, 224, 247, 0.85);
+			background-color: rgba(0, 0, 0, 0.85);
 		}
 		width: 100%;
 		height: 100%;
@@ -452,12 +456,12 @@ $grid-blur: 50px;
 		grid-template-rows: repeat(auto, 10);
 		grid-template-areas:
 			"bio bio"
-			"trader-interactive trader-interactive"
-			"plm plm"
-			"smilenow smilenow"
-			"cabal cabal"
 			"quae quae"
-			"projects projects";
+			"cabal cabal"
+			"smilenow smilenow"
+			"plm plm"
+			"trader-interactive trader-interactive"
+			;
 	}
 }
 @media screen and (min-width: 800px) {
@@ -465,11 +469,11 @@ $grid-blur: 50px;
 		grid-template-columns: repeat(1fr, 2);
 		grid-template-rows: repeat(auto, 6);
 		grid-template-areas:
-			"bio bio"	
-			"trader-interactive trader-interactive"
-			"plm plm"
+			"bio bio"
+			"quae quae"
 			"cabal cabal"
 			"smilenow smilenow"
-			"quae quae";
+			"plm plm"
+			"trader-interactive trader-interactive";
 	}
 }
