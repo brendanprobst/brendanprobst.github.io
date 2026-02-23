@@ -21,7 +21,7 @@ export const projects: ProjectCardType[] = [
 		date: ["January 2026"],
 		tags: ["React", "S3", "CloudFront", "Github Actions"],
 		link: "https://apa-cost-splitter.brendanprobst.com",
-		subText: "A tool to streamline cost splitting for my billiards league",
+		subText: "A tool to streamline cost splitting for my billiards league.",
 		icons: [
 			{
 				icon: <FiExternalLink />,
@@ -37,11 +37,15 @@ export const projects: ProjectCardType[] = [
 		blocks: [
 			{
 				type: "text",
-				content: "I'm on a billiards team in Brooklyn (APA 8-ball), every week we needed to coordinate splitting the league dues, table fees, and any extra shared costs. I realized that it would be a hassle to do the math every week to calculate the amount everyone owed.I made a Google Sheet calculator, used it once, and realized it sucked. So I built a proper app (using vanilla react, tailwind, and a cookie). "
+				content: "I'm on a billiards team in Brooklyn (APA 8-ball), and every week we need to coordinate splitting the league dues, table fees, and any extra shared costs. To tackle the hassle of doing the math every week to calculate the amount everyone owed, I made a Google Sheet calculator. I used it once. It sucked. Next, I built a proper app using vanilla react, tailwind, and a cookie."
 			},
 			{
 				type: "text",
-				content: "Each week the person handling the expenses will compete a short form. The output is a view breaking down the expenses and two copyable text blurs (one for the groupchat and one for the memo of the *League Fees Zelle*). After positive feedback on the MVP, I updated the styles, added support for people to save rosters for multiple teams, and added a feature to consolidate payments to eliminate payments."
+				content: "Within the new app, users must complete a short form to receive a breakdown view of expenses and two copyable text blurs (for the groupchat and another for the memo of the League Fees Zelle)."
+			},
+			{
+				type: "text",
+				content: "After positive feedback on the MVP, I updated the styles, added support for people to save rosters for multiple teams, and created a feature consolidating & eliminating payments."
 			}
 		],
 		visible: true
@@ -54,22 +58,22 @@ export const projects: ProjectCardType[] = [
 		date: ["January 2026"],
 		tags: ["React"],
 		link: "https://salsanyc.com",
-		subText: "A landing page for a salsa school",
+		subText: "A landing page for a salsa school.",
 		icons: [
 			{
 				icon: <FiExternalLink />,
 				link: 'https://fuakata.org/en',
-				label: 'Pool Cost Calculator App'
+				label: 'Fuakata Salsa Website'
 			},
 		],
 		blocks: [
 			{
 				type: "text",
-				content: "Since 2023 I've been taking salsa lessons. I started salsa dancing because of my friend, and co-founder of Cabal Labs, [Marco](https://www.marcosalazar.xyz/) (I ended up meeting my girlfriend through salsa, so I owe Marco one).I noticed the website for the school needed some updating. I approached the salsa teacher with a mockup of a simple 1-page landing page, he loved it and asked if I could build something bigger"
+				content: "Since 2023, I've been taking salsa lessons thanks to my friend and Cabal Labs co-founder, [Marco](https://www.marcosalazar.xyz/) (I ended up meeting my girlfriend through salsa, so I owe Marco a favor). After checking out the website, I noticed it needed some updating. So, I presented my salsa teacher a simple mockup of a 1-page landing page and he loved it, and asked if I could build something bigger."
 			},
 			{
 				type: "text",
-				content: "Luckily, I had the aforementioned Marco, he was happy to help with the project. Together we built a multi-page, feature-rich landing page. The new site gave info about the history of the school, the teachers, and the rich history of cuban salsa. We also built features for the instructor to update the class schedule, handle payments, and accept private lesson appointments."
+				content: "Together, the aforementioned Marco and I created a multi-page, feature-rich landing page. The new site gave info about the history of the school, the teachers, and the rich history of Cuban salsa. We also built features so the instructors can seamlessly update class schedules, handle payments, and accept private lesson appointments."
 			}
 		],
 		visible: true
@@ -82,7 +86,7 @@ export const projects: ProjectCardType[] = [
 		logo: "/img/logos/cabal_sorel.png",
 		date: ["October 2023"],
 		subText:
-			"A recommendation engine for decentralized apps - get a better timeline through a chrome extension",
+			"A recommendation engine for decentralized apps - get a better timeline through a chrome extension.",
 		tags: ["Chrome Extension", "Hackathon Project"],
 		icons: [
 			{
@@ -99,7 +103,7 @@ export const projects: ProjectCardType[] = [
 		blocks: [
 			{
 				type: "text",
-				content: `Cabal Sorel was the project I worked on at [ETH Online 2023](https://ethglobal.com/events/ethonline2023). We built a chrome extension that allows users to get personalized recommendations for decentralized apps. By using our extension, people can pull in data their wallet has stored from interactions on others sites, and optionally upload their twitter archive ([How?](https://www.theverge.com/23453703/twitter-archive-download-how-to-tweets)). Once setup, you would see a new button appear on our enabled sites (just hey.xyz for now). Click it and you'll see a new home feed with more personal recommendations.`,
+				content: `At ETH Online 2023, my team and I created a chrome extension that gave users personalized recommendations for decentralized apps. By using our extension, people could pull data their wallet stored from interactions on others sites, and even upload their Twitter/X archive ([How?](https://www.theverge.com/23453703/twitter-archive-download-how-to-tweets)). Once setup, you would see a new button appear on our enabled sites (just hey.xyz for now). Click it and you'll see a new home feed with more personal recommendations.`,
 			},
 			{
 				type: "text",
