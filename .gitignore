@@ -1,6 +1,7 @@
 # Settings # 
 ###################
 settings.json
+./vscode/**
 # Compiled source #
 ###################
 *.com
