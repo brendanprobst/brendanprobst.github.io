@@ -1,12 +1,9 @@
 ---
-import {LandingHero, QuickLinks, LandingModuleGrid} from "../components/landing";
+import {LandingHero, LandingModuleGrid} from "../components/landing";
 import AppLayout from "../layouts/AppLayout.astro";
 ---
 
 <AppLayout id="landing">
-	<section id="hero">
-		<LandingHero />
-		<QuickLinks />
-	</section>
+	<LandingHero />
 	<LandingModuleGrid />
 </AppLayout>

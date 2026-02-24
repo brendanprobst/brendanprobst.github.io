@@ -2,6 +2,7 @@ import { projects } from "./projectsData";
 
 let skills: string[] = [];
 for (let project of projects) {
+	if (!project.visible) continue;
 	for (let skill of project.tags) {
 		if (skills.indexOf(skill) === -1) {
 			skills.push(skill);

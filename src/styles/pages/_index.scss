@@ -1,4 +1,5 @@
 @import "./landing";
-@import "./contact";
 @import "./projects";
-@import "./resume";
+html {
+	scroll-padding-top: 80px;
+}

@@ -12,22 +12,22 @@ import {
 
 <section id="grid">
 	<div id="bio-module">
-		<GridSection {...aboutMeProps} client:load />
+		<GridSection {...aboutMeProps} client:only="solid-js" />
 	</div>
 	<div id="trader-interactive-module">
-		<GridSection {...TraderInteractiveProps} client:load />
+		<GridSection {...TraderInteractiveProps} client:only="solid-js" />
 	</div>
 	<div id="plm-module">
-		<GridSection {...plmProps} client:load />
+		<GridSection {...plmProps} client:only="solid-js" />
 	</div>
 	<div id="cabal-module">
-		<GridSection {...cabalProps} client:load />
+		<GridSection {...cabalProps} client:only="solid-js" />
 	</div>
 	<div id="smilenow-module">
-		<GridSection {...smileNowProps} client:load />
+		<GridSection {...smileNowProps} client:only="solid-js" />
 	</div>
 	<div id="quae-module">
-		<GridSection {...quaeProps} client:load />
+		<GridSection {...quaeProps} client:only="solid-js" />
 	</div>
 
 	<!-- <div id="projects-module">
