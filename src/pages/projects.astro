@@ -1,10 +1,10 @@
 ---
 import AppLayout from "../layouts/AppLayout.astro";
-import {ProjectsHero, ProjectsList, ProjectSkills} from "../components/projects";
+import {ProjectsList, ProjectSkills} from "../components/projects";
 ---
 
 <AppLayout title="Projects" description="Projects" id="projects">
-	<!-- <ProjectsHero client:load /> -->
-	<ProjectsList client:load />
-	<!-- <ProjectSkills client:load /> -->
+	<h1>My Projects</h1>
+	<ProjectSkills client:only="solid-js" />
+	<ProjectsList client:only="solid-js" />
 </AppLayout>

@@ -56,7 +56,7 @@ export const projects: ProjectCardType[] = [
 		class: "fuakata",
 		logo: "/img/logos/fuakata_logo.png",
 		date: ["January 2026"],
-		tags: ["React"],
+		tags: ["Next.js", "Tailwind CSS", "Sanity CMS"],
 		link: "https://salsanyc.com",
 		subText: "A landing page for a salsa school.",
 		icons: [

@@ -2,7 +2,24 @@
 @use "../colors";
 
 #projects {
-	padding: 10rem 1rem;
+	padding: 3rem auto;
+	h1{
+		margin: 10rem auto 2rem auto;
+		text-align: center;
+		font-size: 3rem;
+		font-weight: 400;
+		color: colors.$text;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(to right, transparent,colors.$border, transparent);
+		}
+	}
 	#hero {
 		// height: 70vh;
 		width: 100%;
@@ -52,75 +69,98 @@
 			}
 		}
 	}
-}
-.skill-container {
-	@include flex-container(row, center, center, wrap);
-	max-width: 65rem;
-	margin: 3rem auto;
-	.tag {
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		margin: 0.3rem;
-		min-width: 10ch;
-		text-align: center;
-		background-color: colors.$accent-light;
-		color: colors.$bg;
+	.skill-container {
+		@include flex-container(row, center, center, wrap);
+		max-width: min(90vw, 65rem);
+		margin: 3rem auto;
+
+		.tag {
+			display: inline-block;
+			padding: 0.15rem 0.5rem;
+			border-radius: 0.35rem;
+			margin: 0.1rem;
+			font-size: 0.9rem;
+			min-width: 7ch;
+			text-align: center;
+			border: 1.5px solid colors.$accent-dark;
+			color: colors.$accent-light;
+			transition: background 0.2s, color 0.2s, text-decoration 0.2s;
+
+			// // More subtle link styling for <a> tags
+			// a {
+			// 	color: inherit;
+			// 	text-decoration: underline dotted;
+			// 	text-underline-offset: 0.13em;
+			// 	opacity: 0.75;
+			// 	transition: color 0.2s, opacity 0.2s;
+			// 	font-size: 0.93em;
+			// 	padding: 0;
+			// 	font-weight: 400;
+			// 	&:hover,
+			// 	&:focus {
+			// 		opacity: 1;
+			// 		color: colors.$text;
+			// 		text-decoration: underline;
+			// 		text-decoration-thickness: 2px;
+			// 	}
+			// }
+		}
 	}
-}
-#projects {
 	.projects-container {
 		width: 100vw;
+		padding: 0 1rem;
+	}
+	.project-card {
+		margin: 0 auto 3rem;
+		width: clamp(8rem, 100%, 60rem);
+		@include flex-container(row, center, flex-start, wrap);
+		background-color: rgba(53, 137, 197, 0.3);
+		border-radius: 1.75rem;
+		overflow: hidden;
 		padding: 1rem;
-	}
-}
-.project-card {
-	margin: 0 auto 6rem;
-	width: clamp(8rem, 100%, 60rem);
-	@include flex-container(row, center, flex-start, wrap);
-	background-color: rgba(53, 137, 197, 0.3);
-	border-radius: 1.75rem;
-	overflow: hidden;
-
-	.header {
-		display: grid;
-		width: 100%;
-
-		.content {
-			grid-area: content;
-			h3,
-			h4 {
-				margin: 0;
+		
+		.header {
+			display: grid;
+			width: 100%;
+			.content {
+				grid-area: content;
+				h3,
+				h4 {
+					margin: 0;
+				}
+				.sub-title {
+					font-style: italic;
+					font-weight: 400;
+				}
 			}
-			.sub-title {
-				font-style: italic;
-				font-weight: 400;
+			.icons {
+				grid-area: icons;
+				a {
+					color: colors.$text;
+				}
 			}
-		}
-		.icons {
-			grid-area: icons;
-			a {
-				color: colors.$text;
+			img {
+				flex: 0.75;
+				border-radius: 1rem;
+				grid-area: logo;
 			}
-		}
-		img {
-			flex: 0.75;
-			border-radius: 1rem;
-			grid-area: logo;
-		}
-		.content {
-			flex: 1;
-			.title {
-				font-size: 2rem;
-			}
-		}
-	}
-
-	.blocks {
-		padding-inline: 1rem;
-		.block {
-			flex: 0.5;
-			P {
+			.content {
 				flex: 1;
+				.title {
+					font-size: 2rem;
+				}
+			}
+		}
+	
+		.blocks {
+			padding-inline: 1rem;
+			margin-top: 2rem;
+			.block {
+				flex: 0.5;
+				P {
+					flex: 1;
+					margin-block: 0;
+				}
 			}
 		}
 	}
