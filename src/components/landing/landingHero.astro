@@ -1,4 +1,5 @@
 ---
+import {EMAIL} from "../../config"
 // function render() {
 // 	const container = document.getElementById("subtitle");
 // 	if (!container) {
@@ -40,13 +41,26 @@
 	// 	}
 	// });
 </script>
+<div id="hero">
+	<section id="hero-content">
+		<div class="container">
 
-<section id="hero-content">
-	<div class="container">
-		<img src={"/img/brendan_probst_pfp.jpeg"} alt="picture of me" />
-		<div class="title-container">
-			<h1 class="title">Hi, I'm Brendan</h1>
-		</div>
-		<div class="subtitle">Thanks for stopping by!</div>
-	</div>
-</section>
+			<img src={"/img/brendan_probst_pfp.jpeg"} alt="picture of me" />
+			<div class="title-container">
+				<h1 class="title">Hi, I'm Brendan</h1>
+				<h2>Full Stack Developer | Software Engineer</h2>
+			</div>
+			<section id="quick-links">
+				<div class="content-container">
+					<a class="quick-link" href="/projects">
+						<h4>Projects</h4>
+					</a>
+					<a class="quick-link" href={`mailto:${EMAIL}`}>
+						<h4>Send Me A Message</h4>
+					</a>
+				</div>
+			</section>
+	</section>
+</div>
+
+</div>
