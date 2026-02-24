@@ -8,10 +8,12 @@ const markdownComponents = {
 	),
 };
 
-export default function DynamicContentBlock({ type, content, imgAlt }: DynamicContentBlockType) {
+export default function DynamicContentBlock({ id, type, content, imgAlt }: DynamicContentBlockType) {
 	if (type === "text") {
 		return (
-			<SolidMarkdown class="block" components={markdownComponents} children={content} />
+			<div>
+				<SolidMarkdown class="block" components={markdownComponents} children={content} />
+			</div>
 		);
 	} else if (type === "image") {
 		return <img src={content} alt={imgAlt} />;
@@ -20,6 +22,6 @@ export default function DynamicContentBlock({ type, content, imgAlt }: DynamicCo
 	} else if (type === "subtitle") {
 		return <h3>{content}</h3>;
 	} else {
-		return <>{content}</>;
+		return <div>{content}</div>;
 	}
 }

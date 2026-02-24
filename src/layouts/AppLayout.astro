@@ -1,7 +1,7 @@
 ---
 import {BaseHead, Footer, Header} from "../components/layout";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-const { title, description, id } = Astro.props;
+const { id } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,7 +10,7 @@ const { title, description, id } = Astro.props;
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body id={id ?? "page"}>
-		<Header client:only />
+		<Header client:only="solid-js" />
 		<main>
 			<slot />
 		</main>

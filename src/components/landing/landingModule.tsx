@@ -1,5 +1,6 @@
 import DynamicContentBlock from "../ui/dynamicContentBlock";
 import type { LandingModuleType } from "../../types/landing/landingModuleType";
+import { For } from "solid-js";
 
 
 export default function LandingModule({
@@ -28,9 +29,12 @@ export default function LandingModule({
 				<h3 class="headline">{headline}</h3>
 				<h4 class="sub-headline">{subHeadline}</h4>
 			</div>
-			{blocks?.map((item) => {
-				return <DynamicContentBlock {...item} />;
-			})}
+			<For each={blocks}>
+				{(item, index) => {
+					const uniqueId = `block-${index()}-${item.type}-${item.content?.substring(0, 10) || ''}`;
+					return <DynamicContentBlock id={uniqueId} {...item} />;
+				}}
+			</For>
 			{children}
 		</div>
 	);
