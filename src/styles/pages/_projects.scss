@@ -6,7 +6,7 @@
 	h1{
 		margin: 10rem auto 2rem auto;
 		text-align: center;
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 400;
 		color: colors.$text;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -170,20 +170,21 @@
 	#projects {
 		.project-card {
 			.header {
-				grid-template-columns: 1fr;
-				grid-template-rows: auto auto;
+				grid-template-columns: auto auto auto; 
+				grid-template-rows: 1fr;
 				justify-items: stretch;
 				align-items: flex-start;
-				grid-template-areas: "logo icons" "content content";
+				grid-template-areas: "logo" "content" "icons";
 				padding-top: 2rem;
 				padding: 1rem;
 				img {
 					width: 5rem;
 				}
 				.icons {
-					@include flex-container(row, center, center, nowrap);
+					@include flex-container(row, flex-start, center, nowrap);
 					font-size: 2rem;
 					gap: 2rem;
+					padding-top: 2rem;
 				}
 				.content {
 					margin-top: 1rem;
@@ -241,7 +242,7 @@
 	.tag {
 		background-color: colors.$bg;
 		border-radius: 0.25rem;
-		margin-inline-end: 0.25rem;
+		margin: 0.25rem 0.25rem 0 0;
 		width: max-content;
 		text-align: center;
 		padding: 0.25rem;
